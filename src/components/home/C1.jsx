@@ -67,7 +67,7 @@ const data = [
 
 export default function AnalyticsChart() {
   return (
-    <div className="bg-[#1c1c1c] rounded-xl p-6 text-white w-full">
+    <div className="bg-[#1c1c1c] rounded-xl p-6 text-white w-full h-full">
       <h2 className="text-sm font-medium mb-1">Analytics</h2>
       <p className="text-2xl font-semibold mb-4">5k+</p>
       <ResponsiveContainer width="100%" height={100}>
@@ -2214,8 +2214,16 @@ export function Hero2() {
           alt=""
         />
 
-        <img src="/frame31.png" className="absolute left-[24%] top-[10%]  sm:top-[29%] z-10" alt="" />
-        <img src="/frame30.png" className="absolute left-[62%] top-[34%] z-10" alt="" />
+        <img
+          src="/frame31.png"
+          className="absolute left-[24%] top-[10%]  sm:top-[29%] z-10"
+          alt=""
+        />
+        <img
+          src="/frame30.png"
+          className="absolute left-[62%] top-[34%] z-10"
+          alt=""
+        />
 
         {/* Large images */}
         <img src="/f20.png" alt="" />
@@ -2230,7 +2238,6 @@ export function Hero2() {
 }
 
 // asian cart
-
 
 export function AsianCard() {
   const formRef = useRef(null);
@@ -2275,12 +2282,16 @@ export function AsianCard() {
               <div className="bg-slate-50 rounded-2xl w-fit py-2 px-4 text-sm flex items-center justify-center mb-3">
                 Touch us Out
               </div>
-              <h2 className="text-white text-xl font-semibold mb-4">Start With a message</h2>
+              <h2 className="text-white text-xl font-semibold mb-4">
+                Start With a message
+              </h2>
 
               <form action="" className="space-y-4">
                 {/* Fullname */}
                 <div>
-                  <label className="block text-white text-sm mb-1">Fullname</label>
+                  <label className="block text-white text-sm mb-1">
+                    Fullname
+                  </label>
                   <input
                     type="text"
                     name="fullname"
@@ -2303,7 +2314,9 @@ export function AsianCard() {
                 {/* Phone & City */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-white text-sm mb-1">Phone number</label>
+                    <label className="block text-white text-sm mb-1">
+                      Phone number
+                    </label>
                     <input
                       type="text"
                       name="phonenumber"
@@ -2312,7 +2325,9 @@ export function AsianCard() {
                     />
                   </div>
                   <div>
-                    <label className="block text-white text-sm mb-1">City</label>
+                    <label className="block text-white text-sm mb-1">
+                      City
+                    </label>
                     <input
                       type="text"
                       name="city"
@@ -2324,7 +2339,9 @@ export function AsianCard() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-white text-sm mb-1">Message</label>
+                  <label className="block text-white text-sm mb-1">
+                    Message
+                  </label>
                   <textarea
                     name="message"
                     rows="4"
@@ -2350,5 +2367,331 @@ export function AsianCard() {
   );
 }
 
+// graphs
 
-// 
+import { BarChart, Bar, LabelList, Cell } from "recharts";
+
+// Data for the chart
+const data2 = [
+  { day: 11, value: 58 },
+  { day: 12, value: 45 },
+  { day: 13, value: 63 },
+  { day: 14, value: 64, highlight: true }, // Highlighted bar
+  { day: 15, value: 35 },
+  { day: 16, value: 50 },
+  { day: 17, value: 48 },
+  { day: 18, value: 55 },
+  { day: 19, value: 39 },
+  { day: 20, value: 51 },
+];
+
+// Custom tooltip
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length && payload[0].payload.highlight) {
+    return (
+      <div className="bg-black text-white text-xs px-2 py-1 rounded-lg shadow">
+        {payload[0].value}%
+      </div>
+    );
+  }
+  return null;
+};
+
+export const ProgressChart = () => {
+  return (
+    <div className="bg-gray-200 p-6 rounded-xl w-full">
+      <h2 className="text-lg font-semibold mb-4">Progress</h2>
+      <div className="w-full h-56">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data2}>
+            <XAxis
+              dataKey="day"
+              axisLine={false}
+              tickLine={false}
+              tick={{ fontSize: 12 }}
+            />
+            <Tooltip
+              content={<CustomTooltip />}
+              cursor={{ fill: "transparent" }}
+            />
+            <Bar
+              dataKey="value"
+              radius={[10, 10, 0, 0]}
+              barSize={20}
+              background={{ fill: "#d1d5db", radius: [10, 10, 0, 0] }} // light gray
+            >
+              <LabelList
+                dataKey="value"
+                content={({ x, y, value, index }) => {
+                  const isHighlighted = data2[index].highlight;
+                  if (!isHighlighted) return null;
+                  return (
+                    <text
+                      x={x + 10}
+                      y={y - 10}
+                      fill="#fff"
+                      textAnchor="middle"
+                      className="text-xs font-medium"
+                    >
+                      {value}%
+                    </text>
+                  );
+                }}
+              />
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={entry.highlight ? "#ff5722" : "#1f2937"} // orange & dark gray
+                />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+};
+
+// Chart 1: PerformanceChart.jsx
+
+const performanceData = [
+  { name: "1", value: 72 },
+  { name: "2", value: 76 },
+  { name: "3", value: 62 },
+  { name: "4", value: 78 },
+  { name: "5", value: 65 },
+  { name: "6", value: 70 },
+  { name: "7", value: 79 },
+  { name: "8", value: 80 },
+  { name: "9", value: 76 },
+  { name: "10", value: 79 },
+];
+
+export const PerformanceChart = () => {
+  return (
+    <div className="bg-purple-800 text-white p-4 rounded-2xl w-[371px]">
+      <div className="text-xs bg-purple-500 inline-block px-2 py-1 rounded-full mb-2">
+        PERFORMANCE
+      </div>
+      <div className="text-4xl font-bold">+280%</div>
+      <div className="text-sm mb-4">in the past 30 days</div>
+      <ResponsiveContainer width="100%" height={120}>
+        <BarChart data={performanceData}>
+          <XAxis dataKey="name" hide />
+          <YAxis hide />
+          <Tooltip />
+          <Bar dataKey="value" radius={[5, 5, 0, 0]} barSize={12}>
+            {performanceData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill="#d9a5f2" />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+      <div className="text-xs mt-2 text-center">SEE ALL</div>
+    </div>
+  );
+};
+
+// Chart 2: TrendsChart.jsx
+
+const trendsData = [
+  { name: "Mon", value: 50 },
+  { name: "Tue", value: 60 },
+  { name: "Wed", value: 70 },
+  { name: "Thu", value: 72 },
+  { name: "Fri", value: 66 },
+  { name: "Sat", value: 65 },
+  { name: "Sun", value: 67 },
+];
+
+export const TrendsChart = () => {
+  return (
+    <div className="bg-blue-200 text-black p-4 rounded-xl w-[184px]">
+      <div className="text-xl font-bold mb-2">Trends</div>
+      <div className="text-3xl font-bold mb-4">72,5%</div>
+      <ResponsiveContainer width="100%" height={80}>
+        <BarChart data={trendsData}>
+          <XAxis dataKey="name" hide />
+          <Tooltip />
+          <Bar dataKey="value" radius={[10, 10, 0, 0]} barSize={12}>
+            {trendsData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill="#0066ff" />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};
+
+// Chart 3: SkillsRadarChart.jsx
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+} from "recharts";
+import Hero from "./Hero";
+
+const skillsData = [
+  { subject: "UI", A: 82 },
+  { subject: "UX", A: 72 },
+  { subject: "Soft skills", A: 88 },
+  { subject: "Design", A: 78 },
+  { subject: "Skill set", A: 75 },
+];
+
+export const SkillsRadarChart = () => {
+  return (
+    <div className="bg-lime-200 text-black p-4 rounded-2xl w-[285px]">
+      <div className="text-xl font-semibold mb-2">Skill set</div>
+      <ResponsiveContainer width="100%" height={250}>
+        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={skillsData}>
+          <PolarGrid stroke="#999" />
+          <PolarAngleAxis dataKey="subject" />
+          <PolarRadiusAxis angle={30} domain={[0, 100]} />
+          <Radar
+            name="Skill"
+            dataKey="A"
+            stroke="#333"
+            fill="#008080"
+            fillOpacity={0.6}
+          />
+        </RadarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};
+
+//
+
+// Chart 4: AnalyticsLineChart.jsx
+
+const analyticsData = [
+  { month: "JAN", a: 40, b: 20 },
+  { month: "FEB", a: 60, b: 30 },
+  { month: "MAR", a: 50, b: 45 },
+  { month: "APR", a: 70, b: 50 },
+  { month: "MAY", a: 80, b: 55 },
+  { month: "JUN", a: 65, b: 60 },
+  { month: "JUL", a: 90, b: 70 },
+  { month: "AUG", a: 100, b: 85 },
+];
+
+export const AnalyticsLineChart = () => {
+  return (
+    <div className="bg-white text-black p-4 rounded-xl  w-[371px] h-[184px] shadow">
+      <div className="flex justify-between items-center mb-2">
+        <h3 className="text-lg font-semibold">Analytics</h3>
+        <span className="text-xs text-gray-500">2024–2025</span>
+      </div>
+      <ResponsiveContainer width="100%" height={140}>
+        <LineChart data={analyticsData}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="month" />
+          <YAxis hide />
+          <Tooltip />
+          <Line type="monotone" dataKey="a" stroke="#ec4899" strokeWidth={3} />
+          <Line type="monotone" dataKey="b" stroke="#22d3ee" strokeWidth={3} />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};
+
+// services grid
+export function ServicesGrid() {
+  return (
+    <div className="max-w-[1280px] min-h-screen px-6 mx-auto">
+      <Hero />
+      <div className="sm:grid hidden grid-rows-2  grid-cols-6 ">
+        <div className="  col-start-1 col-end-3 row-start-1 row-end-3 ">
+          <img
+            src="./img102.jpg"
+            className="w-full h-full object-cover"
+            alt=""
+          />
+        </div>
+        <div className=" col-start-2 col-end-5 row-start-1 pb-4  px-4 row-end-2 bg-[#EDEDED] ">
+          <ProgressChart />
+        </div>
+        <div className=" row-start-1 row-end-3 col-start-5 col-end-8">
+          <img
+            src="./img101.jpg"
+            className="w-full h-full object-cover"
+            alt=""
+          />
+        </div>
+        <div className=" row-start-2 row-end-3 col-start-3 col-end-6 relative z-14 px-4 pt-4 bg-[#EDEDED]">
+          <AnalyticsChart />
+        </div>
+      </div>
+
+      <div className="grid sm:hidden  grid-rows-2  grid-cols-2 ">
+        <div className=" col-span-2 row-span-2 bg-[#EDEDED] ">
+          <ProgressChart />
+        </div>
+
+        <div className=" col-span-2 row-span-2 bg-[#EDEDED]">
+          <AnalyticsChart />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// About us Hero
+export function AboutHero() {
+  return (
+      <section className="relative   border border-red-500 max-w-[1280px] mx-auto md:top-5 top-2 md:mt-12 mt-4 left-0 right-0 z-50 px-2 sm:px-4 lg:px-6">
+        {/* Top Label */}
+        <div className="text-center mb-8">
+          <span
+            className="inline-block px-5 py-3 rounded-full text-sm text-gray-500 text-[15px] font-medium"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(67, 0, 255, 0) 0%, rgba(67, 0, 255, 0.08) 100%)",
+            }}
+          >
+            Lorem ipsum dolor
+          </span>
+        </div>
+
+        {/* heading  */}
+        <div className="text-center mb-6  w-full flex justify-center">
+          <h1 className="sm:text-[50px] text-[35px] leading-12 font-bold max-w-[892px] ">
+            Lorem ipsum dolor sit amet consectetur.
+          </h1>
+        </div>
+        {/* Sub Text */}
+        <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
+          Lorem ipsum dolor sit amet consectetur. Risus commodo faucibus tortor
+          etiam molestie adipiscing amet. Orci sem ut tellus interdum egestas.
+          Sed euismod tristique semper et tellus
+        </p>
+
+        {/* cards */}
+        <div className="relative h-[500px] -z-1">
+          <img src="/f20.png" alt="" />
+          <div className="absolute top-0">
+          <PerformanceChart/>
+          </div>
+          <div className="absolute  left-[25%] top-[8%]">
+            <TrendsChart/>
+          </div>
+            <div className="absolute left-[43%] top-[0%]">
+            <SkillsRadarChart/>
+          </div>
+          <div className="absolute  left-[10%  ] lg:left-[31%]">
+            <AnalyticsLineChart/>
+          </div>
+
+          <div className="absolute">
+            <img src="/rocket.png" className={"left-[64%] rotate-[21deg] top-[0%]"} alt="" />
+          </div>
+        </div>
+        <img src="/v3.png" className="absolute bottom-0 -left-[12%] z-[-1]"  alt="" />
+      </section>
+  );
+}

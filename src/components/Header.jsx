@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { Menu, X } from "lucide-react";
 import logo from "/logo.png";
-
+import { Link } from "react-router-dom";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef(null);
@@ -47,7 +47,7 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const navItems = ["Home", "Projects", "Services", "About Us"];
+  const navItems = [{page:"Home" , path:"/"}, {page:"Projects" , path:'/projects'}];
 
   return (
     <header className="fixed  max-w-[1280px]   mx-auto md:top-5 top-2    left-0 right-0 z-50 px-2 sm:px-4 lg:px-6">
@@ -63,13 +63,13 @@ const Header = () => {
             <div className="flex gap-8 items-center">
               <nav className="hidden md:flex items-center gap-8  ">
                 {navItems.map((item, index) => (
-                  <a
+                  <Link
                     key={index}
-                    href="#"
+                    to={item.path}
                     className="text-[15px]  text-slate-200 font-medium hover:text-white  transition-colors duration-200 relative group"
                   >
-                    {item}
-                  </a>
+                    {item.page}
+                  </Link>
                 ))}
               </nav>
 
@@ -103,13 +103,13 @@ const Header = () => {
         >
           <div ref={menuItemsRef} className="px-4 py-4 space-y-4">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href="#"
+                to={item.path}
                 className="block text-slate-300 hover:text-white py-2 px-3 rounded-lg hover:bg-slate-800 transition-all duration-200 font-medium"
               >
-                {item}
-              </a>
+                {item.page}
+              </Link>
             ))}
             <button className="w-full bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 mt-4">
               Contact Us

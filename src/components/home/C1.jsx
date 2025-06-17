@@ -419,85 +419,87 @@ export const ServicesSection = () => {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-12 px-4 md:px-10 lg:px-20 bg-white text-center"
-    >
-      <h2 className="text-2xl md:text-3xl font-bold mb-2">Our Services</h2>
-      <p className="text-gray-600 max-w-xl mx-auto mb-10">
-        Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus
-        consectetur imperdiet iaculis elit arcu.
-      </p>
+    <div className="bg-white">
+      <section
+        ref={sectionRef}
+        className="py-12 px-4 md:px-6 lg:px-20 max-w-[1280px] mx-auto   text-center"
+      >
+        <h2 className="text-2xl md:text-3xl font-bold mb-2">Our Services</h2>
+        <p className="text-gray-600 max-w-xl mx-auto mb-10">
+          Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus
+          consectetur imperdiet iaculis elit arcu.
+        </p>
 
-      <div className="sm:grid sm:grid-cols-3 sm:grid-rows-2 sm:gap-2 flex flex-col gap-4">
-        <div
-          ref={(el) => (cardsRef.current[0] = el)}
-          className="col-span-1 row-span-2 bg-red-400 rounded-2xl p-6 shadow-md text-left flex flex-col justify-between"
-        >
-          <h3 className="font-semibold text-lg mb-2">Service</h3>
-          <p className="text-sm text-gray-600">
-            Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis amet
-            facilisis egestas.
-          </p>
-        </div>
-
-        <div
-          ref={(el) => (cardsRef.current[1] = el)}
-          className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
-        >
-          <div className="w-10 h-10 bg-violet-600 rounded-lg flex items-center justify-center mb-4">
-            <RocketIcon className="text-white w-5 h-5" />
+        <div className="sm:grid sm:grid-cols-3 sm:grid-rows-2 sm:gap-2 flex flex-col gap-4">
+          <div
+            ref={(el) => (cardsRef.current[0] = el)}
+            className="col-span-1 row-span-2 bg-red-400 rounded-2xl p-6 shadow-md text-left flex flex-col justify-between"
+          >
+            <h3 className="font-semibold text-lg mb-2">Service</h3>
+            <p className="text-sm text-gray-600">
+              Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
+              amet facilisis egestas.
+            </p>
           </div>
-          <h3 className="font-semibold text-left text-lg">Service</h3>
-          <p className="text-left text-sm text-gray-600">
-            Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis amet
-            facilisis egestas.
-          </p>
-        </div>
 
-        <div
-          ref={(el) => (cardsRef.current[2] = el)}
-          className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
-        >
-          <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mb-4">
-            <WrenchIcon className="text-white w-5 h-5" />
+          <div
+            ref={(el) => (cardsRef.current[1] = el)}
+            className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
+          >
+            <div className="w-10 h-10 bg-violet-600 rounded-lg flex items-center justify-center mb-4">
+              <RocketIcon className="text-white w-5 h-5" />
+            </div>
+            <h3 className="font-semibold text-left text-lg">Service</h3>
+            <p className="text-left text-sm text-gray-600">
+              Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
+              amet facilisis egestas.
+            </p>
           </div>
-          <h3 className="font-semibold text-left text-lg">Service</h3>
-          <p className="text-left text-sm text-gray-600">
-            Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis amet
-            facilisis egestas.
-          </p>
-        </div>
 
-        <div
-          ref={(el) => (cardsRef.current[3] = el)}
-          className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
-        >
-          <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mb-4">
-            <SmartphoneIcon className="text-white w-5 h-5" />
+          <div
+            ref={(el) => (cardsRef.current[2] = el)}
+            className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
+          >
+            <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mb-4">
+              <WrenchIcon className="text-white w-5 h-5" />
+            </div>
+            <h3 className="font-semibold text-left text-lg">Service</h3>
+            <p className="text-left text-sm text-gray-600">
+              Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
+              amet facilisis egestas.
+            </p>
           </div>
-          <h3 className="font-semibold text-left text-lg">Service</h3>
-          <p className="text-left text-sm text-gray-600">
-            Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis amet
-            facilisis egestas.
-          </p>
-        </div>
 
-        <div
-          ref={(el) => (cardsRef.current[4] = el)}
-          className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
-        >
-          <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
-            <CodeIcon className="text-white w-5 h-5" />
+          <div
+            ref={(el) => (cardsRef.current[3] = el)}
+            className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
+          >
+            <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+              <SmartphoneIcon className="text-white w-5 h-5" />
+            </div>
+            <h3 className="font-semibold text-left text-lg">Service</h3>
+            <p className="text-left text-sm text-gray-600">
+              Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
+              amet facilisis egestas.
+            </p>
           </div>
-          <h3 className="font-semibold text-left text-lg">Service</h3>
-          <p className="text-left text-sm text-gray-600">
-            Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis amet
-            facilisis egestas.
-          </p>
+
+          <div
+            ref={(el) => (cardsRef.current[4] = el)}
+            className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
+          >
+            <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+              <CodeIcon className="text-white w-5 h-5" />
+            </div>
+            <h3 className="font-semibold text-left text-lg">Service</h3>
+            <p className="text-left text-sm text-gray-600">
+              Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
+              amet facilisis egestas.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
@@ -1087,7 +1089,7 @@ export const FaqComponent = () => {
     <div className=" bg-gradient-to-br from-[#FFE3E3] via-[#FFFFFF] to-[#D2D1FF]">
       <div
         ref={containerRef}
-        className=" max-w-[1280px] mx-auto  w-full min-h-screen flex flex-col lg:flex-row items-start justify-center gap-8 px-6 py-12 bg-gradient-to-br from-[#FFE3E3] via-[#FFFFFF] to-[#D2D1FF]"
+        className=" max-w-[1280px] mx-auto  w-full min-h-[80vh] flex flex-col lg:flex-row items-start justify-center gap-8 px-6 py-12 bg-gradient-to-br from-[#FFE3E3] via-[#FFFFFF] to-[#D2D1FF]"
       >
         {/* Left Side */}
         <div className="bg-white/30 backdrop-blur-lg rounded-2xl p-6 sm:p-8 max-w-xl shadow-lg relative flex-1">
@@ -1353,7 +1355,7 @@ export const WorkingMethodology = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-gray-100 overflow-hidden py-20 px-6 md:px-16"
+      className="relative bg-gray-100 overflow-hidden py-20 px-4 md:px-16"
     >
       {/* Circles */}
       <div
@@ -2125,7 +2127,7 @@ export function Hero2() {
   return (
     <section
       ref={sectionRef}
-      className="max-w-[1240px] mx-auto md:top-5 top-2 md:mt-12 mt-4 left-0 right-0 z-50 px-2 sm:px-4 lg:px-6"
+      className="max-w-[1240px] mx-auto top-2 pt-30  left-0 right-0 z-50 px-2 sm:px-4 lg:px-6"
     >
       {/* Top Label */}
       <div className="text-center mb-8">
@@ -2170,7 +2172,7 @@ export function Hero2() {
         <span className="relative font-bold">
           Nisl felis.
           <img
-            src="/line.png"
+            src="/vector1.png"
             alt="line vector"
             className="vector-line absolute  left-[2px] md:top-[40px] top-[20px]"
           />
@@ -2223,7 +2225,7 @@ export function Hero2() {
         />
         <img
           src="/frame30.png"
-          className="absolute left-[62%] top-[34%] z-10"
+          className="absolute left-[56%] top-[34%] z-10"
           alt=""
         />
 
@@ -2268,12 +2270,13 @@ export function AsianCard() {
         <div className="mt-[50px] flex flex-col justify-center items-center">
           <img src="./mackbook.png" alt="Macbook" />
         </div>
-        <div className="max-w-[865px] flex justify-center items-center bg-red-500">
+        <div className="md:max-w-[59vw] w-[100vw] 
+         flex justify-center items-center bg-red-500">
           <img src="./cards.png" alt="Cards" className="w-full" />
         </div>
 
         {/* Form + Image Section */}
-        <div className="w-full max-w-[865px] bg-[#7537ea] mt-6">
+        <div className="w-full md:max-w-[59vw] bg-[#7537ea] ">
           <div className="flex flex-col md:flex-row w-full">
             {/* Form Side */}
             <div
@@ -2281,7 +2284,7 @@ export function AsianCard() {
               className="md:flex-1 p-4 overflow-auto"
               style={{ maxHeight: "100%" }}
             >
-              <div className="bg-slate-50 rounded-2xl w-fit py-2 px-4 text-sm flex items-center justify-center mb-3">
+              <div className="bg-slate-50 rounded-2xl w-fit py-4 px-4 text-sm flex items-center justify-center mb-3">
                 Touch us Out
               </div>
               <h2 className="text-white text-xl font-semibold mb-4">
@@ -2355,7 +2358,7 @@ export function AsianCard() {
             </div>
 
             {/* Image Side */}
-            <div className="md:flex-1 max-h-full">
+            <div className="hidden md:flex  md:flex-1 max-h-full">
               <img
                 src="/group.jpeg"
                 className="w-full h-full object-cover rounded-b-xl md:rounded-none md:rounded-r-xl"

@@ -1,8 +1,8 @@
 import React from 'react'
 import Hero from '../components/home/Hero'
-import ProgressCard, {  AsianCard, Contact, ContactMapSection, DownloadSection, ExpertTeamSection, FaqComponent, FooterComponent, Hero2, OurProjects, ServicesSection, StatsCards, TechIconsSpread, WhoWeAreSection, WhoWeAreSection2, WorkingMethodology } from '../components/home/C1'
+import ProgressCard, {  AboutHero, AnalyticsLineChart, AsianCard, Contact, ContactMapSection, DownloadSection, ExpertTeamSection, FaqComponent, FooterComponent, Hero2, OurProjects, PerformanceChart, ProgressChart, ServicesGrid, ServicesSection, SkillsRadarChart, StatsCards, TechIconsSpread, TrendsChart, WhoWeAreSection, WhoWeAreSection2, WorkingMethodology } from '../components/home/C1'
 import CardsGrid from '../components/home/CardsGrid'
-import Dashboard from '../components/home/Dashboard'
+// import Dashboard from '../components/home/Dashboard'
 import { MediaLogoBanner } from '../components/home/C1'
 const Home = () => {
   return (
@@ -25,9 +25,16 @@ const Home = () => {
     <ExpertTeamSection/>
     <OurProjects/>
     {/* <HeroSection/> */}
-    <Hero2/>
+    {/* <Hero2/> */}
     <FooterComponent/>
-    <AsianCard/>
+    {/* <AsianCard/> */}
+    {/* <ProgressChart/>
+    <PerformanceChart/>
+    <TrendsChart/>
+    <SkillsRadarChart/>
+    <AnalyticsLineChart/> */}
+    {/* <ServicesGrid/> */}
+    {/* <AboutHero/> */}
     </div>
   )
 }

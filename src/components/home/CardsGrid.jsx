@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react'
-import AnalyticsChart, { NotificationCard, ProgressCard, ReviewCard, CreditCard } from './C1'
+import AnalyticsChart , { NotificationCard, ProgressCard, ReviewCard } from './C1'
+import { CreditCard } from './C1'
+
 import { gsap } from 'gsap'
 
 const CardsGrid = () => {

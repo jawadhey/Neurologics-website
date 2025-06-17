@@ -382,7 +382,11 @@ export const MediaLogoBanner = () => {
               key={index}
               className={`${media.className} cursor-pointer transition-all duration-300 hover:brightness-110 flex-shrink-0 px-8`}
             >
-              <img src={media.logo} alt={media.name} className="h-8 object-contain" />
+              <img
+                src={media.logo}
+                alt={media.name}
+                className="h-8 object-contain"
+              />
             </div>
           ))}
         </div>
@@ -391,11 +395,17 @@ export const MediaLogoBanner = () => {
   );
 };
 
-
 // services
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { RocketIcon, WrenchIcon, SmartphoneIcon, CodeIcon, MessageCircleQuestion, FacebookIcon } from "lucide-react";
+import {
+  RocketIcon,
+  WrenchIcon,
+  SmartphoneIcon,
+  CodeIcon,
+  MessageCircleQuestion,
+  FacebookIcon,
+} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -1034,7 +1044,6 @@ export const DownloadSection = () => {
 
 // FaqComponent.jsx
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const faqs = [
@@ -1121,8 +1130,8 @@ export const FaqComponent = () => {
           </h2>
           <p className="text-gray-800 text-sm leading-relaxed">
             Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi libero
-            tellus massa sed etiam nisi. Pharetra vitae adipiscing imperdiet elit.
-            Pharetra neque enim quam donec rutrum quis phasellus volutpat
+            tellus massa sed etiam nisi. Pharetra vitae adipiscing imperdiet
+            elit. Pharetra neque enim quam donec rutrum quis phasellus volutpat
             lobortis. Vitae pulvinar et feugiat lobortis accumsan semper aliquam
             adipiscing sed. Nisl et bibendum amet egestas maecenas.
           </p>
@@ -1145,7 +1154,6 @@ export const FaqComponent = () => {
               <div className="flex items-start gap-3">
                 <div className="min-w-6 min-h-6  p-1 bg-[#34C759] flex items-center justify-center rounded">
                   <MessageCircleQuestion color="white" size={16} />
-                 
                 </div>
                 <div>
                   <h3 className="font-semibold text-black text-sm sm:text-base">
@@ -1163,7 +1171,6 @@ export const FaqComponent = () => {
     </div>
   );
 };
-
 
 // footer
 
@@ -1274,37 +1281,165 @@ export const FooterComponent = () => {
   );
 };
 
-
-
-
-
 // footer
-  
-export function footer(){
+
+
+
+// hero contact page
+
+
+export function ContactHero() {
+  const imageRefs = useRef([]);
+
+  useEffect(() => {
+    // Animate main container
+    gsap.from(".contact-hero-container", {
+      opacity: 0,
+      y: 50,
+      duration: 1.2,
+      ease: "power2.out",
+    });
+
+    // Animate small images individually
+    imageRefs.current.forEach((img, i) => {
+      gsap.fromTo(
+        img,
+        { scale: 0.9, opacity: 0 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          delay: i * 0.1,
+          ease: "power2.out",
+        }
+      );
+
+      // Infinite floating effect
+      gsap.to(img, {
+        y: "+=15",
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+    });
+  }, []);
+
   return (
     <div>
+      <div className="relative">
+        <div className="pt-14 contact-hero-container">
+          <img
+            src="/f20.png"
+            className="absolute left-[50%] translate-x-[-50%] top-[30%]"
+            alt=""
+          />
 
+          {/* Small animated images */}
+          <img
+            ref={(el) => (imageRefs.current[0] = el)}
+            src="/rocket.png"
+            className="absolute bottom-[1%] w-[120px] sm:w-[140px] md:w-[166px]"
+            alt=""
+          />
+          <img
+            ref={(el) => (imageRefs.current[1] = el)}
+            src="/Bitgreen.png"
+            className="absolute top-[8%] left-[52%] w-[64px] sm:w-[80px]"
+            alt=""
+          />
+          <img
+            ref={(el) => (imageRefs.current[2] = el)}
+            src="/Mythos.png"
+            className="absolute top-[15%] right-[14%] w-[64px] sm:w-[80px]"
+            alt=""
+          />
+          <img
+            ref={(el) => (imageRefs.current[3] = el)}
+            src="/Joystream2.png"
+            className="absolute top-[25%] right-[22%] w-[64px] sm:w-[80px]"
+            alt=""
+          />
+         
+          <img
+            ref={(el) => (imageRefs.current[5] = el)}
+            src="/camera.png"
+            className="absolute left-[10%] top-[27%] w-[72px] sm:w-[96px]"
+            alt=""
+          />
+          <img
+            ref={(el) => (imageRefs.current[6] = el)}
+            src="/Darwinia2.png"
+            className="absolute top-[12%] left-[7%] w-[64px] sm:w-[80px]"
+            alt=""
+          />
+          <img
+            ref={(el) => (imageRefs.current[7] = el)}
+            src="/Astar.png"
+            className="absolute top-[4%] right-[26%] w-[64px] sm:w-[80px]"
+            alt=""
+          />
+
+          {/* Hero Section */}
+          <section className="max-w-[1240px] mx-auto bg-transparent relative pt-[100px] left-0 right-0 z-50 px-2 sm:px-4 lg:px-6">
+            <div className="text-center pb-8">
+              <span
+                className="inline-block px-5 py-3 rounded-full text-sm text-gray-500 text-[15px] font-medium"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(67, 0, 255, 0) 0%, rgba(67, 0, 255, 0.08) 100%)",
+                }}
+              >
+                Lorem ipsum dolor
+              </span>
+            </div>
+
+            <h1 className="text-center text-[26px] md:text-5xl font-bold mb-8 md:leading-tight">
+              Lorem ipsum {" "}
+              <span
+                className="text-black px-2 py-1 rounded"
+                style={{
+                  background: "linear-gradient(90deg, #FF0000, #FF6666)",
+                  backgroundSize: "200% auto",
+                }}
+              >
+                dolor
+              </span>{" "}
+              sit amet
+              <span
+                className="ml-2 px-2 py-1 rounded text-black"
+                style={{
+                  background: "linear-gradient(90deg, #FFD700, #FFEF8B)",
+                  backgroundSize: "200% auto",
+                }}
+              >
+                consectetur.
+              </span>
+              <br />
+              Porta nibh ut commodo iaculis id. {" "}
+              <span className="relative font-bold">
+                Nisl felis.
+                <img
+                  src={"/vector1.png"}
+                  alt="line vector"
+                  className="vector-line absolute left-[2px] md:top-[40px] top-[20px]"
+                />
+              </span>
+            </h1>
+
+            <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
+              Lorem ipsum dolor sit amet consectetur. Risus commodo faucibus tortor etiam
+              molestie adipiscing amet. Orci sem ut tellus interdum egestas. Sed euismod
+              tristique semper et tellus
+            </p>
+
+          
+          </section>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // _________________________-
 
@@ -1585,67 +1720,66 @@ export function Contact() {
 
   return (
     <div className="bg-gradient-to-r from-gray-100 to-gray-200 p-6">
-  <section
-      ref={sectionRef}
-      className="min-h-screen max-w-[1280px] mx-auto flex items-center justify-center "
-    >
-      <div className="flex flex-col md:flex-row gap-8 bg-white rounded-2xl shadow-xl p-8 w-full max-w-5xl">
-        {/* Left Content */}
-        <div className="flex-1 space-y-4">
-          <h2 className="text-2xl font-bold">Contact Us</h2>
-          <p className="text-sm text-gray-600">
-            Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi libero
-            tellus massa sed etiam nisi. Pharetra vitae adipiscing imperdiet
-            elit.
-          </p>
-          <button className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700">
-            Learn More
-          </button>
-          <div className="mt-6 flex justify-end">
-            <img
-              ref={handRef}
-              src="https://em-content.zobj.net/source/microsoft-teams/337/waving-hand_1f44b.png"
-              alt="waving hand"
-              className="w-32 h-32"
-            />
+      <section
+        ref={sectionRef}
+        className="min-h-screen max-w-[1280px] mx-auto flex items-center justify-center "
+      >
+        <div className="flex flex-col md:flex-row gap-8 bg-white rounded-2xl shadow-xl p-8 w-full max-w-5xl">
+          {/* Left Content */}
+          <div className="flex-1 space-y-4">
+            <h2 className="text-2xl font-bold">Contact Us</h2>
+            <p className="text-sm text-gray-600">
+              Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi
+              libero tellus massa sed etiam nisi. Pharetra vitae adipiscing
+              imperdiet elit.
+            </p>
+            <button className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700">
+              Learn More
+            </button>
+            <div className="mt-6 flex justify-end">
+              <img
+                ref={handRef}
+                src="https://em-content.zobj.net/source/microsoft-teams/337/waving-hand_1f44b.png"
+                alt="waving hand"
+                className="w-32 h-32"
+              />
+            </div>
+          </div>
+
+          {/* Right Content - Contact Form */}
+          <div className="flex-1 space-y-4">
+            <h2 className="text-2xl font-bold">Send us a Message</h2>
+            <form className="space-y-3">
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="w-full px-4 py-2  bg-gradient-to-b from-gray-50 to-white  border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              />
+              <input
+                type="text"
+                placeholder="Phone Number"
+                className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full px-4 py-2 border border-gray-300  bg-gradient-to-b from-gray-50 to-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              />
+              <textarea
+                placeholder="Message"
+                className="w-full px-4 py-2 border border-gray-300  bg-gradient-to-b from-gray-50 to-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 min-h-[100px]"
+              ></textarea>
+              <button
+                type="submit"
+                className="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700"
+              >
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
-
-        {/* Right Content - Contact Form */}
-        <div className="flex-1 space-y-4">
-          <h2 className="text-2xl font-bold">Send us a Message</h2>
-          <form className="space-y-3">
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="w-full px-4 py-2  bg-gradient-to-b from-gray-50 to-white  border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full px-4 py-2 border border-gray-300  bg-gradient-to-b from-gray-50 to-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-            <textarea
-              placeholder="Message"
-              className="w-full px-4 py-2 border border-gray-300  bg-gradient-to-b from-gray-50 to-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 min-h-[100px]"
-            ></textarea>
-            <button
-              type="submit"
-              className="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+      </section>
     </div>
-  
   );
 }
 
@@ -2018,7 +2152,9 @@ export function ExpertTeamSection() {
       <div className="flex justify-between items-center mb-6  p-[20px] bg-white rounded  flex-col  sm:flex-row gap-4">
         <div className="flex">
           <div className="flex flex-col gap-4">
-            <span className="text-sm text-gray-400  bg-slate-50 px-4  py-2 rounded-4xl flex items-center justify-center w-[150px]">Executive Team</span>
+            <span className="text-sm text-gray-400  bg-slate-50 px-4  py-2 rounded-4xl flex items-center justify-center w-[150px]">
+              Executive Team
+            </span>
             <h2 className="text-2xl font-bold">Our Expert Team</h2>
             <p className="text-sm text-gray-500 max-w-[650px]">
               Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi
@@ -2722,7 +2858,42 @@ export const AnalyticsLineChart = () => {
 export function ServicesGrid() {
   return (
     <div className="max-w-[1280px] min-h-screen px-6 mx-auto">
-      <Hero />
+            <div className="text-center mb-8">
+        <span
+          className="inline-block px-5 py-3 rounded-full text-sm text-gray-500 text-[15px] font-medium"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(67, 0, 255, 0) 0%, rgba(67, 0, 255, 0.08) 100%)",
+          }}
+        >
+          Lorem ipsum dolor
+        </span>
+      </div>
+
+      {/* heading */}
+      <div className="text-center mb-6 w-full flex justify-center">
+        <h1 className="sm:text-[50px] text-[35px] leading-12 font-bold max-w-[892px]">
+          Lorem ipsum dolor sit amet consectetur.
+        </h1>
+      </div>
+
+      {/* Sub Text */}
+      <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
+        Lorem ipsum dolor sit amet consectetur. Risus commodo faucibus tortor
+        etiam molestie adipiscing amet. Orci sem ut tellus interdum egestas. Sed
+        euismod tristique semper et tellus
+      </p>
+
+      {/* Buttons */}
+      <div className="flex justify-center gap-4 mb-10">
+        <button className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
+          Get Started
+        </button>
+        <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
+          Learn More
+        </button>
+        </div>
+
       <div className="sm:grid hidden grid-rows-2  grid-cols-6 ">
         <div className="  col-start-1 col-end-3 row-start-1 row-end-3 ">
           <img
@@ -2825,6 +2996,15 @@ export function AboutHero() {
         euismod tristique semper et tellus
       </p>
 
+        <div className="flex justify-center gap-4 mb-10">
+              <button className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
+                Get Started
+              </button>
+              <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
+                Learn More
+              </button>
+            </div>
+
       {/* cards */}
       <div className="relative h-[600px] -z-1">
         <img src="/f20.png" alt="" />
@@ -2870,13 +3050,7 @@ export function AboutHero() {
   );
 }
 
-
-
-// footer 
-
-
-
-
+// footer
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -2904,64 +3078,58 @@ export const Footer = () => {
 
   return (
     <div className="bg-gradient-to-r from-[#F9DCDC] via-[#E7E1F5] to-[#DCD9F9] ">
-   <footer
-      ref={footerRef}
-      className=" max-w-[1280px] mx-auto bg-gradient-to-r from-[#F9DCDC] via-[#E7E1F5] to-[#DCD9F9] rounded-2xl  p-6 shadow backdrop-blur-xl text-gray-800"
-    >
-      {/* Top section */}
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 border-b border-white/30 pb-6">
-        <div>
-          <h2 className="text-xl sm:text-2xl font-semibold text-black">
-            Lorem ipsum dolor sit amet consectetur.{" "}
-            <span className="text-violet-600 font-bold">Facilisis non.</span>
-          </h2>
-          <p className="text-gray-600 mt-2">
-            Lorem ipsum dolor sit amet consectetur.
-          </p>
-        </div>
-        <div className="flex gap-4">
-          <button className="bg-violet-600 text-white px-5 py-2 rounded-md shadow">
-            Contact Us
-          </button>
-          <button className="bg-white text-black px-5 py-2 rounded-md shadow border border-gray-200">
-            Learn More
-          </button>
-        </div>
-      </div>
-
-      {/* Middle section */}
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pt-8 ">
-        {/* Logo and description */}
-        <div className="flex flex-col gap-2 max-w-sm pb-6">
-          <img src="/logo.png" alt="logo" className="w-24" />
-          <p className="text-sm text-gray-700">
-            Design amazing digital experiences that create more happy in the
-            world.
-          </p>
-        </div>
-
-       
-
-        {/* App download */}
-        <div className="flex flex-col gap-2">
-          <span className="text-violet-700 font-semibold">
-            Get Asian Cart app
-          </span>
-          <div className="flex flex-col gap-2">
-            <img
-              src="/appstore.png"
-              alt="App Store"
-              className="w-28"
-            />
-            <img
-              src="/googlestorebadge.png"
-              alt="Google Play"
-              className="w-28"
-            />
+      <footer
+        ref={footerRef}
+        className=" max-w-[1280px] mx-auto bg-gradient-to-r from-[#F9DCDC] via-[#E7E1F5] to-[#DCD9F9] rounded-2xl  p-6 shadow backdrop-blur-xl text-gray-800"
+      >
+        {/* Top section */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 border-b border-white/30 pb-6">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold text-black">
+              Lorem ipsum dolor sit amet consectetur.{" "}
+              <span className="text-violet-600 font-bold">Facilisis non.</span>
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Lorem ipsum dolor sit amet consectetur.
+            </p>
+          </div>
+          <div className="flex gap-4">
+            <button className="bg-violet-600 text-white px-5 py-2 rounded-md shadow">
+              Contact Us
+            </button>
+            <button className="bg-white text-black px-5 py-2 rounded-md shadow border border-gray-200">
+              Learn More
+            </button>
           </div>
         </div>
-      </div>
-       {/* Navigation links */}
+
+        {/* Middle section */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pt-8 ">
+          {/* Logo and description */}
+          <div className="flex flex-col gap-2 max-w-sm pb-6">
+            <img src="/logo.png" alt="logo" className="w-24" />
+            <p className="text-sm text-gray-700">
+              Design amazing digital experiences that create more happy in the
+              world.
+            </p>
+          </div>
+
+          {/* App download */}
+          <div className="flex flex-col gap-2">
+            <span className="text-violet-700 font-semibold">
+              Get Asian Cart app
+            </span>
+            <div className="flex flex-col gap-2">
+              <img src="/appstore.png" alt="App Store" className="w-28" />
+              <img
+                src="/googlestorebadge.png"
+                alt="Google Play"
+                className="w-28"
+              />
+            </div>
+          </div>
+        </div>
+        {/* Navigation links */}
         <nav className="flex flex-wrap gap-2 mt-4   sm:gap-6 text-sm text-blue-800 font-semibold border-b border-white/30 pb-4">
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
@@ -2970,34 +3138,27 @@ export const Footer = () => {
           <Link to="/contact-us">Contact Us</Link>
         </nav>
 
-      {/* Bottom section */}
-      <div className="flex flex-col md:flex-row justify-between items-center pt-6 text-sm text-gray-500">
-        <p>© 2077 Untitled UI. All rights reserved.</p>
-        <div className="flex gap-4 mt-2 md:mt-0 text-gray-400 text-xl">
-          <Instagram color="#999999" />
-          <FacebookIcon color="#999999"/>
-          <i className="fab fa-facebook"></i>
-          <i className="fab fa-github"></i>
-          <i className="fab fa-dribbble"></i>
+        {/* Bottom section */}
+        <div className="flex flex-col md:flex-row justify-between items-center pt-6 text-sm text-gray-500">
+          <p>© 2077 Untitled UI. All rights reserved.</p>
+          <div className="flex gap-4 mt-2 md:mt-0 text-gray-400 text-xl">
+            <Instagram color="#999999" />
+            <FacebookIcon color="#999999" />
+            <i className="fab fa-facebook"></i>
+            <i className="fab fa-github"></i>
+            <i className="fab fa-dribbble"></i>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
     </div>
- 
   );
 };
 
-
-
-
-// who we are 
-
-
-
+// who we are
 
 gsap.registerPlugin(ScrollTrigger);
 
-export  function WhoWeAre() {
+export function WhoWeAre() {
   const sectionRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -3030,36 +3191,40 @@ export  function WhoWeAre() {
   }, []);
 
   return (
-    <div className="bg-[#f5f5f5] " >
- <section
-      ref={sectionRef}
-      className="max-w-[1280px] mx-auto px-6 py-12  "
-    >
-      <div className="flex flex-col md:flex-row items-center gap-8" ref={contentRef}>
-        <div className="md:w-1/2 w-full">
-          <img
-            src="/whoweare.jpg"
-            alt="developers working"
-            className="rounded-lg w-full h-auto object-cover"
-          />
-        </div>
+    <div className="bg-[#f5f5f5] ">
+      <section ref={sectionRef} className="max-w-[1280px] mx-auto px-6 py-12  ">
+        <div
+          className="flex flex-col md:flex-row items-center gap-8"
+          ref={contentRef}
+        >
+          <div className="md:w-1/2 w-full">
+            <img
+              src="/whoweare.jpg"
+              alt="developers working"
+              className="rounded-lg w-full h-auto object-cover"
+            />
+          </div>
 
-        <div className="md:w-1/2 w-full">
-          <h2 className="text-2xl font-semibold mb-2">Who We Are</h2>
-          <p className="text-gray-600 mb-4">
-            Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus consectetur imperdiet iaculis elit arcu.
-          </p>
-          <p className="text-gray-700">
-            Lorem ipsum dolor sit amet consectetur. Commodo nisl vulputate purus tortor facilisis nulla odio quam. Purus
-            placerat condimentum diam placerat massa nibh. A nibh habitant aliquam facilisi. Arcu parturient in orci mi amet
-            ac non et quam at. Sem sit in interdum habitant nec mollis. Orci laoreet metus sodales placerat lorem. Massa
-            porttitor eu faucibus rhoncus aliquet. Id scelerisque metus sed ut massa sagittis integer eu. Viverra tristique
-            suspendisse pretium praesent, risus porttitor id adipiscing egestas sit condimentum.
-          </p>
+          <div className="md:w-1/2 w-full">
+            <h2 className="text-2xl font-semibold mb-2">Who We Are</h2>
+            <p className="text-gray-600 mb-4">
+              Lorem ipsum dolor sit amet consectetur. Felis neque fermentum
+              tellus consectetur imperdiet iaculis elit arcu.
+            </p>
+            <p className="text-gray-700">
+              Lorem ipsum dolor sit amet consectetur. Commodo nisl vulputate
+              purus tortor facilisis nulla odio quam. Purus placerat condimentum
+              diam placerat massa nibh. A nibh habitant aliquam facilisi. Arcu
+              parturient in orci mi amet ac non et quam at. Sem sit in interdum
+              habitant nec mollis. Orci laoreet metus sodales placerat lorem.
+              Massa porttitor eu faucibus rhoncus aliquet. Id scelerisque metus
+              sed ut massa sagittis integer eu. Viverra tristique suspendisse
+              pretium praesent, risus porttitor id adipiscing egestas sit
+              condimentum.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
-   
   );
 }

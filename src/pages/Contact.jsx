@@ -1,9 +1,10 @@
 import React from 'react'
-import { ContactMapSection, Footer, MediaLogoBanner } from '../components/home/C1'
+import { ContactHero, ContactMapSection, Footer, MediaLogoBanner } from '../components/home/C1'
 
 const Contact = () => {
   return (
     <div>
+        <ContactHero/>
         <MediaLogoBanner/>
         <ContactMapSection/>
         <Footer/>

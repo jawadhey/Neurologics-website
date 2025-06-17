@@ -1084,59 +1084,61 @@ export const FaqComponent = () => {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full min-h-screen flex flex-col lg:flex-row items-start justify-center gap-8 px-6 py-12 bg-gradient-to-br from-[#FFE3E3] via-[#FFFFFF] to-[#D2D1FF]"
-    >
-      {/* Left Side */}
-      <div className="bg-white/30 backdrop-blur-lg rounded-2xl p-6 sm:p-8 max-w-xl shadow-lg relative flex-1">
-        <span className="text-sm text-gray-700 mb-2 block">
-          Lorem ipsum dolor
-        </span>
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-          Frequently Asked Questions
-        </h2>
-        <p className="text-gray-800 text-sm leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi libero
-          tellus massa sed etiam nisi. Pharetra vitae adipiscing imperdiet elit.
-          Pharetra neque enim quam donec rutrum quis phasellus volutpat
-          lobortis. Vitae pulvinar et feugiat lobortis accumsan semper aliquam
-          adipiscing sed. Nisl et bibendum amet egestas maecenas.
-        </p>
-        <img
-          src="/rocket.png"
-          alt="rocket"
-          className="absolute w-24 sm:w-32 bottom-[-20px] right-[-20px] sm:bottom-[-30px] sm:right-[-30px]"
-        />
-      </div>
+    <div className=" bg-gradient-to-br from-[#FFE3E3] via-[#FFFFFF] to-[#D2D1FF]">
+      <div
+        ref={containerRef}
+        className=" max-w-[1280px] mx-auto  w-full min-h-screen flex flex-col lg:flex-row items-start justify-center gap-8 px-6 py-12 bg-gradient-to-br from-[#FFE3E3] via-[#FFFFFF] to-[#D2D1FF]"
+      >
+        {/* Left Side */}
+        <div className="bg-white/30 backdrop-blur-lg rounded-2xl p-6 sm:p-8 max-w-xl shadow-lg relative flex-1">
+          <span className="text-sm text-gray-700 mb-2 block">
+            Lorem ipsum dolor
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-gray-800 text-sm leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi libero
+            tellus massa sed etiam nisi. Pharetra vitae adipiscing imperdiet
+            elit. Pharetra neque enim quam donec rutrum quis phasellus volutpat
+            lobortis. Vitae pulvinar et feugiat lobortis accumsan semper aliquam
+            adipiscing sed. Nisl et bibendum amet egestas maecenas.
+          </p>
+          <img
+            src="/rocket.png"
+            alt="rocket"
+            className="absolute w-24 sm:w-32 bottom-[-20px] right-[-20px] sm:bottom-[-30px] sm:right-[-30px]"
+          />
+        </div>
 
-      {/* Right Side */}
-      <div className="flex-1 flex flex-col gap-4">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="bg-white/40 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-md transition-all duration-300 cursor-pointer"
-            onClick={() => toggleFAQ(index)}
-          >
-            <div className="flex items-start gap-3">
-              <div className="min-w-6 min-h-6">
-                <img
-                  src="/faq-icon.png"
-                  alt="faq"
-                  className="w-6 h-6 object-contain"
-                />
-              </div>
-              <div>
-                <h3 className="font-semibold text-black text-sm sm:text-base">
-                  {faq.question}
-                </h3>
-                {activeIndex === index && (
-                  <p className="text-sm text-gray-800 mt-2">{faq.answer}</p>
-                )}
+        {/* Right Side */}
+        <div className="flex-1 flex flex-col gap-4">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="bg-white/40 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-md transition-all duration-300 cursor-pointer"
+              onClick={() => toggleFAQ(index)}
+            >
+              <div className="flex items-start gap-3">
+                <div className="min-w-6 min-h-6">
+                  <img
+                    src="/faq-icon.png"
+                    alt="faq"
+                    className="w-6 h-6 object-contain"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-black text-sm sm:text-base">
+                    {faq.question}
+                  </h3>
+                  {activeIndex === index && (
+                    <p className="text-sm text-gray-800 mt-2">{faq.answer}</p>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -2644,54 +2646,62 @@ export function ServicesGrid() {
 // About us Hero
 export function AboutHero() {
   return (
-      <section className="relative   border border-red-500 max-w-[1280px] mx-auto md:top-5 top-2 md:mt-12 mt-4 left-0 right-0 z-50 px-2 sm:px-4 lg:px-6">
-        {/* Top Label */}
-        <div className="text-center mb-8">
-          <span
-            className="inline-block px-5 py-3 rounded-full text-sm text-gray-500 text-[15px] font-medium"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(67, 0, 255, 0) 0%, rgba(67, 0, 255, 0.08) 100%)",
-            }}
-          >
-            Lorem ipsum dolor
-          </span>
+    <section className="relative   border border-red-500 max-w-[1280px] mx-auto md:top-5 top-2 md:mt-12 mt-4 left-0 right-0 z-50 px-2 sm:px-4 lg:px-6">
+      {/* Top Label */}
+      <div className="text-center mb-8">
+        <span
+          className="inline-block px-5 py-3 rounded-full text-sm text-gray-500 text-[15px] font-medium"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(67, 0, 255, 0) 0%, rgba(67, 0, 255, 0.08) 100%)",
+          }}
+        >
+          Lorem ipsum dolor
+        </span>
+      </div>
+
+      {/* heading  */}
+      <div className="text-center mb-6  w-full flex justify-center">
+        <h1 className="sm:text-[50px] text-[35px] leading-12 font-bold max-w-[892px] ">
+          Lorem ipsum dolor sit amet consectetur.
+        </h1>
+      </div>
+      {/* Sub Text */}
+      <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
+        Lorem ipsum dolor sit amet consectetur. Risus commodo faucibus tortor
+        etiam molestie adipiscing amet. Orci sem ut tellus interdum egestas. Sed
+        euismod tristique semper et tellus
+      </p>
+
+      {/* cards */}
+      <div className="relative h-[500px] -z-1">
+        <img src="/f20.png" alt="" />
+        <div className="absolute top-0">
+          <PerformanceChart />
+        </div>
+        <div className="absolute  left-[25%] top-[8%]">
+          <TrendsChart />
+        </div>
+        <div className="absolute left-[43%] top-[0%]">
+          <SkillsRadarChart />
+        </div>
+        <div className="absolute  left-[10%  ] lg:left-[31%]">
+          <AnalyticsLineChart />
         </div>
 
-        {/* heading  */}
-        <div className="text-center mb-6  w-full flex justify-center">
-          <h1 className="sm:text-[50px] text-[35px] leading-12 font-bold max-w-[892px] ">
-            Lorem ipsum dolor sit amet consectetur.
-          </h1>
+        <div className="absolute">
+          <img
+            src="/rocket.png"
+            className={"left-[64%] rotate-[21deg] top-[0%]"}
+            alt=""
+          />
         </div>
-        {/* Sub Text */}
-        <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-          Lorem ipsum dolor sit amet consectetur. Risus commodo faucibus tortor
-          etiam molestie adipiscing amet. Orci sem ut tellus interdum egestas.
-          Sed euismod tristique semper et tellus
-        </p>
-
-        {/* cards */}
-        <div className="relative h-[500px] -z-1">
-          <img src="/f20.png" alt="" />
-          <div className="absolute top-0">
-          <PerformanceChart/>
-          </div>
-          <div className="absolute  left-[25%] top-[8%]">
-            <TrendsChart/>
-          </div>
-            <div className="absolute left-[43%] top-[0%]">
-            <SkillsRadarChart/>
-          </div>
-          <div className="absolute  left-[10%  ] lg:left-[31%]">
-            <AnalyticsLineChart/>
-          </div>
-
-          <div className="absolute">
-            <img src="/rocket.png" className={"left-[64%] rotate-[21deg] top-[0%]"} alt="" />
-          </div>
-        </div>
-        <img src="/v3.png" className="absolute bottom-0 -left-[12%] z-[-1]"  alt="" />
-      </section>
+      </div>
+      <img
+        src="/v3.png"
+        className="absolute bottom-0 -left-[12%] z-[-1]"
+        alt=""
+      />
+    </section>
   );
 }

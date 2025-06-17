@@ -13,21 +13,21 @@ const Home = () => {
       <StatsCards/>
     <MediaLogoBanner/>
     <ServicesSection/>
+    <OurProjects/>
+    <AsianCard/>
+    <WorkingMethodology/>
     <TechIconsSpread/>
     <DownloadSection/>
     <FaqComponent/>
-    {/* <ContactSection/> */}
-    <WorkingMethodology/>
-    <Contact/>
-    <ContactMapSection/>
-    <WhoWeAreSection/>
-    <WhoWeAreSection2/>
     <ExpertTeamSection/>
-    <OurProjects/>
+    <FooterComponent/>
+    {/* <ContactSection/> */}
+    {/* <Contact/> */}
+    {/* <ContactMapSection/> */}
+    {/* <WhoWeAreSection/> */}
+    {/* <WhoWeAreSection2/> */}
     {/* <HeroSection/> */}
     {/* <Hero2/> */}
-    <FooterComponent/>
-    {/* <AsianCard/> */}
     {/* <ProgressChart/>
     <PerformanceChart/>
     <TrendsChart/>

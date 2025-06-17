@@ -1,5 +1,5 @@
 import React from 'react'
-import { AsianCard, Contact, ContactSection, FooterComponent, Hero2, MediaLogoBanner, OurProjects } from '../components/home/C1'
+import { AsianCard, Contact, ContactSection, Footer, FooterComponent, Hero2, MediaLogoBanner, OurProjects } from '../components/home/C1'
 
 const Projects = () => {
   return (
@@ -9,7 +9,7 @@ const Projects = () => {
         <OurProjects/>
         <AsianCard/>
         <Contact/>
-        <FooterComponent/>
+        <Footer/>
         {/* <ContactSection/> */}
     </div>
   )

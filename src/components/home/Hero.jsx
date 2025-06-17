@@ -30,9 +30,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="max-w-[1240px] mx-auto md:top-5 top-2 md:mt-12 mt-4 left-0 right-0 z-50 px-2 sm:px-4 lg:px-6">
+    <section className="max-w-[1240px] mx-auto bg-[#EDEDED]   left-0 right-0 z-50 px-2 sm:px-4 lg:px-6">
       {/* Top Label */}
-      <div className="text-center mb-8">
+      <div className="text-center pb-8">
         <span
           className="inline-block px-5 py-3 rounded-full text-sm text-gray-500 text-[15px] font-medium"
           style={{

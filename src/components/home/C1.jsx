@@ -276,6 +276,7 @@ import Vector10 from "/Vector10.png";
 import PressLogo from "/Presslogo.png";
 import Vector11 from "/Vector11.png";
 import press1 from "/press1.png";
+
 export const MediaLogoBanner = () => {
   const bannerRef = useRef(null);
   const logosRef = useRef(null);
@@ -303,7 +304,7 @@ export const MediaLogoBanner = () => {
     },
   ];
 
-  // Duplicate logos for seamless loop
+  // Duplicate for smooth infinite scroll
   const duplicatedLogos = [...mediaLogos, ...mediaLogos];
 
   useEffect(() => {
@@ -312,6 +313,7 @@ export const MediaLogoBanner = () => {
     const banner = bannerRef.current;
     const logosContainer = logosRef.current;
 
+    // Banner fade-in animation
     gsap.fromTo(
       banner,
       {
@@ -326,14 +328,18 @@ export const MediaLogoBanner = () => {
       }
     );
 
-    const marqueeTimeline = gsap.timeline({ repeat: -1 });
-    marqueeTimeline.to(logosContainer, {
-      x: "-50%",
+    // Infinite marquee animation
+    gsap.to(logosContainer, {
+      xPercent: -50,
+      repeat: -1,
       duration: 20,
-      ease: "none",
+      ease: "linear",
+      modifiers: {
+        xPercent: gsap.utils.wrap(-100, 0),
+      },
     });
 
-    // Hover animations for individual logos
+    // Hover scale animation
     const logoElements = logosContainer.children;
     Array.from(logoElements).forEach((logo) => {
       const element = logo;
@@ -356,7 +362,7 @@ export const MediaLogoBanner = () => {
     });
 
     return () => {
-      gsap.killTweensOf([banner, logosContainer, logoElements]);
+      gsap.killTweensOf([banner, logosContainer]);
     };
   }, []);
 
@@ -365,7 +371,7 @@ export const MediaLogoBanner = () => {
       ref={bannerRef}
       className="w-full bg-gradient-to-r from-gray-800 via-gray-900 to-black py-6 overflow-hidden"
     >
-      <div className="relative w-[1280px] mx-auto  h-[110px] flex items-center overflow-hidden">
+      <div className="relative max-w-[1280px] px-6 mx-auto h-[110px] flex items-center overflow-hidden">
         <div
           ref={logosRef}
           className="flex items-center gap-16 whitespace-nowrap"
@@ -376,7 +382,7 @@ export const MediaLogoBanner = () => {
               key={index}
               className={`${media.className} cursor-pointer transition-all duration-300 hover:brightness-110 flex-shrink-0 px-8`}
             >
-              <img src={media.logo} alt="" />
+              <img src={media.logo} alt={media.name} className="h-8 object-contain" />
             </div>
           ))}
         </div>
@@ -385,10 +391,11 @@ export const MediaLogoBanner = () => {
   );
 };
 
+
 // services
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { RocketIcon, WrenchIcon, SmartphoneIcon, CodeIcon } from "lucide-react";
+import { RocketIcon, WrenchIcon, SmartphoneIcon, CodeIcon, MessageCircleQuestion, FacebookIcon } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -433,8 +440,9 @@ export const ServicesSection = () => {
         <div className="sm:grid sm:grid-cols-3 sm:grid-rows-2 sm:gap-2 flex flex-col gap-4">
           <div
             ref={(el) => (cardsRef.current[0] = el)}
-            className="col-span-1 row-span-2 bg-red-400 rounded-2xl p-6 shadow-md text-left flex flex-col justify-between"
+            className="col-span-1 row-span-2 bg-gradient-to-b from-white from-0% to-[#dedede1a] to-2% rounded-2xl p-6 shadow-md text-left flex flex-col justify-between"
           >
+            <img src="./screensm.jpg" alt="Macbook" />
             <h3 className="font-semibold text-lg mb-2">Service</h3>
             <p className="text-sm text-gray-600">
               Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
@@ -444,7 +452,7 @@ export const ServicesSection = () => {
 
           <div
             ref={(el) => (cardsRef.current[1] = el)}
-            className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
+            className="bg-gradient-to-b from-white from-0% to-[#dedede1a] to-2% rounded-2xl p-6 shadow-md flex flex-col justify-between"
           >
             <div className="w-10 h-10 bg-violet-600 rounded-lg flex items-center justify-center mb-4">
               <RocketIcon className="text-white w-5 h-5" />
@@ -458,7 +466,7 @@ export const ServicesSection = () => {
 
           <div
             ref={(el) => (cardsRef.current[2] = el)}
-            className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
+            className="bg-gradient-to-b from-white from-0% to-[#dedede1a] to-2%   rounded-2xl p-6 shadow-md flex flex-col justify-between"
           >
             <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mb-4">
               <WrenchIcon className="text-white w-5 h-5" />
@@ -472,7 +480,7 @@ export const ServicesSection = () => {
 
           <div
             ref={(el) => (cardsRef.current[3] = el)}
-            className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
+            className="bg-gradient-to-b from-white from-0% to-[#dedede1a] to-2% rounded-2xl p-6 shadow-md flex flex-col justify-between"
           >
             <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mb-4">
               <SmartphoneIcon className="text-white w-5 h-5" />
@@ -486,7 +494,7 @@ export const ServicesSection = () => {
 
           <div
             ref={(el) => (cardsRef.current[4] = el)}
-            className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between"
+            className="bg-gradient-to-b from-white from-0% to-[#dedede1a] to-2% rounded-2xl p-6 shadow-md flex flex-col justify-between"
           >
             <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
               <CodeIcon className="text-white w-5 h-5" />
@@ -1026,6 +1034,7 @@ export const DownloadSection = () => {
 
 // FaqComponent.jsx
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const faqs = [
@@ -1055,6 +1064,7 @@ const faqs = [
 export const FaqComponent = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const containerRef = useRef(null);
+  const rocketRef = useRef(null);
 
   const toggleFAQ = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -1064,6 +1074,7 @@ export const FaqComponent = () => {
     const element = containerRef.current;
 
     const ctx = gsap.context(() => {
+      // Animate the entire section when it comes into view
       gsap.fromTo(
         element,
         { autoAlpha: 0, y: 50 },
@@ -1080,20 +1091,29 @@ export const FaqComponent = () => {
           },
         }
       );
+
+      // Infinite floating rocket animation
+      gsap.to(rocketRef.current, {
+        y: -20,
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div className=" bg-gradient-to-br from-[#FFE3E3] via-[#FFFFFF] to-[#D2D1FF]">
+    <div className="bg-gradient-to-br from-[#FFE3E3] via-[#FFFFFF] to-[#D2D1FF]">
       <div
         ref={containerRef}
-        className=" max-w-[1280px] mx-auto  w-full min-h-[80vh] flex flex-col lg:flex-row items-start justify-center gap-8 px-6 py-12 bg-gradient-to-br from-[#FFE3E3] via-[#FFFFFF] to-[#D2D1FF]"
+        className="max-w-[1280px] mx-auto w-full min-h-[80vh] flex flex-col lg:flex-row items-start justify-center gap-8 px-6 py-12 "
       >
         {/* Left Side */}
-        <div className="bg-white/30 backdrop-blur-lg rounded-2xl p-6 sm:p-8 max-w-xl shadow-lg relative flex-1">
-          <span className="text-sm text-gray-700 mb-2 block">
+        <div className=" min-h-[428px] backdrop-blur-lg rounded-2xl p-6 sm:p-8 max-w-xl shadow-lg relative flex-1">
+          <span className="text-sm text-gray-700 mb-2 bg-white/60 backdrop-blur-md border border-white/30 px-4 py-2 rounded-3xl flex items-center justify-center w-[190px]">
             Lorem ipsum dolor
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
@@ -1101,15 +1121,16 @@ export const FaqComponent = () => {
           </h2>
           <p className="text-gray-800 text-sm leading-relaxed">
             Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi libero
-            tellus massa sed etiam nisi. Pharetra vitae adipiscing imperdiet
-            elit. Pharetra neque enim quam donec rutrum quis phasellus volutpat
+            tellus massa sed etiam nisi. Pharetra vitae adipiscing imperdiet elit.
+            Pharetra neque enim quam donec rutrum quis phasellus volutpat
             lobortis. Vitae pulvinar et feugiat lobortis accumsan semper aliquam
             adipiscing sed. Nisl et bibendum amet egestas maecenas.
           </p>
           <img
+            ref={rocketRef}
             src="/rocket.png"
             alt="rocket"
-            className="absolute w-24 sm:w-32 bottom-[-20px] right-[-20px] sm:bottom-[-30px] sm:right-[-30px]"
+            className="absolute w-32 right-0 sm:w-32 bottom-[-20px] sm:bottom-[-30px] sm:right-[-30px]  left-0 rotate-45"
           />
         </div>
 
@@ -1122,12 +1143,9 @@ export const FaqComponent = () => {
               onClick={() => toggleFAQ(index)}
             >
               <div className="flex items-start gap-3">
-                <div className="min-w-6 min-h-6">
-                  <img
-                    src="/faq-icon.png"
-                    alt="faq"
-                    className="w-6 h-6 object-contain"
-                  />
+                <div className="min-w-6 min-h-6  p-1 bg-[#34C759] flex items-center justify-center rounded">
+                  <MessageCircleQuestion color="white" size={16} />
+                 
                 </div>
                 <div>
                   <h3 className="font-semibold text-black text-sm sm:text-base">
@@ -1145,6 +1163,7 @@ export const FaqComponent = () => {
     </div>
   );
 };
+
 
 // footer
 
@@ -1189,8 +1208,8 @@ export const FooterComponent = () => {
       ref={footerRef}
       className="bg-gradient-to-br from-[#FFE3E3] via-[#FFFFFF] to-[#D2D1FF] text-black px-6 py-10 md:py-16 lg:px-20 w-full"
     >
-      <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-3">
-        <div className="md:col-span-2">
+      <div className="max-w-7xl mx-auto   grid gap-8 md:grid-cols-3">
+        <div className="md:col-span-2 bg-red-400">
           <h2 className="text-lg sm:text-xl font-semibold">
             Lorem ipsum dolor sit amet consectetur.{" "}
             <span className="text-indigo-600 font-bold">Facilisis non.</span>
@@ -1254,6 +1273,38 @@ export const FooterComponent = () => {
     </footer>
   );
 };
+
+
+
+
+
+// footer
+  
+export function footer(){
+  return (
+    <div>
+
+    </div>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // _________________________-
 
@@ -1533,9 +1584,10 @@ export function Contact() {
   }, []);
 
   return (
-    <section
+    <div className="bg-gradient-to-r from-gray-100 to-gray-200 p-6">
+  <section
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-100 to-gray-200 p-6"
+      className="min-h-screen max-w-[1280px] mx-auto flex items-center justify-center "
     >
       <div className="flex flex-col md:flex-row gap-8 bg-white rounded-2xl shadow-xl p-8 w-full max-w-5xl">
         {/* Left Content */}
@@ -1549,7 +1601,7 @@ export function Contact() {
           <button className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700">
             Learn More
           </button>
-          <div className="mt-6">
+          <div className="mt-6 flex justify-end">
             <img
               ref={handRef}
               src="https://em-content.zobj.net/source/microsoft-teams/337/waving-hand_1f44b.png"
@@ -1566,21 +1618,21 @@ export function Contact() {
             <input
               type="text"
               placeholder="Full Name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full px-4 py-2  bg-gradient-to-b from-gray-50 to-white  border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
             />
             <input
               type="text"
               placeholder="Phone Number"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
             />
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full px-4 py-2 border border-gray-300  bg-gradient-to-b from-gray-50 to-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
             />
             <textarea
               placeholder="Message"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 min-h-[100px]"
+              className="w-full px-4 py-2 border border-gray-300  bg-gradient-to-b from-gray-50 to-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 min-h-[100px]"
             ></textarea>
             <button
               type="submit"
@@ -1592,6 +1644,8 @@ export function Contact() {
         </div>
       </div>
     </section>
+    </div>
+  
   );
 }
 
@@ -1623,21 +1677,21 @@ export function ContactMapSection() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-100 to-gray-200 p-6"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-100 to-gray-200 mdp-6 sm:px-2"
     >
-      <div className="flex flex-col md:flex-row gap-8 bg-white rounded-2xl shadow-xl p-8 w-full max-w-6xl">
+      <div className="flex flex-col md:flex-row gap-8 bg-white rounded-2xl shadow-xl p-4 w-full max-w-6xl">
         {/* Left Content - Map */}
         <div className="flex-1 space-y-4">
           <h2 className="text-2xl font-bold">Find Us</h2>
           <iframe
             title="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19804.247331735055!2d-0.1285905!3d51.5032975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c1d0c69755%3A0x912496d9c8440f11!2sLondon%20Eye!5e0!3m2!1sen!2suk!4v1717583891427!5m2!1sen!2suk"
-            className="w-full h-64 rounded-md border"
+            className="w-full md:h-[609px]  rounded-md border"
             allowFullScreen=""
             loading="lazy"
           ></iframe>
-          <div className="flex items-center justify-between text-sm text-gray-700 pt-2">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-700 pt-2">
+            <div className="flex items-center gap-2  ">
               <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
               Lorem Ipsum
             </div>
@@ -1660,39 +1714,39 @@ export function ContactMapSection() {
             tellus massa sed etiam nisi. Pharetra vitae adipiscing imperdiet
             elit.
           </p>
-          <form className="space-y-3">
+          <form className="space-y-3 flex flex-col gap-4">
             <input
               type="text"
               placeholder="First Name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full px-4 py-2  bg-gradient-to-b from-gray-50 to-white  border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
             />
             <input
               type="text"
               placeholder="Last Name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full px-4 py-2 bg-gradient-to-b from-gray-50 to-white  border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
             />
             <input
               type="text"
               placeholder="Phone Number"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full px-4 py-2 border   bg-gradient-to-b from-gray-50 to-white  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
             />
             <input
               type="text"
               placeholder="Address"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
             />
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full px-4 py-2 border  bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
             />
             <textarea
               placeholder="Message"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 min-h-[100px]"
+              className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 min-h-[100px]"
             ></textarea>
             <button
               type="submit"
-              className="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700"
+              className="bg-purple-600 text-white  px-6 py-2 rounded-md hover:bg-purple-700"
             >
               Send Message
             </button>
@@ -1961,19 +2015,21 @@ export function ExpertTeamSection() {
 
   return (
     <section ref={sectionRef} className="px-6 py-12 max-w-7xl mx-auto w-full">
-      <div className="flex justify-between items-center mb-6">
-        <div>
-          <span className="text-sm text-gray-400">Executive Team</span>
-          <h2 className="text-2xl font-bold">Our Expert Team</h2>
-          <p className="text-sm text-gray-500">
-            Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi libero
-            tellus massa sed etiam nisi.
-          </p>
+      <div className="flex justify-between items-center mb-6  p-[20px] bg-white rounded  flex-col  sm:flex-row gap-4">
+        <div className="flex">
+          <div className="flex flex-col gap-4">
+            <span className="text-sm text-gray-400  bg-slate-50 px-4  py-2 rounded-4xl flex items-center justify-center w-[150px]">Executive Team</span>
+            <h2 className="text-2xl font-bold">Our Expert Team</h2>
+            <p className="text-sm text-gray-500 max-w-[650px]">
+              Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi
+              libero tellus massa sed etiam nisi.
+            </p>
+          </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <button
             onClick={() => setShowAll(true)}
-            className="bg-[#5A00F0] text-white px-4 py-2 rounded-md text-sm"
+            className="bg-[#5A00F0] hidden text-white px-4 py-2 rounded-md text-sm"
           >
             Show All
           </button>
@@ -2001,7 +2057,7 @@ export function ExpertTeamSection() {
         {(showAll ? teamData : teamData.slice(0, 8)).map((member, idx) => (
           <div
             key={idx}
-            className="min-w-[200px] max-w-[200px] flex-shrink-0 bg-white rounded-xl overflow-hidden shadow-md relative"
+            className="min-w-[280px] max-w-[200px] flex-shrink-0 bg-white rounded-xl overflow-hidden shadow-md relative"
           >
             <img
               src={member.image}
@@ -2031,21 +2087,75 @@ export function ExpertTeamSection() {
 // our projects
 export function OurProjects() {
   return (
-    <div className="max-w-[1280px]  mx-auto px-6">
-      <div>
-        <h1>Our Projects</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus
-          consectetur imperdiet iaculis elit arcu.
-        </p>
-      </div>
-      {/* cards grid */}
-      <div className="min-h-[80vh] bg-red-400 grid grid-cols-4 gap-4">
-        <div className="bg-blue-300 lg:col-span-2 row-span-2 sm:col-span-2 col-span-4 "></div>
-        <div className="bg-green-300 lg:col-span-1 sm:col-span-2 col-span-4"></div>
-        <div className="bg-pink-300 lg:col-span-1 sm:col-span-2 col-span-4"></div>
-        <div className="bg-orange-300 lg:col-span-1 sm:col-span-2 col-span-4"></div>
-        <div className="bg-yellow-300 lg:col-span-1 sm:col-span-2 col-span-4"></div>
+    <div className="bg-white py-4 pb-6">
+      <div className="max-w-[1280px]  mx-auto px-6">
+        <div className="flex flex-col items-center py-8">
+          <h1 className="text-2xl font-bold py-4">Our Projects</h1>
+          <p className="max-w-[508px] text-center">
+            Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus
+            consectetur imperdiet iaculis elit arcu.
+          </p>
+        </div>
+        {/* cards grid */}
+        <div className="min-h-[80vh grid grid-cols-4 gap-4">
+          <div className="bg-blue-300 lg:col-span-2 row-span-2 sm:col-span-2 col-span-4 ">
+            <img src="/img900.jpg" className="h-full object-cover" alt="" />
+          </div>
+          <div className=" lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col rounded-xl gap-4 bg-[#DEDEDE]">
+            <div>
+              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500"></div>
+            </div>
+            <div>
+              <h4 className="font-bold text-[22px]">Project</h4>
+              <p className="text-sm text-[#999999] pb-4">
+                Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
+                amet facilisis egestas.
+              </p>
+              <img src="/ScreenPart.png" />
+            </div>
+          </div>
+
+          <div className=" lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
+            <div>
+              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500"></div>
+            </div>
+            <div>
+              <h4 className="font-bold text-[22px]">Project</h4>
+              <p className="text-sm text-[#999999] pb-4">
+                Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
+                amet facilisis egestas.
+              </p>
+              <img src="/ScreenPart.png" />
+            </div>
+          </div>
+          <div className=" lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
+            <div>
+              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500"></div>
+            </div>
+            <div>
+              <h4 className="font-bold text-[22px]">Project</h4>
+              <p className="text-sm text-[#999999] pb-4">
+                Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
+                amet facilisis egestas.
+              </p>
+              <img src="/ScreenPart.png" />
+            </div>
+          </div>
+
+          <div className=" lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
+            <div>
+              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500"></div>
+            </div>
+            <div>
+              <h4 className="font-bold text-[22px]">Project</h4>
+              <p className="text-sm text-[#999999] pb-4">
+                Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
+                amet facilisis egestas.
+              </p>
+              <img src="/ScreenPart.png" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -2127,7 +2237,7 @@ export function Hero2() {
   return (
     <section
       ref={sectionRef}
-      className="max-w-[1240px] mx-auto top-2 pt-30  left-0 right-0 z-50 px-2 sm:px-4 lg:px-6"
+      className="max-w-[1240px] mx-auto top-2  left-0 right-0 z-50 px-2 sm:px-4 lg:px-6"
     >
       {/* Top Label */}
       <div className="text-center mb-8">
@@ -2270,8 +2380,10 @@ export function AsianCard() {
         <div className="mt-[50px] flex flex-col justify-center items-center">
           <img src="./mackbook.png" alt="Macbook" />
         </div>
-        <div className="md:max-w-[59vw] w-[100vw] 
-         flex justify-center items-center bg-red-500">
+        <div
+          className="md:max-w-[59vw] w-[100vw] 
+         flex justify-center items-center bg-red-500"
+        >
           <img src="./cards.png" alt="Cards" className="w-full" />
         </div>
 
@@ -2538,6 +2650,7 @@ import {
   PolarRadiusAxis,
 } from "recharts";
 import Hero from "./Hero";
+import { Link } from "react-router-dom";
 
 const skillsData = [
   { subject: "UI", A: 82 },
@@ -2648,8 +2761,43 @@ export function ServicesGrid() {
 
 // About us Hero
 export function AboutHero() {
+  const sectionRef = useRef(null);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(sectionRef.current, {
+        autoAlpha: 0,
+        y: 50,
+        duration: 1.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      });
+
+      gsap.from(cardRefs.current, {
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        stagger: 0.3,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative   border border-red-500 max-w-[1280px] mx-auto md:top-5 top-2 md:mt-12 mt-4 left-0 right-0 z-50 px-2 sm:px-4 lg:px-6">
+    <section
+      ref={sectionRef}
+      className="relative max-w-[1280px] mx-auto left-0 right-0 z-50 px-2 sm:px-4 lg:px-6"
+    >
       {/* Top Label */}
       <div className="text-center mb-8">
         <span
@@ -2663,12 +2811,13 @@ export function AboutHero() {
         </span>
       </div>
 
-      {/* heading  */}
-      <div className="text-center mb-6  w-full flex justify-center">
-        <h1 className="sm:text-[50px] text-[35px] leading-12 font-bold max-w-[892px] ">
+      {/* heading */}
+      <div className="text-center mb-6 w-full flex justify-center">
+        <h1 className="sm:text-[50px] text-[35px] leading-12 font-bold max-w-[892px]">
           Lorem ipsum dolor sit amet consectetur.
         </h1>
       </div>
+
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
         Lorem ipsum dolor sit amet consectetur. Risus commodo faucibus tortor
@@ -2677,34 +2826,240 @@ export function AboutHero() {
       </p>
 
       {/* cards */}
-      <div className="relative h-[500px] -z-1">
+      <div className="relative h-[600px] -z-1">
         <img src="/f20.png" alt="" />
-        <div className="absolute top-0">
+        <div
+          className="absolute top-0"
+          ref={(el) => (cardRefs.current[0] = el)}
+        >
           <PerformanceChart />
         </div>
-        <div className="absolute  left-[25%] top-[8%]">
+        <div
+          className="absolute sm:left-[25%] sm:top-[30%] top-[31%] left-[12%]"
+          ref={(el) => (cardRefs.current[1] = el)}
+        >
           <TrendsChart />
         </div>
-        <div className="absolute left-[43%] top-[0%]">
+        <div
+          className="absolute sm:right-[0%] md:left-[42%] top-[8%] sm:top-[0%]"
+          ref={(el) => (cardRefs.current[2] = el)}
+        >
           <SkillsRadarChart />
         </div>
-        <div className="absolute  left-[10%  ] lg:left-[31%]">
+        <div
+          className="absolute top-[50%] sm:top-[50%] right-0 sm:left-[10%] lg:left-[31%]"
+          ref={(el) => (cardRefs.current[3] = el)}
+        >
           <AnalyticsLineChart />
         </div>
 
-        <div className="absolute">
+        <div className="absolute right-[4%] bottom-0">
           <img
             src="/rocket.png"
-            className={"left-[64%] rotate-[21deg] top-[0%]"}
+            className="hidden sm:block left-[64%] rotate-[21deg] w-[200px]  md:w-[400px] bottom-[0%] md:bottom-[18%]"
             alt=""
           />
         </div>
       </div>
       <img
         src="/v3.png"
-        className="absolute bottom-0 -left-[12%] z-[-1]"
+        className="absolute bottom-0 -left-[12%] z-[-2]"
         alt=""
       />
     </section>
+  );
+}
+
+
+
+// footer 
+
+
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+export const Footer = () => {
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    const el = footerRef.current;
+
+    gsap.fromTo(
+      el,
+      { autoAlpha: 0, y: 50 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%",
+        },
+      }
+    );
+  }, []);
+
+  return (
+    <div className="bg-gradient-to-r from-[#F9DCDC] via-[#E7E1F5] to-[#DCD9F9] ">
+   <footer
+      ref={footerRef}
+      className=" max-w-[1280px] mx-auto bg-gradient-to-r from-[#F9DCDC] via-[#E7E1F5] to-[#DCD9F9] rounded-2xl  p-6 shadow backdrop-blur-xl text-gray-800"
+    >
+      {/* Top section */}
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 border-b border-white/30 pb-6">
+        <div>
+          <h2 className="text-xl sm:text-2xl font-semibold text-black">
+            Lorem ipsum dolor sit amet consectetur.{" "}
+            <span className="text-violet-600 font-bold">Facilisis non.</span>
+          </h2>
+          <p className="text-gray-600 mt-2">
+            Lorem ipsum dolor sit amet consectetur.
+          </p>
+        </div>
+        <div className="flex gap-4">
+          <button className="bg-violet-600 text-white px-5 py-2 rounded-md shadow">
+            Contact Us
+          </button>
+          <button className="bg-white text-black px-5 py-2 rounded-md shadow border border-gray-200">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      {/* Middle section */}
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pt-8 ">
+        {/* Logo and description */}
+        <div className="flex flex-col gap-2 max-w-sm pb-6">
+          <img src="/logo.png" alt="logo" className="w-24" />
+          <p className="text-sm text-gray-700">
+            Design amazing digital experiences that create more happy in the
+            world.
+          </p>
+        </div>
+
+       
+
+        {/* App download */}
+        <div className="flex flex-col gap-2">
+          <span className="text-violet-700 font-semibold">
+            Get Asian Cart app
+          </span>
+          <div className="flex flex-col gap-2">
+            <img
+              src="/appstore.png"
+              alt="App Store"
+              className="w-28"
+            />
+            <img
+              src="/googlestorebadge.png"
+              alt="Google Play"
+              className="w-28"
+            />
+          </div>
+        </div>
+      </div>
+       {/* Navigation links */}
+        <nav className="flex flex-wrap gap-2 mt-4   sm:gap-6 text-sm text-blue-800 font-semibold border-b border-white/30 pb-4">
+          <Link to="/">Home</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/projects">Projects</Link>
+          <Link to="/about-us">About Us</Link>
+          <Link to="/contact-us">Contact Us</Link>
+        </nav>
+
+      {/* Bottom section */}
+      <div className="flex flex-col md:flex-row justify-between items-center pt-6 text-sm text-gray-500">
+        <p>© 2077 Untitled UI. All rights reserved.</p>
+        <div className="flex gap-4 mt-2 md:mt-0 text-gray-400 text-xl">
+          <Instagram color="#999999" />
+          <FacebookIcon color="#999999"/>
+          <i className="fab fa-facebook"></i>
+          <i className="fab fa-github"></i>
+          <i className="fab fa-dribbble"></i>
+        </div>
+      </div>
+    </footer>
+    </div>
+ 
+  );
+};
+
+
+
+
+// who we are 
+
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+export  function WhoWeAre() {
+  const sectionRef = useRef(null);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(sectionRef.current, {
+        autoAlpha: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      });
+
+      gsap.from(contentRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div className="bg-[#f5f5f5] " >
+ <section
+      ref={sectionRef}
+      className="max-w-[1280px] mx-auto px-6 py-12  "
+    >
+      <div className="flex flex-col md:flex-row items-center gap-8" ref={contentRef}>
+        <div className="md:w-1/2 w-full">
+          <img
+            src="/whoweare.jpg"
+            alt="developers working"
+            className="rounded-lg w-full h-auto object-cover"
+          />
+        </div>
+
+        <div className="md:w-1/2 w-full">
+          <h2 className="text-2xl font-semibold mb-2">Who We Are</h2>
+          <p className="text-gray-600 mb-4">
+            Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus consectetur imperdiet iaculis elit arcu.
+          </p>
+          <p className="text-gray-700">
+            Lorem ipsum dolor sit amet consectetur. Commodo nisl vulputate purus tortor facilisis nulla odio quam. Purus
+            placerat condimentum diam placerat massa nibh. A nibh habitant aliquam facilisi. Arcu parturient in orci mi amet
+            ac non et quam at. Sem sit in interdum habitant nec mollis. Orci laoreet metus sodales placerat lorem. Massa
+            porttitor eu faucibus rhoncus aliquet. Id scelerisque metus sed ut massa sagittis integer eu. Viverra tristique
+            suspendisse pretium praesent, risus porttitor id adipiscing egestas sit condimentum.
+          </p>
+        </div>
+      </div>
+    </section>
+    </div>
+   
   );
 }

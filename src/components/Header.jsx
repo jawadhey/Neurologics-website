@@ -2,11 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { Menu, X } from "lucide-react";
 import logo from "/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef(null);
   const menuItemsRef = useRef(null);
+  const navigate= useNavigate()
 
   useEffect(() => {
     if (mobileMenuRef.current && menuItemsRef.current) {
@@ -47,10 +48,10 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const navItems = [{page:"Home" , path:"/"}, {page:"Projects" , path:'/projects'}];
+  const navItems = [{page:"Home" , path:"/"}, {page:"Projects" , path:'/projects'} , {page:"Services" , path:'/services'} , {page:"About" , path:'/about-us'} , {page:"Contact" , path:'/contact-us'}];
 
   return (
-    <header className="fixed  max-w-[1280px]   mx-auto md:top-5 top-2    left-0 right-0 z-50 px-2 sm:px-4 lg:px-6">
+    <header className="fixed  max-w-[1280px]   mx-auto md:top-5 top-2    left-0 right-0 z-[1000000000] px-2 sm:px-4 lg:px-6">
       <div className="bg-[#1E1E1E]  overflow-x-hidden  px-4  backdrop-blur-md rounded-2xl border border-slate-700/50 shadow-2xl">
         <div className="   mx-auto ">
           <div className="flex items-center justify-between  h-16">
@@ -75,7 +76,7 @@ const Header = () => {
 
               {/* Contact Button - Desktop */}
               <div className="hidden md:block">
-                <button className="bg-blue-600 text-[15px] hover:bg-blue-500 text-white px-3 py-2 rounded-[10px] font-medium transition-all duration-200 hover:scale-102 shadow-lg hover:shadow-blue-500/25">
+                <button  onClick={(()=>{navigate("/contact-us")})} className="bg-blue-600 text-[15px] hover:bg-blue-500 text-white px-3 py-2 rounded-[10px] font-medium transition-all duration-200 hover:scale-102 shadow-lg hover:shadow-blue-500/25">
                   Contact Us
                 </button>
               </div>
@@ -111,7 +112,7 @@ const Header = () => {
                 {item.page}
               </Link>
             ))}
-            <button className="w-full bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 mt-4">
+            <button onClick={(()=>{navigate("/contact-us")})} className="w-full bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 mt-4">
               Contact Us
             </button>
           </div>

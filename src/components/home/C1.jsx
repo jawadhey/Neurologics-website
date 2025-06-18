@@ -3192,7 +3192,16 @@ export function WhoWeAre() {
 
   return (
     <div className="bg-[#f5f5f5] ">
-      <section ref={sectionRef} className="max-w-[1280px] mx-auto px-6 py-12  ">
+      <section ref={sectionRef} className="max-w-[1280px] mx-auto px-6 py-12   ">
+        <div className='bg-[#EDEDED] flex justify-between gap-4 p-[20px] rounded-xl mb-[40px] items-center md:flex-row flex-col  '>
+          <div className="">
+            <h1 className="text-[27px] font-bold">Who we are ? </h1>
+            <p className="max-w-[508px] pt-[14px]">
+              Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus consectetur imperdiet iaculis elit arcu.
+            </p>
+          </div>
+          <button className="p-[13px] bg-[#4300FF]  hover:bg-[#400FF] transition text-white rounded-xl">Contact Us</button>
+        </div>
         <div
           className="flex flex-col md:flex-row items-center gap-8"
           ref={contentRef}

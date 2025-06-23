@@ -2279,7 +2279,7 @@ export function OurProjects() {
               </div>
             </div>
             <div>
-              <h4 className="font-bold text-[22px]">Asian Cart</h4>
+              <h4 className="font-bold text-[22px]">Asain Cart</h4>
               <p className="text-sm text-[#999999] pb-4">
                 An intuitive eCommerce platform designed to sell and manage a wide variety of authentic spices online.
               </p>
@@ -2525,10 +2525,9 @@ export function AsianCard() {
     <div className="max-w-[1280px] mx-auto mt-[100px] px-6">
       {/* Heading Section */}
       <div className="text-center flex flex-col justify-center items-center">
-        <h3 className="text-[#1E1E1E] text-[27px] font-bold">Asin Card</h3>
+        <h3 className="text-[#1E1E1E] text-[27px] font-bold">Asain Card</h3>
         <p className="text-[#1E1E1E] max-w-[508px] pt-4 text-[17px]">
-          Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus
-          consectetur imperdiet iaculis elit arcu.
+        An eCommerce platform built to simplify the online sale of spices with a smooth, user-friendly shopping experience. 
         </p>
       </div>
 

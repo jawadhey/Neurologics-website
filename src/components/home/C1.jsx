@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 
 export const ProgressCard = () => {
   const departments = ["UI", "UX", "DS", "HR", "QA"];
@@ -243,9 +244,9 @@ export const StatsCards = () => {
       {/* Cards Container */}
       <div className="relative z-10 flex flex-wrap justify-center gap-6">
         {[
-          { color: "bg-blue-500", text: "23k", desc: "Lorem ipsum" },
-          { color: "bg-red-500", text: "120k", desc: "Lorem ipsum" },
-          { color: "bg-green-500", text: "236k", desc: "Lorem ipsum" },
+          { color: "bg-blue-500", text: "25+", desc: "Platforms Launched", sub: "Tailored digital solutions across industries." },
+          { color: "bg-red-500", text: "10+", desc: "Active Partnerships", sub: "Driving growth through long-term tech alliances." },
+          { color: "bg-green-500", text: "5+", desc: "Years of Experience", sub: "Building scalable web, mobile, and cloud platforms." },
         ].map((card, idx) => (
           <div
             key={idx}
@@ -263,7 +264,7 @@ export const StatsCards = () => {
                 {card.text}
               </h2>
               <p className="text-[20px] text-[#999999]">{card.desc}</p>
-              <p className="text-sm text-[#999999]">{card.desc}</p>
+              <p className="text-sm text-[#999999]">{card.sub}</p>
             </div>
           </div>
         ))}
@@ -443,8 +444,7 @@ export const ServicesSection = () => {
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-2">Our Services</h2>
         <p className="text-gray-600 max-w-xl mx-auto mb-10">
-          Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus
-          consectetur imperdiet iaculis elit arcu.
+          From design to deployment, our services are built to accelerate your digital success. Explore how NeuroLogics helps businesses thrive with smart, scalable tech solutions.
         </p>
 
         <div className="sm:grid sm:grid-cols-3 sm:grid-rows-2 sm:gap-2 flex flex-col gap-4">
@@ -453,10 +453,9 @@ export const ServicesSection = () => {
             className="col-span-1 row-span-2 bg-gradient-to-b from-white from-0% to-[#dedede1a] to-2% rounded-2xl p-6 shadow-md text-left flex flex-col justify-between"
           >
             <img src="./screensm.jpg" alt="Macbook" />
-            <h3 className="font-semibold text-lg mb-2">Service</h3>
+            <h3 className="font-semibold text-lg mb-2">Complete Digital Solutions Under One Roof</h3>
             <p className="text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
-              amet facilisis egestas.
+              At NeuroLogics, we don't just offer services—we deliver end-to-end digital transformation. From intuitive design to full-stack development and growth strategies, we power every stage of your digital journey.
             </p>
           </div>
 
@@ -467,10 +466,9 @@ export const ServicesSection = () => {
             <div className="w-10 h-10 bg-violet-600 rounded-lg flex items-center justify-center mb-4">
               <RocketIcon className="text-white w-5 h-5" />
             </div>
-            <h3 className="font-semibold text-left text-lg">Service</h3>
+            <h3 className="font-semibold text-left text-lg">UI/UX Design</h3>
             <p className="text-left text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
-              amet facilisis egestas.
+              Crafting user-first, intuitive designs that elevate digital experiences and boost engagement.
             </p>
           </div>
 
@@ -481,10 +479,9 @@ export const ServicesSection = () => {
             <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mb-4">
               <WrenchIcon className="text-white w-5 h-5" />
             </div>
-            <h3 className="font-semibold text-left text-lg">Service</h3>
+            <h3 className="font-semibold text-left text-lg">Web & App Development</h3>
             <p className="text-left text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
-              amet facilisis egestas.
+              Building fast, secure, and scalable web and mobile applications tailored to your goals.
             </p>
           </div>
 
@@ -495,10 +492,9 @@ export const ServicesSection = () => {
             <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mb-4">
               <SmartphoneIcon className="text-white w-5 h-5" />
             </div>
-            <h3 className="font-semibold text-left text-lg">Service</h3>
+            <h3 className="font-semibold text-left text-lg">Digital Marketing</h3>
             <p className="text-left text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
-              amet facilisis egestas.
+              Driving visibility, traffic, and conversion through smart, data-driven strategies.
             </p>
           </div>
 
@@ -509,10 +505,9 @@ export const ServicesSection = () => {
             <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
               <CodeIcon className="text-white w-5 h-5" />
             </div>
-            <h3 className="font-semibold text-left text-lg">Service</h3>
+            <h3 className="font-semibold text-left text-lg">Product-Based Services</h3>
             <p className="text-left text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
-              amet facilisis egestas.
+              Offering tailored support, integration, and enhancement for NeuroLogics' proprietary tech solutions.
             </p>
           </div>
         </div>
@@ -780,14 +775,10 @@ export const TechIconsSpread = () => {
           {/* Text Content */}
           <div ref={textRef} className="space-y-6">
             <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-gray-900 leading-tight">
-              Lorem ipsum dolor sit amet consectetur. Blandit aliquet malesuada
-              tristique adipiscing nunc. Iaculis ipsum.
+              Cutting-Edge Technologies and Proven Techniques That Power Every Project
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi
-              libero tellus massa sed etiam nis. Phasellus vitae adipiscing
-              imperdiet elit. Vitae pulvinar et feugiat lobortis accumsan tempor
-              aliquam.
+              We leverage the latest tools, frameworks, and industry best practices to build high-performance digital platforms. At NeuroLogics, staying ahead of the curve is part of our DNA. We use modern technologies like React, Node.js, Flutter, Python, and cloud services such as AWS and Firebase to create fast, secure, and scalable solutions. Our team follows agile methodologies, CI/CD pipelines, and responsive design principles to ensure seamless development and efficient delivery. Whether it's front-end brilliance, back-end architecture, or mobile responsiveness—we combine innovation with reliability to deliver tech that lasts.
             </p>
           </div>
 
@@ -979,15 +970,12 @@ export const DownloadSection = () => {
         </div>
 
         {/* Right Content */}
-        <div className=" px-[40px] pt-[100px] md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left backdrop-blur-[10px] bg-white/10 h-full ">
+        <div className=" px-[12px] md:px-[40px] pt-[100px] md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left backdrop-blur-[10px] bg-white/10 h-full ">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Lorem ipsum dolor sit amet consectetur. <br /> Blandit aliquet
-            malesuada.
+            Experience the Flavors of Asia at Your Fingertips. Download the Asian Cart App Today
           </h2>
-          <p className="text-white  font-medium mb-6 max-w-lg">
-            Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi libero
-            tellus massa sed enim. Phasellus vitae adipiscing imperdiet elit
-            placerat.
+          <p className="text-white  font-medium mb-6 ">
+            Shop spices with ease, convenience, and confidence—right from your phone. The Asian Cart app brings the full marketplace experience to your mobile device. Browse a wide range of authentic spices, get personalized recommendations, enjoy secure payments, and track your orders in real-time. Designed for speed and simplicity, the app ensures a smooth shopping journey—from cart to kitchen. Download now and explore the rich taste of tradition, delivered.
           </p>
 
           {/* Buttons */}
@@ -1024,13 +1012,17 @@ export const DownloadSection = () => {
 
           {/* Stats */}
           <div className="flex flex-col py-4  sm:flex-row   gap-4 w-full justify-center md:justify-start">
-            {[1, 2, 3].map((item, index) => (
+            {[
+              { value: "10,000+", label: "App Downloads" },
+              { value: "500+", label: "Products Available" },
+              { value: "4.8", label: "Average Rating" },
+            ].map((stat, index) => (
               <div
                 key={index}
                 className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl px-6 py-4 text-center"
               >
-                <h3 className="text-2xl font-bold">100+</h3>
-                <p className="text-sm text-gray-300">Lorem ipsum dolor</p>
+                <h3 className="text-2xl font-bold">{stat.value}</h3>
+                <p className="text-sm text-gray-300">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -1048,25 +1040,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 const faqs = [
   {
-    question: "Lorem ipsum dolor sit amet consectetur. Tortor sit purus.",
+    question: "What services does NeuroLogics offer?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi libero tellus massa sed etiam nisi. Pharetra vitae adipiscing imperdiet elit.",
+      "We provide end-to-end digital solutions including UI/UX design, web and mobile development, digital marketing, tech consulting, and support for our own digital products.",
   },
   {
-    question: "Lorem ipsum dolor sit amet consectetur. Arcu neque.",
-    answer: "Lorem ipsum dolor sit amet consectetur. Arcu neque.",
+    question: "Can I get a custom solution tailored to my business?",
+    answer:
+      "Absolutely. We specialize in building custom platforms that match your specific goals, workflow, and industry requirements.",
   },
   {
-    question: "Lorem ipsum dolor sit amet consectetur. Arcu neque.",
-    answer: "Lorem ipsum dolor sit amet consectetur. Arcu neque.",
+    question: "What industries do you serve?",
+    answer:
+      "Our solutions are industry-agnostic, but we've successfully worked across eCommerce, logistics, travel, healthtech, and more.",
   },
   {
-    question: "Lorem ipsum dolor sit amet consectetur. Arcu neque.",
-    answer: "Lorem ipsum dolor sit amet consectetur. Arcu neque.",
+    question: "Is the Asian Cart app free to use?",
+    answer:
+      "Yes, the app is completely free to download and use. You only pay for the products you purchase.",
   },
   {
-    question: "Lorem ipsum dolor sit amet consectetur. Arcu neque.",
-    answer: "Lorem ipsum dolor sit amet consectetur. Arcu neque.",
+    question: "How can I get in touch for a project or consultation?",
+    answer:
+      "You can contact us through our website's contact form, email, or phone. We'll get back to you quickly to discuss your needs.",
   },
 ];
 
@@ -1123,23 +1119,19 @@ export const FaqComponent = () => {
         {/* Left Side */}
         <div className=" min-h-[428px] backdrop-blur-lg rounded-2xl p-6 sm:p-8 max-w-xl shadow-lg relative flex-1">
           <span className="text-sm text-gray-700 mb-2 bg-white/60 backdrop-blur-md border border-white/30 px-4 py-2 rounded-3xl flex items-center justify-center w-[190px]">
-            Lorem ipsum dolor
+            Frequently Asked Questions
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             Frequently Asked Questions
           </h2>
           <p className="text-gray-800 text-sm leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi libero
-            tellus massa sed etiam nisi. Pharetra vitae adipiscing imperdiet
-            elit. Pharetra neque enim quam donec rutrum quis phasellus volutpat
-            lobortis. Vitae pulvinar et feugiat lobortis accumsan semper aliquam
-            adipiscing sed. Nisl et bibendum amet egestas maecenas.
+            We understand that starting a digital project—or exploring a new platform—can come with a lot of questions. That's why we've compiled answers to the most common inquiries from clients and users alike. Whether you're curious about our services, development process, or specific product features like the Asian Cart app, this section is here to give you clarity and confidence as you engage with NeuroLogics.
           </p>
           <img
             ref={rocketRef}
             src="/rocket.png"
             alt="rocket"
-            className="absolute w-32 right-0 sm:w-32 bottom-[-20px] sm:bottom-[-30px] sm:right-[-30px]  left-0 rotate-45"
+            className=" hidden   md:block absolute w-32 right-0 sm:w-32 bottom-[-20px] sm:bottom-[-30px] sm:right-[-30px]  left-0 rotate-45"
           />
         </div>
 
@@ -1288,8 +1280,13 @@ export const FooterComponent = () => {
 // hero contact page
 
 
+
+gsap.registerPlugin(ScrollTrigger);
+
 export function ContactHero() {
   const imageRefs = useRef([]);
+  const titleRef = useRef(null);
+  const paraRef = useRef(null);
 
   useEffect(() => {
     // Animate main container
@@ -1300,7 +1297,24 @@ export function ContactHero() {
       ease: "power2.out",
     });
 
-    // Animate small images individually
+    // Animate headline and paragraph
+    gsap.from(titleRef.current, {
+      opacity: 0,
+      y: 40,
+      duration: 1.2,
+      delay: 0.3,
+      ease: "power3.out",
+    });
+
+    gsap.from(paraRef.current, {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      delay: 0.6,
+      ease: "power3.out",
+    });
+
+    // Animate each floating image
     imageRefs.current.forEach((img, i) => {
       gsap.fromTo(
         img,
@@ -1314,7 +1328,7 @@ export function ContactHero() {
         }
       );
 
-      // Infinite floating effect
+      // Infinite float animation
       gsap.to(img, {
         y: "+=15",
         duration: 3,
@@ -1326,7 +1340,7 @@ export function ContactHero() {
   }, []);
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="relative">
         <div className="pt-14 contact-hero-container">
           <img
@@ -1335,7 +1349,7 @@ export function ContactHero() {
             alt=""
           />
 
-          {/* Small animated images */}
+          {/* Floating Icons */}
           <img
             ref={(el) => (imageRefs.current[0] = el)}
             src="/rocket.png"
@@ -1360,42 +1374,44 @@ export function ContactHero() {
             className="absolute top-[25%] right-[22%] w-[64px] sm:w-[80px]"
             alt=""
           />
-         
           <img
-            ref={(el) => (imageRefs.current[5] = el)}
+            ref={(el) => (imageRefs.current[4] = el)}
             src="/camera.png"
             className="absolute left-[10%] top-[27%] w-[72px] sm:w-[96px]"
             alt=""
           />
           <img
-            ref={(el) => (imageRefs.current[6] = el)}
+            ref={(el) => (imageRefs.current[5] = el)}
             src="/Darwinia2.png"
             className="absolute top-[12%] left-[7%] w-[64px] sm:w-[80px]"
             alt=""
           />
           <img
-            ref={(el) => (imageRefs.current[7] = el)}
+            ref={(el) => (imageRefs.current[6] = el)}
             src="/Astar.png"
             className="absolute top-[4%] right-[26%] w-[64px] sm:w-[80px]"
             alt=""
           />
 
-          {/* Hero Section */}
-          <section className="max-w-[1240px] mx-auto bg-transparent relative pt-[100px] left-0 right-0 z-50 px-2 sm:px-4 lg:px-6">
+          {/* Hero Content */}
+          <section className="max-w-[1240px] mx-auto bg-transparent relative pt-[100px] px-4 z-50">
             <div className="text-center pb-8">
               <span
-                className="inline-block px-5 py-3 rounded-full text-sm text-gray-500 text-[15px] font-medium"
+                className="inline-block px-5 py-3 rounded-full text-sm text-gray-500 font-medium"
                 style={{
                   background:
                     "linear-gradient(180deg, rgba(67, 0, 255, 0) 0%, rgba(67, 0, 255, 0.08) 100%)",
                 }}
               >
-                Lorem ipsum dolor
+                Explore Our Tech Stack
               </span>
             </div>
 
-            <h1 className="text-center text-[26px] md:text-5xl font-bold mb-8 md:leading-tight">
-              Lorem ipsum {" "}
+            <h1
+              ref={titleRef}
+              className="text-center text-[26px] md:text-5xl font-bold mb-8 md:leading-tight"
+            >
+              Smart{" "}
               <span
                 className="text-black px-2 py-1 rounded"
                 style={{
@@ -1403,9 +1419,9 @@ export function ContactHero() {
                   backgroundSize: "200% auto",
                 }}
               >
-                dolor
+                tech
               </span>{" "}
-              sit amet
+              meets your
               <span
                 className="ml-2 px-2 py-1 rounded text-black"
                 style={{
@@ -1413,12 +1429,12 @@ export function ContactHero() {
                   backgroundSize: "200% auto",
                 }}
               >
-                consectetur.
+                bold vision.
               </span>
               <br />
-              Porta nibh ut commodo iaculis id. {" "}
+              Delivering results at the speed of{" "}
               <span className="relative font-bold">
-                Nisl felis.
+                innovation.
                 <img
                   src={"/vector1.png"}
                   alt="line vector"
@@ -1427,13 +1443,14 @@ export function ContactHero() {
               </span>
             </h1>
 
-            <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-              Lorem ipsum dolor sit amet consectetur. Risus commodo faucibus tortor etiam
-              molestie adipiscing amet. Orci sem ut tellus interdum egestas. Sed euismod
-              tristique semper et tellus
+            <p
+              ref={paraRef}
+              className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6"
+            >
+              At NeuroLogics, we turn breakthrough ideas into scalable platforms.
+              With modern frameworks and cloud tools like React, Flutter, Firebase,
+              and AWS—we build future-ready solutions that move your business forward.
             </p>
-
-          
           </section>
         </div>
       </div>
@@ -1441,28 +1458,15 @@ export function ContactHero() {
   );
 }
 
+
 // _________________________-
 
 gsap.registerPlugin(ScrollTrigger);
 
-const cards = [
-  {
-    title: "Creative Planning",
-    desc: "Lorem ipsum dolor sit amet consectetur adipiscing.",
-  },
-  {
-    title: "Team Collaboration",
-    desc: "Adipiscing nunc ac mi libero tellus massa.",
-  },
-  {
-    title: "Execution Process",
-    desc: "Phasellus vitae adipiscing imperdiet elit.",
-  },
-  {
-    title: "Final Delivery",
-    desc: "Sed etiam nisi. Phasellus vitae imperdiet.",
-  },
-];
+
+import { BrainCog, LayoutTemplate, Code2, Rocket } from "lucide-react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const WorkingMethodology = () => {
   const sectionRef = useRef(null);
@@ -1471,7 +1475,6 @@ export const WorkingMethodology = () => {
   const purpleCircleRef = useRef(null);
 
   useEffect(() => {
-    // Section fade-in (repeats every time it comes into view)
     gsap.fromTo(
       sectionRef.current,
       { opacity: 0, y: 50 },
@@ -1488,7 +1491,6 @@ export const WorkingMethodology = () => {
       }
     );
 
-    // KK image (zoom + fade on scroll)
     gsap.from(".kk", {
       opacity: 0,
       scale: 0.8,
@@ -1501,7 +1503,6 @@ export const WorkingMethodology = () => {
       },
     });
 
-    // Animate cards one by one
     gsap.utils.toArray(".method-card").forEach((card, index) => {
       gsap.from(card, {
         opacity: 0,
@@ -1517,7 +1518,6 @@ export const WorkingMethodology = () => {
       });
     });
 
-    // Red circle infinite movement (more noticeable now)
     gsap.to(redCircleRef.current, {
       x: 50,
       y: 30,
@@ -1527,7 +1527,6 @@ export const WorkingMethodology = () => {
       ease: "sine.inOut",
     });
 
-    // Purple circle infinite movement (more noticeable now)
     gsap.to(purpleCircleRef.current, {
       x: -50,
       y: -40,
@@ -1537,6 +1536,13 @@ export const WorkingMethodology = () => {
       ease: "sine.inOut",
     });
   }, []);
+
+  const icons = {
+    Ideate: <BrainCog className="w-6 h-6" />,
+    Design: <LayoutTemplate className="w-6 h-6" />,
+    Develop: <Code2 className="w-6 h-6" />,
+    Deploy: <Rocket className="w-6 h-6" />,
+  };
 
   return (
     <section
@@ -1565,23 +1571,37 @@ export const WorkingMethodology = () => {
         {/* Content Box */}
         <div className="backdrop-blur-[20px] bg-white/60 rounded-2xl p-6 md:p-10 shadow-md w-full">
           <h2 className="text-xl md:text-2xl font-bold text-black mb-2">
-            Our Working Methodology
+            Our Methodology
           </h2>
           <p className="text-sm text-[#1E1E1E] mb-4 max-w-[572px]">
-            Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi libero
-            tellus massa sed etiam nisi. Phasellus vitae adipiscing imperdiet
-            eli Adipiscing nunc ac mi libero tellus massa sed etiam nisi.
-            Phasellus vitae adipiscing imperdiet elit
+            At NeuroLogics, we believe that a successful digital product is born from a clear, well-structured process. Our methodology is designed to align with your business goals at every stage—from the first spark of an idea to post-launch optimization. We work closely with you to understand your needs, transform them into smart designs, develop with precision, and deploy solutions that are reliable, scalable, and future-ready. It's a collaborative, end-to-end approach that ensures innovation, efficiency, and long-term impact.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {cards.map((card, i) => (
+            {[
+              {
+                title: "Ideate",
+                desc: "We kick off by diving deep into your business goals, market needs, and user expectations—laying a strong strategic foundation for the product ahead.",
+              },
+              {
+                title: "Design",
+                desc: "Our team crafts thoughtful, user-centered interfaces that not only look great but also enhance usability and engagement across every screen.",
+              },
+              {
+                title: "Develop",
+                desc: "Using modern frameworks and best coding practices, we build secure, scalable, and high-performance web and mobile applications that grow with your business.",
+              },
+              {
+                title: "Deploy",
+                desc: "With careful testing and optimization, we launch your product smoothly—followed by continuous support and improvements to keep it running at its best.",
+              },
+            ].map((card, i) => (
               <div
                 key={i}
                 className="method-card bg-white rounded-xl shadow-md px-4 py-6 flex flex-col items-center text-center"
               >
-                <div className="bg-violet-600 text-white rounded-full p-3 mb-4">
-                  {/* Icon can be added here */}
+                <div className="bg-violet-600 text-white rounded-full p-3 mb-4 flex items-center justify-center">
+                  {icons[card.title]}
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-1">
                   {card.title}
@@ -1595,6 +1615,7 @@ export const WorkingMethodology = () => {
     </section>
   );
 };
+
 
 // contact
 
@@ -1675,7 +1696,7 @@ export const ContactSection = () => {
           It starts with you
         </div>
         <div className="absolute top-14 left-6 bg-yellow-400 px-5 py-2 rounded-md text-lg font-bold text-gray-900">
-          Don’t miss out!
+          Don't miss out!
         </div>
         {/* Decorative shapes */}
         <div className="absolute top-0 left-0 w-28 h-28 border-8 border-yellow-400 rounded-full animate-pulse opacity-20" />
@@ -1729,9 +1750,7 @@ export function Contact() {
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-bold">Contact Us</h2>
             <p className="text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi
-              libero tellus massa sed etiam nisi. Pharetra vitae adipiscing
-              imperdiet elit.
+            Have a project in mind or just want to connect? We’re here to help. Let’s build something great together—reach out today!
             </p>
             <button className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700">
               Learn More
@@ -1817,25 +1836,32 @@ export function ContactMapSection() {
         {/* Left Content - Map */}
         <div className="flex-1 space-y-4">
           <h2 className="text-2xl font-bold">Find Us</h2>
-          <iframe
+          {/* <iframe
             title="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19804.247331735055!2d-0.1285905!3d51.5032975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c1d0c69755%3A0x912496d9c8440f11!2sLondon%20Eye!5e0!3m2!1sen!2suk!4v1717583891427!5m2!1sen!2suk"
             className="w-full md:h-[609px]  rounded-md border"
             allowFullScreen=""
             loading="lazy"
-          ></iframe>
+          ></iframe> */}
+          <iframe
+          title="map"
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13303.682358795668!2d73.10540909435271!3d33.529450209223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAster%206%2C%20Riverview%20hill%20%2C%20Bahria%20%20Phase%207%20%2C%20Rwalpindi%20Pakistan%20!5e0!3m2!1sen!2s!4v1750664296985!5m2!1sen!2s"
+          className="w-full md:h-[609px]  rounded-md border"
+          allowFullScreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-700 pt-2">
             <div className="flex items-center gap-2  ">
               <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-              Lorem Ipsum
+              info@neurologics.com 
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-              example@email.com
+              +923325281886 
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-              +1 (000) 000 0000
+              +92312508859
             </div>
           </div>
         </div>
@@ -1844,9 +1870,9 @@ export function ContactMapSection() {
         <div className="flex-1 space-y-4">
           <h2 className="text-2xl font-bold">Contact Us</h2>
           <p className="text-sm text-gray-600">
-            Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi libero
-            tellus massa sed etiam nisi. Pharetra vitae adipiscing imperdiet
-            elit.
+          Ready to bring your vision to life? Fill out the form below and our expert team will connect with you to discuss how NeuroLogics can craft the perfect digital solution for your business.
+
+
           </p>
           <form className="space-y-3 flex flex-col gap-4">
             <input
@@ -1897,71 +1923,81 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function WhoWeAreSection() {
   const sectionRef = useRef(null);
+  const contentRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
-      sectionRef.current,
-      { autoAlpha: 0, y: 50 },
-      {
-        autoAlpha: 1,
-        y: 0,
+    const ctx = gsap.context(() => {
+      gsap.from(sectionRef.current, {
+        autoAlpha: 0,
+        y: 50,
         duration: 1,
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
         },
-      }
-    );
+      });
+
+      gsap.from(contentRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-100 to-gray-200 p-6"
-    >
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-6xl">
-        <div className="mb-6 flex items-center justify-between">
-          <div>
-            <h2 className="text-2xl font-bold">Who We Are</h2>
-            <p className="text-sm text-gray-600 mt-1">
+    <div className="bg-[#f5f5f5] ">
+      <section ref={sectionRef} className="max-w-[1280px] mx-auto px-6 py-12   ">
+        <div className='bg-[#EDEDED] flex justify-between gap-4 p-[20px] rounded-xl mb-[40px] items-center md:flex-row flex-col  '>
+          <div className="">
+            <h1 className="text-[27px] font-bold">Who we are ? </h1>
+            <p className="max-w-[508px] pt-[14px]">
+            We craft future-ready platforms that help businesses grow. From design to deployment, our solutions are smart, scalable, and built to last.
+            </p>
+          </div>
+          <button className="p-[13px] bg-[#4300FF]  hover:bg-[#400FF] transition text-white rounded-xl">Contact Us</button>
+        </div>
+        <div
+          className="flex flex-col md:flex-row items-center gap-8"
+          ref={contentRef}
+        >
+          <div className="md:w-1/2 w-full">
+            <img
+              src="/whoweare.jpg"
+              alt="developers working"
+              className="rounded-lg w-full h-auto object-cover"
+            />
+          </div>
+
+          <div className="md:w-1/2 w-full">
+            <h2 className="text-2xl font-semibold mb-2">Who We Are</h2>
+            <p className="text-gray-600 mb-4">
               Lorem ipsum dolor sit amet consectetur. Felis neque fermentum
               tellus consectetur imperdiet iaculis elit arcu.
             </p>
-          </div>
-          <button className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700">
-            Contact Us
-          </button>
-        </div>
-
-        <div className="flex flex-col md:flex-row gap-8">
-          <div className="flex-1">
-            <img
-              src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34"
-              alt="office"
-              className="w-full h-auto rounded-lg object-cover"
-            />
-          </div>
-          <div className="flex-1">
-            <p className="text-sm text-gray-700">
+            <p className="text-gray-700">
               Lorem ipsum dolor sit amet consectetur. Commodo nisl vulputate
               purus tortor facilisis nulla odio quam. Purus placerat condimentum
               diam placerat massa nibh. A nibh habitant aliquam facilisi. Arcu
-              parturient in porta amet arcu et lob quam sit. Sem in sit interdum
-              habitant net mollis. Orci laoreet netus sodales placerat lorem.
-              Massa accidit ut faucibus rhoncus aliquet. Et scelerisque netus
-              sed ac mus sagittis integer ac.
-              <br />
-              <br />
-              Ultrices non ut cras et purus ultricies eu. Ultricies lorem in ac
-              pellentesque imperdiet arcu rhoncus habitasse. In quam magna
-              adipiscing in id feugiat id egestas. Arcu netus turpis in id
-              commodo aliquam.
+              parturient in orci mi amet ac non et quam at. Sem sit in interdum
+              habitant nec mollis. Orci laoreet metus sodales placerat lorem.
+              Massa accidit ut faucibus rhoncus aliquet. Id scelerisque metus
+              sed ut massa sagittis integer eu. Viverra tristique suspendisse
+              pretium praesent, risus porttitor id adipiscing egestas sit
+              condimentum.
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
@@ -1972,19 +2008,19 @@ gsap.registerPlugin(ScrollTrigger);
 const timelineData = [
   {
     title: "Idea and Team",
-    image: "https://images.unsplash.com/photo-1581091215367-59ab6febe4a1",
+    image: "/i1.jpg",
   },
   {
     title: "Startup",
-    image: "https://images.unsplash.com/photo-1557800636-894a64c1696f",
+    image: "/i2.jpg",
   },
   {
     title: "System Ideation",
-    image: "https://images.unsplash.com/photo-1603576663094-8742f7f6b8b0",
+    image: "/i3.jpg",
   },
   {
     title: "Product MVP",
-    image: "https://images.unsplash.com/photo-1557683316-973673baf926",
+    image: "/i4.jpg",
   },
 ];
 
@@ -2016,11 +2052,10 @@ export function WhoWeAreSection2() {
     >
       <div className="w-full max-w-6xl">
         <div className="mb-8">
-          <p className="text-sm text-gray-300">Lorem ipsum dolor</p>
+          <p className="text-sm text-gray-300">NeuroLogics Journey</p>
           <h2 className="text-3xl font-bold mb-2">Our Journey</h2>
           <p className="text-gray-400 max-w-xl">
-            Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus
-            consectetur imperdiet iaculis elit arcu.
+          NeuroLogics evolves ideas into innovative, scalable tech solutions. Here’s how we bring your vision to life — from spark to solution.
           </p>
         </div>
 
@@ -2072,7 +2107,10 @@ export function WhoWeAreSection2() {
   );
 }
 
-//
+// team
+
+"use client";
+
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -2080,44 +2118,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 const teamData = [
   {
-    name: "Hassan Waheed",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "Muhammad Jawad",
+    image: "/jawad.jpg",
+    role: "CEO",
   },
   {
-    name: "Hassan Waheed",
-    image: "https://randomuser.me/api/portraits/men/44.jpg",
+    name: "Saima Tamaz",
+    image: "/saimaTamaz.jpeg",
+    role: "COO Islamabad",
   },
   {
-    name: "Hassan Waheed",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
+    name: "Tahir Farooq",
+    image: "/tahirFarooq.jpeg",
+    role: "Business Development Officer France",
   },
   {
-    name: "Hassan Waheed",
-    image: "https://randomuser.me/api/portraits/men/85.jpg",
-  },
-  {
-    name: "Hassan Waheed",
-    image: "https://randomuser.me/api/portraits/men/95.jpg",
-  },
-  {
-    name: "Hassan Waheed",
-    image: "https://randomuser.me/api/portraits/men/33.jpg",
-  },
-  {
-    name: "Hassan Waheed",
-    image: "https://randomuser.me/api/portraits/women/39.jpg",
-  },
-  {
-    name: "Hassan Waheed",
-    image: "https://randomuser.me/api/portraits/men/52.jpg",
+    name: "Muhammad Ehsan",
+    image: "/muhammadEhsan.jpeg",
+    role: "Business Development Officer Germany",
   },
 ];
 
 export function ExpertTeamSection() {
   const sectionRef = useRef(null);
-  const [showAll, setShowAll] = useState(false);
-  const [scrollIndex, setScrollIndex] = useState(0);
   const containerRef = useRef(null);
+  const cardRefs = useRef([]);
+  const [scrollIndex, setScrollIndex] = useState(0);
 
   useEffect(() => {
     gsap.fromTo(
@@ -2134,11 +2160,29 @@ export function ExpertTeamSection() {
         },
       }
     );
+
+    cardRefs.current.forEach((card, i) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          delay: i * 0.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+          },
+        }
+      );
+    });
   }, []);
 
   const handleScroll = (direction) => {
     const container = containerRef.current;
-    const cardWidth = container.firstChild.offsetWidth + 16; // card width + gap
+    const cardWidth = container.firstChild.offsetWidth + 16;
     const visibleCards = Math.floor(container.offsetWidth / cardWidth);
     const maxIndex = teamData.length - visibleCards;
     let newIndex = direction === "next" ? scrollIndex + 1 : scrollIndex - 1;
@@ -2149,35 +2193,26 @@ export function ExpertTeamSection() {
 
   return (
     <section ref={sectionRef} className="px-6 py-12 max-w-7xl mx-auto w-full">
-      <div className="flex justify-between items-center mb-6  p-[20px] bg-white rounded  flex-col  sm:flex-row gap-4">
-        <div className="flex">
-          <div className="flex flex-col gap-4">
-            <span className="text-sm text-gray-400  bg-slate-50 px-4  py-2 rounded-4xl flex items-center justify-center w-[150px]">
-              Executive Team
-            </span>
-            <h2 className="text-2xl font-bold">Our Expert Team</h2>
-            <p className="text-sm text-gray-500 max-w-[650px]">
-              Lorem ipsum dolor sit amet consectetur. Adipiscing nunc ac mi
-              libero tellus massa sed etiam nisi.
-            </p>
-          </div>
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">
+        <div>
+          <span className="text-sm text-gray-500 bg-slate-100 px-4 py-2 rounded-full inline-block mb-2">
+            Executive Team
+          </span>
+          <h2 className="text-3xl font-bold mb-2">Our Expert Team</h2>
+          <p className="text-gray-600 max-w-xl">
+            Meet the minds behind NeuroLogics. Our skilled team blends creativity, strategy, and tech to craft impactful digital platforms.
+          </p>
         </div>
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => setShowAll(true)}
-            className="bg-[#5A00F0] hidden text-white px-4 py-2 rounded-md text-sm"
-          >
-            Show All
-          </button>
+        <div className="flex gap-3">
           <button
             onClick={() => handleScroll("prev")}
-            className="bg-gray-200 p-2 rounded-full"
+            className="bg-gray-200 p-2 rounded-full hover:bg-gray-300"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={() => handleScroll("next")}
-            className="bg-[#5A00F0] text-white p-2 rounded-full"
+            className="bg-[#5A00F0] text-white p-2 rounded-full hover:bg-purple-700"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -2186,32 +2221,25 @@ export function ExpertTeamSection() {
 
       <div
         ref={containerRef}
-        className={`transition-all duration-700 flex gap-4 overflow-hidden no-scrollbar ${
-          showAll ? "flex-wrap justify-center" : "whitespace-nowrap"
-        }`}
+        className="flex gap-4 overflow-hidden no-scrollbar scroll-smooth"
+        style={{ scrollbarWidth: "none" }}
       >
-        {(showAll ? teamData : teamData.slice(0, 8)).map((member, idx) => (
+        {teamData.map((member, idx) => (
           <div
+            ref={(el) => (cardRefs.current[idx] = el)}
             key={idx}
-            className="min-w-[280px] max-w-[200px] flex-shrink-0 bg-white rounded-xl overflow-hidden shadow-md relative"
+            className="w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
           >
             <img
               src={member.image}
               alt={member.name}
-              className="w-full h-64 object-cover"
+              className="w-full h-60 object-cover object-center"
             />
-            <div className="p-3">
-              <p className="text-md font-medium leading-tight">Hassan</p>
-              <p className="text-xl font-bold -mt-1">Waheed</p>
-            </div>
-            <div className="absolute bottom-2 right-2 bg-white p-1 rounded-full shadow">
-              <svg
-                className="w-5 h-5 text-purple-600"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
-              </svg>
+            <div className="p-4">
+              <h3 className="text-lg font-semibold text-gray-800">
+                {member.name}
+              </h3>
+              <p className="text-sm text-gray-500">{member.role}</p>
             </div>
           </div>
         ))}
@@ -2220,73 +2248,88 @@ export function ExpertTeamSection() {
   );
 }
 
+
+
 // our projects
+"use client";
+import { ShoppingCart, Ship, Truck, MapPin } from "lucide-react";
+
 export function OurProjects() {
   return (
     <div className="bg-white py-4 pb-6">
-      <div className="max-w-[1280px]  mx-auto px-6">
+      <div className="max-w-[1280px] mx-auto px-6">
         <div className="flex flex-col items-center py-8">
           <h1 className="text-2xl font-bold py-4">Our Projects</h1>
           <p className="max-w-[508px] text-center">
-            Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus
-            consectetur imperdiet iaculis elit arcu.
+            Explore how NeuroLogics transforms ideas into impactful digital platforms tailored to real-world business needs.
           </p>
         </div>
+
         {/* cards grid */}
-        <div className="min-h-[80vh grid grid-cols-4 gap-4">
-          <div className="bg-blue-300 lg:col-span-2 row-span-2 sm:col-span-2 col-span-4 ">
+        <div className="min-h-[80vh] grid grid-cols-4 gap-4">
+          <div className="bg-blue-300 lg:col-span-2 row-span-2 sm:col-span-2 col-span-4">
             <img src="/img900.jpg" className="h-full object-cover" alt="" />
           </div>
-          <div className=" lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col rounded-xl gap-4 bg-[#DEDEDE]">
+
+          {/* Card: Asian Cart */}
+          <div className="lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col rounded-xl gap-4 bg-[#DEDEDE]">
             <div>
-              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500"></div>
+              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500 flex items-center justify-center text-white">
+                <ShoppingCart size={20} />
+              </div>
             </div>
             <div>
-              <h4 className="font-bold text-[22px]">Project</h4>
+              <h4 className="font-bold text-[22px]">Asian Cart</h4>
               <p className="text-sm text-[#999999] pb-4">
-                Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
-                amet facilisis egestas.
+                An intuitive eCommerce platform designed to sell and manage a wide variety of authentic spices online.
               </p>
               <img src="/ScreenPart.png" />
             </div>
           </div>
 
-          <div className=" lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
+          {/* Card: Oil Shipper */}
+          <div className="lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
             <div>
-              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500"></div>
+              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500 flex items-center justify-center text-white">
+                <Ship size={20} />
+              </div>
             </div>
             <div>
-              <h4 className="font-bold text-[22px]">Project</h4>
+              <h4 className="font-bold text-[22px]">Oil Shipper</h4>
               <p className="text-sm text-[#999999] pb-4">
-                Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
-                amet facilisis egestas.
-              </p>
-              <img src="/ScreenPart.png" />
-            </div>
-          </div>
-          <div className=" lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
-            <div>
-              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500"></div>
-            </div>
-            <div>
-              <h4 className="font-bold text-[22px]">Project</h4>
-              <p className="text-sm text-[#999999] pb-4">
-                Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
-                amet facilisis egestas.
+                A smart logistics system built to streamline oil shipping operations with real-time tracking and management.
               </p>
               <img src="/ScreenPart.png" />
             </div>
           </div>
 
-          <div className=" lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
+          {/* Card: Tanker */}
+          <div className="lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
             <div>
-              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500"></div>
+              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500 flex items-center justify-center text-white">
+                <Truck size={20} />
+              </div>
             </div>
             <div>
-              <h4 className="font-bold text-[22px]">Project</h4>
+              <h4 className="font-bold text-[22px]">Tanker</h4>
               <p className="text-sm text-[#999999] pb-4">
-                Lorem ipsum dolor sit amet consectetur. Vitae in euismod turpis
-                amet facilisis egestas.
+                A robust trucking management solution developed to optimize fleet operations and logistics workflows.
+              </p>
+              <img src="/ScreenPart.png" />
+            </div>
+          </div>
+
+          {/* Card: TripPano */}
+          <div className="lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
+            <div>
+              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500 flex items-center justify-center text-white">
+                <MapPin size={20} />
+              </div>
+            </div>
+            <div>
+              <h4 className="font-bold text-[22px]">TripPano</h4>
+              <p className="text-sm text-[#999999] pb-4">
+                A user-friendly mobile app for seamless trip planning, booking, and travel itinerary management.
               </p>
               <img src="/ScreenPart.png" />
             </div>
@@ -2384,7 +2427,7 @@ export function Hero2() {
               "linear-gradient(180deg, rgba(67, 0, 255, 0) 0%, rgba(67, 0, 255, 0.08) 100%)",
           }}
         >
-          Lorem ipsum dolor
+          Empowering Digital Innovation for Forward-Thinking Businesses
         </span>
       </div>
 
@@ -2393,43 +2436,21 @@ export function Hero2() {
         ref={headingRef}
         className="text-center text-[26px] md:text-5xl font-bold mb-8 md:leading-tight"
       >
-        Lorem ipsum{" "}
+        Custom-Built Tech Solutions That Drive Growth From Concept to Code.<br />
         <span
           className="text-black px-2 py-1 rounded"
           style={{
-            background: "linear-gradient(90deg, #FF0000, #FF6666)",
+            background: "linear-gradient(90deg, #FFffff, #FF6666)",
             backgroundSize: "200% auto",
           }}
         >
-          dolor
-        </span>{" "}
-        sit amet
-        <span
-          className="ml-2 px-2 py-1 rounded text-black"
-          style={{
-            background: "linear-gradient(90deg, #FFD700, #FFEF8B)",
-            backgroundSize: "200% auto",
-          }}
-        >
-          consectetur.
-        </span>
-        <br />
-        Porta nibh ut commodo iaculis id.{" "}
-        <span className="relative font-bold">
-          Nisl felis.
-          <img
-            src="/vector1.png"
-            alt="line vector"
-            className="vector-line absolute  left-[2px] md:top-[40px] top-[20px]"
-          />
+          We Build Future-Ready Platforms
         </span>
       </h1>
 
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-        Lorem ipsum dolor sit amet consectetur. Risus commodo faucibus tortor
-        etiam molestie adipiscing amet. Orci sem ut tellus interdum egestas. Sed
-        euismod tristique semper et tellus
+        NeuroLogics builds smart, scalable digital platforms to help businesses grow and adapt. From strategy to deployment, we deliver custom tech solutions across web, mobile, and cloud. Turn your ideas into impactful digital experiences with our expert team.
       </p>
 
       {/* Buttons */}
@@ -2855,10 +2876,39 @@ export const AnalyticsLineChart = () => {
 };
 
 // services grid
+"use client";
+
+
+
+
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
 export function ServicesGrid() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      sectionRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <div className="max-w-[1280px] min-h-screen px-6 mx-auto">
-            <div className="text-center mb-8">
+    <div ref={sectionRef} className="max-w-[1280px] min-h-screen px-6 mx-auto">
+      <div className="text-center mb-8">
         <span
           className="inline-block px-5 py-3 rounded-full text-sm text-gray-500 text-[15px] font-medium"
           style={{
@@ -2866,22 +2916,21 @@ export function ServicesGrid() {
               "linear-gradient(180deg, rgba(67, 0, 255, 0) 0%, rgba(67, 0, 255, 0.08) 100%)",
           }}
         >
-          Lorem ipsum dolor
+          Our Services
         </span>
       </div>
 
       {/* heading */}
       <div className="text-center mb-6 w-full flex justify-center">
-        <h1 className="sm:text-[50px] text-[35px] leading-12 font-bold max-w-[892px]">
-          Lorem ipsum dolor sit amet consectetur.
+        <h1 className="sm:text-[50px] text-[35px] leading-16 font-bold max-w-[892px]">
+          Scalable 
+          <span className="text-black px-2 py-1 rounded" style={{ background: "linear-gradient(90deg, #FFffff, #FF6666)", backgroundSize: "200% auto", }} > Digital Solutions</span>That Grow With You
         </h1>
       </div>
 
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-        Lorem ipsum dolor sit amet consectetur. Risus commodo faucibus tortor
-        etiam molestie adipiscing amet. Orci sem ut tellus interdum egestas. Sed
-        euismod tristique semper et tellus
+        We build future-ready web, mobile, and cloud platforms tailored to your business goals. From strategy to deployment, NeuroLogics delivers innovation that drives success.
       </p>
 
       {/* Buttons */}
@@ -2892,37 +2941,28 @@ export function ServicesGrid() {
         <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
           Learn More
         </button>
-        </div>
+      </div>
 
       <div className="sm:grid hidden grid-rows-2  grid-cols-6 ">
-        <div className="  col-start-1 col-end-3 row-start-1 row-end-3 ">
-          <img
-            src="./img102.jpg"
-            className="w-full h-full object-cover"
-            alt=""
-          />
+        <div className="col-start-1 col-end-3 row-start-1 row-end-3">
+          <img src="./img102.jpg" className="w-full h-full object-cover" alt="" />
         </div>
-        <div className=" col-start-2 col-end-5 row-start-1 pb-4  px-4 row-end-2 bg-[#EDEDED] ">
+        <div className="col-start-2 col-end-5 row-start-1 pb-4 px-4 row-end-2 bg-[#EDEDED]">
           <ProgressChart />
         </div>
-        <div className=" row-start-1 row-end-3 col-start-5 col-end-8">
-          <img
-            src="./img101.jpg"
-            className="w-full h-full object-cover"
-            alt=""
-          />
+        <div className="row-start-1 row-end-3 col-start-5 col-end-8">
+          <img src="./img101.jpg" className="w-full h-full object-cover" alt="" />
         </div>
-        <div className=" row-start-2 row-end-3 col-start-3 col-end-6 relative z-14 px-4 pt-4 bg-[#EDEDED]">
+        <div className="row-start-2 row-end-3 col-start-3 col-end-6 relative z-14 px-4 pt-4 bg-[#EDEDED]">
           <AnalyticsChart />
         </div>
       </div>
 
-      <div className="grid sm:hidden  grid-rows-2  grid-cols-2 ">
-        <div className=" col-span-2 row-span-2 bg-[#EDEDED] ">
+      <div className="grid sm:hidden grid-rows-2 grid-cols-2 ">
+        <div className="col-span-2 row-span-2 bg-[#EDEDED]">
           <ProgressChart />
         </div>
-
-        <div className=" col-span-2 row-span-2 bg-[#EDEDED]">
+        <div className="col-span-2 row-span-2 bg-[#EDEDED]">
           <AnalyticsChart />
         </div>
       </div>
@@ -2978,22 +3018,20 @@ export function AboutHero() {
               "linear-gradient(180deg, rgba(67, 0, 255, 0) 0%, rgba(67, 0, 255, 0.08) 100%)",
           }}
         >
-          Lorem ipsum dolor
+          Driving Innovation
         </span>
       </div>
 
       {/* heading */}
       <div className="text-center mb-6 w-full flex justify-center">
         <h1 className="sm:text-[50px] text-[35px] leading-12 font-bold max-w-[892px]">
-          Lorem ipsum dolor sit amet consectetur.
+        Powering Innovation Through Custom Digital Solutions
         </h1>
       </div>
 
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-        Lorem ipsum dolor sit amet consectetur. Risus commodo faucibus tortor
-        etiam molestie adipiscing amet. Orci sem ut tellus interdum egestas. Sed
-        euismod tristique semper et tellus
+      At NeuroLogics, we specialize in building future-ready platforms that help businesses grow. With expert teams and cutting-edge tech, we turn bold ideas into smart, scalable digital experiences.
       </p>
 
         <div className="flex justify-center gap-4 mb-10">
@@ -3052,6 +3090,7 @@ export function AboutHero() {
 
 // footer
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 export const Footer = () => {
@@ -3084,13 +3123,13 @@ export const Footer = () => {
       >
         {/* Top section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 border-b border-white/30 pb-6">
-          <div>
+          <div className="max-w-[750px]">
             <h2 className="text-xl sm:text-2xl font-semibold text-black">
-              Lorem ipsum dolor sit amet consectetur.{" "}
-              <span className="text-violet-600 font-bold">Facilisis non.</span>
+            Smart solutions for modern businesses.{" "}
+              <span className="text-violet-600 font-bold">Built to scale, designed to perform.</span>
             </h2>
             <p className="text-gray-600 mt-2">
-              Lorem ipsum dolor sit amet consectetur.
+            We help you turn digital ideas into real-world impact—fast, secure, and future-ready.
             </p>
           </div>
           <div className="flex gap-4">
@@ -3140,7 +3179,7 @@ export const Footer = () => {
 
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-6 text-sm text-gray-500">
-          <p>© 2077 Untitled UI. All rights reserved.</p>
+          <p>© 2025 Neurologics. All rights reserved.</p>
           <div className="flex gap-4 mt-2 md:mt-0 text-gray-400 text-xl">
             <Instagram color="#999999" />
             <FacebookIcon color="#999999" />
@@ -3197,7 +3236,7 @@ export function WhoWeAre() {
           <div className="">
             <h1 className="text-[27px] font-bold">Who we are ? </h1>
             <p className="max-w-[508px] pt-[14px]">
-              Lorem ipsum dolor sit amet consectetur. Felis neque fermentum tellus consectetur imperdiet iaculis elit arcu.
+            We craft future-ready platforms that help businesses grow. From design to deployment, our solutions are smart, scalable, and built to last.
             </p>
           </div>
           <button className="p-[13px] bg-[#4300FF]  hover:bg-[#400FF] transition text-white rounded-xl">Contact Us</button>
@@ -3217,19 +3256,10 @@ export function WhoWeAre() {
           <div className="md:w-1/2 w-full">
             <h2 className="text-2xl font-semibold mb-2">Who We Are</h2>
             <p className="text-gray-600 mb-4">
-              Lorem ipsum dolor sit amet consectetur. Felis neque fermentum
-              tellus consectetur imperdiet iaculis elit arcu.
+            Driving digital excellence through innovation and custom technology.
             </p>
             <p className="text-gray-700">
-              Lorem ipsum dolor sit amet consectetur. Commodo nisl vulputate
-              purus tortor facilisis nulla odio quam. Purus placerat condimentum
-              diam placerat massa nibh. A nibh habitant aliquam facilisi. Arcu
-              parturient in orci mi amet ac non et quam at. Sem sit in interdum
-              habitant nec mollis. Orci laoreet metus sodales placerat lorem.
-              Massa porttitor eu faucibus rhoncus aliquet. Id scelerisque metus
-              sed ut massa sagittis integer eu. Viverra tristique suspendisse
-              pretium praesent, risus porttitor id adipiscing egestas sit
-              condimentum.
+              At NeuroLogics, we specialize in building scalable digital platforms that empower businesses to thrive in an ever-changing tech landscape. With over 5 years of experience and 25+ successful product launches, our team turns complex ideas into seamless web, mobile, and cloud solutions. We don’t just develop software—we deliver strategy, design, and long-term growth. From startups to enterprises, we partner with clients to create future-ready digital experiences that truly make an impact.
             </p>
           </div>
         </div>

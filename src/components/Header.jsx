@@ -8,13 +8,13 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef(null);
   const menuItemsRef = useRef(null);
+  const headerRef = useRef(null);
   const navigate = useNavigate();
-  const location = useLocation(); // for active route
+  const location = useLocation();
 
   useEffect(() => {
     if (mobileMenuRef.current && menuItemsRef.current) {
       if (isMobileMenuOpen) {
-        // Open
         gsap.set(mobileMenuRef.current, { display: "block" });
         gsap.fromTo(
           mobileMenuRef.current,
@@ -29,7 +29,6 @@ const Header = () => {
           { opacity: 1, y: 0, duration: 0.2, stagger: 0.1, delay: 0.1 }
         );
       } else {
-        // Close
         gsap.to(mobileMenuRef.current, {
           opacity: 0,
           y: -20,
@@ -45,13 +44,48 @@ const Header = () => {
     }
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let isAnimating = false;
+
+    const handleScroll = () => {
+      if (!headerRef.current || isAnimating) return;
+
+      const currentScrollY = window.scrollY;
+      const direction = currentScrollY > lastScrollY ? "down" : "up";
+
+      if (direction === "down" && currentScrollY > 50) {
+        isAnimating = true;
+        gsap.to(headerRef.current, {
+          y: -headerRef.current.offsetHeight,
+          duration: 0.4,
+          ease: "power2.out",
+          onComplete: () => (isAnimating = false),
+        });
+      } else if (direction === "up") {
+        isAnimating = true;
+        gsap.to(headerRef.current, {
+          y: 8, // top-2 = 0.5rem = 8px
+          duration: 0.4,
+          ease: "power2.out",
+          onComplete: () => (isAnimating = false),
+        });
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const handleNavClick = (path) => {
     navigate(path);
-    setIsMobileMenuOpen(false); // mobile menu auto-close
+    setIsMobileMenuOpen(false);
   };
 
   const navItems = [
@@ -63,7 +97,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed max-w-[1280px] mx-auto md:top-5 top-2 left-0 right-0 z-[1000000000] px-2 sm:px-4 lg:px-6">
+    <header
+      ref={headerRef}
+      className="fixed max-w-[1280px] mx-auto left-0 right-0 z-[1000000000] px-2 sm:px-4 lg:px-6"
+      style={{ top: "2px" }} // Initial top value as top-2 (0.5rem)
+    >
       <div className="bg-[#1E1E1E] overflow-x-hidden px-4 backdrop-blur-md rounded-2xl border border-slate-700/50 shadow-2xl">
         <div className="mx-auto">
           <div className="flex items-center justify-between h-16">

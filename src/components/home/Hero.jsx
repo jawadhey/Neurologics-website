@@ -2,11 +2,10 @@ import React, { useEffect, useRef } from "react";
 import vector from "/vector1.png";
 
 import gsap from "gsap";
+
 export default function Hero() {
   const headingRef = useRef(null);
-  // const cardRefs = useRef([]);
   const dolorRef = useRef(null);
-  const consecteturRef = useRef(null);
 
   useEffect(() => {
     // Animate heading
@@ -25,8 +24,6 @@ export default function Hero() {
       delay: 0.5,
       ease: "power3.out",
     });
-
-
   }, []);
 
   return (
@@ -43,13 +40,13 @@ export default function Hero() {
           Innovative platforms
         </span>
       </div>
-  
+
       {/* Main Heading */}
       <h1
         ref={headingRef}
         className="text-center text-[26px] md:text-5xl font-bold mb-8 md:leading-tight"
       >
-        Empowering{" "}
+        Your Strategic Tech Partner for{" "}
         <span
           className="text-black px-2 py-1 rounded"
           style={{
@@ -57,9 +54,9 @@ export default function Hero() {
             backgroundSize: "200% auto",
           }}
         >
-          innovation
+          Business-Driven
         </span>{" "}
-        with custom tech{" "}
+        Innovation. We architect reliable, scalable{" "}
         <span
           className="text-black px-2 py-1 rounded"
           style={{
@@ -67,15 +64,12 @@ export default function Hero() {
             backgroundSize: "200% auto",
           }}
         >
-          solutions
+          platforms
         </span>{" "}
-        — from concept to code, we build{" "}
+        — mobile, web, and AI — built to accelerate{" "}
         <span className="relative font-bold">
           <span ref={dolorRef} className="text-black">
-            future-ready
-          </span>{" "}
-          <span ref={consecteturRef} className="ml-2 text-black">
-            platforms.
+            success.
           </span>
           <img
             src={vector}
@@ -84,12 +78,12 @@ export default function Hero() {
           />
         </span>
       </h1>
-  
+
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
         NeuroLogics builds smart, scalable digital platforms to help businesses grow and adapt. From strategy to deployment, we deliver custom tech solutions across web, mobile, and cloud. Turn your ideas into impactful digital experiences with our expert team.
       </p>
-  
+
       {/* Buttons */}
       <div className="flex justify-center gap-4 mb-10">
         <button className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
@@ -101,9 +95,4 @@ export default function Hero() {
       </div>
     </section>
   );
-  
-  
-  
-  
-  
 }

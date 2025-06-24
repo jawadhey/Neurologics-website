@@ -1013,8 +1013,8 @@ export const DownloadSection = () => {
           {/* Stats */}
           <div className="flex flex-col py-4  sm:flex-row   gap-4 w-full justify-center md:justify-start">
             {[
-              { value: "10,000+", label: "App Downloads" },
-              { value: "500+", label: "Products Available" },
+              { value: "100+", label: "App Downloads" },
+              { value: "50+", label: "Products Available" },
               { value: "4.8", label: "Average Rating" },
             ].map((stat, index) => (
               <div
@@ -1348,7 +1348,7 @@ export function ContactHero() {
             className="absolute left-[50%] translate-x-[-50%] top-[30%]"
             alt=""
           />
-
+  
           {/* Floating Icons */}
           <img
             ref={(el) => (imageRefs.current[0] = el)}
@@ -1389,10 +1389,10 @@ export function ContactHero() {
           <img
             ref={(el) => (imageRefs.current[6] = el)}
             src="/Astar.png"
-            className="absolute top-[4%] right-[26%] w-[64px] sm:w-[80px]"
+            className="absolute top-[4%] right-[26%] w-[44px] sm:w-[60px]"
             alt=""
           />
-
+  
           {/* Hero Content */}
           <section className="max-w-[1240px] mx-auto bg-transparent relative pt-[100px] px-4 z-50">
             <div className="text-center pb-8">
@@ -1406,12 +1406,12 @@ export function ContactHero() {
                 Explore Our Tech Stack
               </span>
             </div>
-
+  
             <h1
               ref={titleRef}
               className="text-center text-[26px] md:text-5xl font-bold mb-8 md:leading-tight"
             >
-              Smart{" "}
+              Engineering{" "}
               <span
                 className="text-black px-2 py-1 rounded"
                 style={{
@@ -1419,9 +1419,9 @@ export function ContactHero() {
                   backgroundSize: "200% auto",
                 }}
               >
-                tech
+                Intelligent
               </span>{" "}
-              meets your
+              Solutions for
               <span
                 className="ml-2 px-2 py-1 rounded text-black"
                 style={{
@@ -1429,12 +1429,12 @@ export function ContactHero() {
                   backgroundSize: "200% auto",
                 }}
               >
-                bold vision.
+                Modern Businesses.
               </span>
-              <br />
-              Delivering results at the speed of{" "}
+          
+              Mobile & Web AI-integrated, and built to scale — from startup to {" "}
               <span className="relative font-bold">
-                innovation.
+                enterprise.
                 <img
                   src={"/vector1.png"}
                   alt="line vector"
@@ -1442,7 +1442,7 @@ export function ContactHero() {
                 />
               </span>
             </h1>
-
+  
             <p
               ref={paraRef}
               className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6"
@@ -1456,13 +1456,11 @@ export function ContactHero() {
       </div>
     </div>
   );
+  
 }
 
 
 // _________________________-
-
-gsap.registerPlugin(ScrollTrigger);
-
 
 import { BrainCog, LayoutTemplate, Code2, Rocket } from "lucide-react";
 
@@ -1473,8 +1471,10 @@ export const WorkingMethodology = () => {
   const glassRef = useRef(null);
   const redCircleRef = useRef(null);
   const purpleCircleRef = useRef(null);
+  const cardRefs = useRef([]);
 
   useEffect(() => {
+    // Entrance animation for section
     gsap.fromTo(
       sectionRef.current,
       { opacity: 0, y: 50 },
@@ -1491,6 +1491,7 @@ export const WorkingMethodology = () => {
       }
     );
 
+    // Glass image animation
     gsap.from(".kk", {
       opacity: 0,
       scale: 0.8,
@@ -1503,7 +1504,8 @@ export const WorkingMethodology = () => {
       },
     });
 
-    gsap.utils.toArray(".method-card").forEach((card, index) => {
+    // Cards scroll animation
+    cardRefs.current.forEach((card, index) => {
       gsap.from(card, {
         opacity: 0,
         y: 40,
@@ -1511,13 +1513,33 @@ export const WorkingMethodology = () => {
         delay: 0.2 + index * 0.2,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "restart none none reset",
+          trigger: card,
+          start: "top 90%",
+          toggleActions: "play none none reset",
         },
+      });
+
+      // Hover animations
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+          scale: 1.05,
+          boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.1)",
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          scale: 1,
+          boxShadow: "0px 10px 15px rgba(0, 0, 0, 0.05)",
+          duration: 0.3,
+          ease: "power2.out",
+        });
       });
     });
 
+    // Circles float animation
     gsap.to(redCircleRef.current, {
       x: 50,
       y: 30,
@@ -1544,12 +1566,31 @@ export const WorkingMethodology = () => {
     Deploy: <Rocket className="w-6 h-6" />,
   };
 
+  const cardsData = [
+    {
+      title: "Ideate",
+      desc: "We kick off by diving deep into your business goals, market needs, and user expectations—laying a strong strategic foundation for the product ahead.",
+    },
+    {
+      title: "Design",
+      desc: "Our team crafts thoughtful, user-centered interfaces that not only look great but also enhance usability and engagement across every screen.",
+    },
+    {
+      title: "Develop",
+      desc: "Using modern frameworks and best coding practices, we build secure, scalable, and high-performance web and mobile applications that grow with your business.",
+    },
+    {
+      title: "Deploy",
+      desc: "With careful testing and optimization, we launch your product smoothly—followed by continuous support and improvements to keep it running at its best.",
+    },
+  ];
+
   return (
     <section
       ref={sectionRef}
       className="relative bg-gray-100 overflow-hidden py-20 px-4 md:px-16"
     >
-      {/* Circles */}
+      {/* Floating Circles */}
       <div
         ref={redCircleRef}
         className="absolute w-72 h-72 bg-[#FF3B30] rounded-full top-[-60px] left-[-60px] opacity-60 z-0"
@@ -1560,7 +1601,7 @@ export const WorkingMethodology = () => {
       ></div>
 
       <div className="max-w-[1280px] mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
-        {/* KK Image */}
+        {/* Glass Image */}
         <img
           ref={glassRef}
           src="/glass.png"
@@ -1574,31 +1615,23 @@ export const WorkingMethodology = () => {
             Our Methodology
           </h2>
           <p className="text-sm text-[#1E1E1E] mb-4 max-w-[572px]">
-            At NeuroLogics, we believe that a successful digital product is born from a clear, well-structured process. Our methodology is designed to align with your business goals at every stage—from the first spark of an idea to post-launch optimization. We work closely with you to understand your needs, transform them into smart designs, develop with precision, and deploy solutions that are reliable, scalable, and future-ready. It's a collaborative, end-to-end approach that ensures innovation, efficiency, and long-term impact.
+            At NeuroLogics, we believe that a successful digital product is born
+            from a clear, well-structured process. Our methodology is designed to
+            align with your business goals at every stage—from the first spark of
+            an idea to post-launch optimization. We work closely with you to
+            understand your needs, transform them into smart designs, develop with
+            precision, and deploy solutions that are reliable, scalable, and
+            future-ready. It's a collaborative, end-to-end approach that ensures
+            innovation, efficiency, and long-term impact.
           </p>
 
+          {/* Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              {
-                title: "Ideate",
-                desc: "We kick off by diving deep into your business goals, market needs, and user expectations—laying a strong strategic foundation for the product ahead.",
-              },
-              {
-                title: "Design",
-                desc: "Our team crafts thoughtful, user-centered interfaces that not only look great but also enhance usability and engagement across every screen.",
-              },
-              {
-                title: "Develop",
-                desc: "Using modern frameworks and best coding practices, we build secure, scalable, and high-performance web and mobile applications that grow with your business.",
-              },
-              {
-                title: "Deploy",
-                desc: "With careful testing and optimization, we launch your product smoothly—followed by continuous support and improvements to keep it running at its best.",
-              },
-            ].map((card, i) => (
+            {cardsData.map((card, i) => (
               <div
                 key={i}
-                className="method-card bg-white rounded-xl shadow-md px-4 py-6 flex flex-col items-center text-center"
+                ref={(el) => (cardRefs.current[i] = el)}
+                className="method-card bg-white rounded-xl shadow-md px-4 py-6 flex flex-col items-center text-center cursor-pointer transition-all"
               >
                 <div className="bg-violet-600 text-white rounded-full p-3 mb-4 flex items-center justify-center">
                   {icons[card.title]}
@@ -1615,7 +1648,6 @@ export const WorkingMethodology = () => {
     </section>
   );
 };
-
 
 // contact
 
@@ -2109,8 +2141,6 @@ export function WhoWeAreSection2() {
 
 // team
 
-"use client";
-
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -2119,31 +2149,47 @@ gsap.registerPlugin(ScrollTrigger);
 const teamData = [
   {
     name: "Muhammad Jawad",
-    image: "/jawad.jpg",
-    role: "CEO",
+    image: "/jawad.jpeg",
+    role: "CEO Islamabad",
+    country: "pakistan",
   },
   {
     name: "Saima Tamaz",
     image: "/saimaTamaz.jpeg",
     role: "COO Islamabad",
+    country: "pakistan",
   },
   {
     name: "Tahir Farooq",
     image: "/tahirFarooq.jpeg",
     role: "Business Development Officer France",
+    country: "france",
   },
   {
     name: "Muhammad Ehsan",
     image: "/muhammadEhsan.jpeg",
     role: "Business Development Officer Germany",
+    country: "germany",
+  },
+  {
+    name: "Muhammad Anees",
+    image: "/anees.jpeg",
+    role: "Business Development Officer Australia",
+    country: "australia",
   },
 ];
 
+const flagMap = {
+  pakistan: "🇵🇰",
+  france: "🇫🇷",
+  germany: "🇩🇪",
+  australia: "🇦🇺",
+};
+
 export function ExpertTeamSection() {
   const sectionRef = useRef(null);
-  const containerRef = useRef(null);
-  const cardRefs = useRef([]);
-  const [scrollIndex, setScrollIndex] = useState(0);
+  const trackRef = useRef(null);
+  const animationRef = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -2161,34 +2207,44 @@ export function ExpertTeamSection() {
       }
     );
 
-    cardRefs.current.forEach((card, i) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          delay: i * 0.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 90%",
-          },
-        }
-      );
+    const track = trackRef.current;
+    const distance = track.scrollWidth / 2;
+
+    animationRef.current = gsap.to(track, {
+      x: `-=${distance}`,
+      ease: "none",
+      duration: 40,
+      repeat: -1,
     });
+
+    // Pause on hover
+    track.addEventListener("mouseenter", () => {
+      animationRef.current.pause();
+    });
+
+    track.addEventListener("mouseleave", () => {
+      animationRef.current.resume();
+    });
+
+    return () => {
+      animationRef.current.kill();
+    };
   }, []);
 
-  const handleScroll = (direction) => {
-    const container = containerRef.current;
-    const cardWidth = container.firstChild.offsetWidth + 16;
-    const visibleCards = Math.floor(container.offsetWidth / cardWidth);
-    const maxIndex = teamData.length - visibleCards;
-    let newIndex = direction === "next" ? scrollIndex + 1 : scrollIndex - 1;
-    newIndex = Math.max(0, Math.min(newIndex, maxIndex));
-    setScrollIndex(newIndex);
-    container.scrollTo({ left: newIndex * cardWidth, behavior: "smooth" });
+  const handleManualScroll = (direction) => {
+    const track = trackRef.current;
+    const step = 280 + 16; // card width + gap
+    const currentX = gsap.getProperty(track, "x");
+    const offset = direction === "next" ? -step : step;
+
+    animationRef.current.pause();
+
+    gsap.to(track, {
+      x: currentX + offset,
+      duration: 0.5,
+      ease: "power2.out",
+      onComplete: () => animationRef.current.resume(),
+    });
   };
 
   return (
@@ -2196,22 +2252,25 @@ export function ExpertTeamSection() {
       <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">
         <div>
           <span className="text-sm text-gray-500 bg-slate-100 px-4 py-2 rounded-full inline-block mb-2">
-            Executive Team
+            Founding Members
           </span>
-          <h2 className="text-3xl font-bold mb-2">Our Expert Team</h2>
+          <h2 className="text-3xl font-bold mb-2">Our Founding Members</h2>
           <p className="text-gray-600 max-w-xl">
-            Meet the minds behind NeuroLogics. Our skilled team blends creativity, strategy, and tech to craft impactful digital platforms.
+            Meet the minds behind NeuroLogics. Our skilled team blends creativity,
+            strategy, and tech to craft impactful digital platforms.
           </p>
         </div>
+
+        {/* Arrows */}
         <div className="flex gap-3">
           <button
-            onClick={() => handleScroll("prev")}
+            onClick={() => handleManualScroll("prev")}
             className="bg-gray-200 p-2 rounded-full hover:bg-gray-300"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
-            onClick={() => handleScroll("next")}
+            onClick={() => handleManualScroll("next")}
             className="bg-[#5A00F0] text-white p-2 rounded-full hover:bg-purple-700"
           >
             <ChevronRight className="w-5 h-5" />
@@ -2219,124 +2278,35 @@ export function ExpertTeamSection() {
         </div>
       </div>
 
-      <div
-        ref={containerRef}
-        className="flex gap-4 overflow-hidden no-scrollbar scroll-smooth"
-        style={{ scrollbarWidth: "none" }}
-      >
-        {teamData.map((member, idx) => (
-          <div
-            ref={(el) => (cardRefs.current[idx] = el)}
-            key={idx}
-            className="w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-          >
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-full h-60 object-cover object-center"
-            />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-800">
-                {member.name}
-              </h3>
-              <p className="text-sm text-gray-500">{member.role}</p>
+      {/* Infinite Track */}
+      <div className="relative overflow-hidden w-full">
+        <div ref={trackRef} className="flex gap-4 w-max">
+          {[...teamData, ...teamData].map((member, idx) => (
+            <div
+              key={idx}
+              className="relative w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            >
+              {/* Flag */}
+              <div className="absolute flex items-center justify-center bottom-3 right-3 w-8 h-8 rounded-full overflow-hidden border border-white shadow-md bg-white text-lg">
+                <p>{flagMap[member.country]}</p>
+              </div>
+
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-full h-60  object-top object-cover object-center"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-gray-500">{member.role}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
-  );
-}
-
-
-
-// our projects
-"use client";
-import { ShoppingCart, Ship, Truck, MapPin } from "lucide-react";
-
-export function OurProjects() {
-  return (
-    <div className="bg-white py-4 pb-6">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <div className="flex flex-col items-center py-8">
-          <h1 className="text-2xl font-bold py-4">Our Projects</h1>
-          <p className="max-w-[508px] text-center">
-            Explore how NeuroLogics transforms ideas into impactful digital platforms tailored to real-world business needs.
-          </p>
-        </div>
-
-        {/* cards grid */}
-        <div className="min-h-[80vh] grid grid-cols-4 gap-4">
-          <div className="bg-blue-300 lg:col-span-2 row-span-2 sm:col-span-2 col-span-4">
-            <img src="/img900.jpg" className="h-full object-cover" alt="" />
-          </div>
-
-          {/* Card: Asian Cart */}
-          <div className="lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col rounded-xl gap-4 bg-[#DEDEDE]">
-            <div>
-              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500 flex items-center justify-center text-white">
-                <ShoppingCart size={20} />
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold text-[22px]">Asain Cart</h4>
-              <p className="text-sm text-[#999999] pb-4">
-                An intuitive eCommerce platform designed to sell and manage a wide variety of authentic spices online.
-              </p>
-              <img src="/ScreenPart.png" />
-            </div>
-          </div>
-
-          {/* Card: Oil Shipper */}
-          <div className="lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
-            <div>
-              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500 flex items-center justify-center text-white">
-                <Ship size={20} />
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold text-[22px]">Oil Shipper</h4>
-              <p className="text-sm text-[#999999] pb-4">
-                A smart logistics system built to streamline oil shipping operations with real-time tracking and management.
-              </p>
-              <img src="/ScreenPart.png" />
-            </div>
-          </div>
-
-          {/* Card: Tanker */}
-          <div className="lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
-            <div>
-              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500 flex items-center justify-center text-white">
-                <Truck size={20} />
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold text-[22px]">Tanker</h4>
-              <p className="text-sm text-[#999999] pb-4">
-                A robust trucking management solution developed to optimize fleet operations and logistics workflows.
-              </p>
-              <img src="/ScreenPart.png" />
-            </div>
-          </div>
-
-          {/* Card: TripPano */}
-          <div className="lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 flex flex-col gap-4 rounded-xl bg-[#DEDEDE]">
-            <div>
-              <div className="w-[48px] h-[48px] rounded-2xl bg-red-500 flex items-center justify-center text-white">
-                <MapPin size={20} />
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold text-[22px]">TripPano</h4>
-              <p className="text-sm text-[#999999] pb-4">
-                A user-friendly mobile app for seamless trip planning, booking, and travel itinerary management.
-              </p>
-              <img src="/ScreenPart.png" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -2485,16 +2455,23 @@ export function Hero2() {
           alt=""
         />
 
-        <img
-          src="/frame31.png"
-          className="absolute left-[24%] top-[10%]  sm:top-[29%] z-10"
-          alt=""
-        />
-        <img
-          src="/frame30.png"
-          className="absolute left-[56%] top-[34%] z-10"
-          alt=""
-        />
+<div className=" w-full h-full">
+  {/* Left Bubble */}
+  <div className="absolute left-[20%] top-[10%] sm:top-[29%] z-10">
+    <div className="bg-[#5E2EFF] text-white text-sm sm:text-base font-medium px-6 py-2 rounded-full shadow-lg relative">
+      Smart Digital Platforms
+      <span className="absolute bottom-[-6px] left-[90%] w-3 h-3 bg-[#5E2EFF] rounded-full shadow-md"></span>
+    </div>
+  </div>
+
+  {/* Right Bubble */}
+  <div className="absolute left-[56%] top-[34%] z-10">
+    <div className="bg-[#F3F3F3] text-black text-sm sm:text-base font-medium px-6 py-2 rounded-full shadow-lg relative">
+      Built to Scale
+      <span className="absolute bottom-[-6px] left-[90%] w-3 h-3 bg-[#F3F3F3] rounded-full shadow-md"></span>
+    </div>
+  </div>
+</div>
 
         {/* Large images */}
         <img src="/f20.png" alt="" />
@@ -2543,98 +2520,7 @@ export function AsianCard() {
           <img src="./cards.png" alt="Cards" className="w-full" />
         </div>
 
-        {/* Form + Image Section */}
-        <div className="w-full md:max-w-[59vw] bg-[#7537ea] ">
-          <div className="flex flex-col md:flex-row w-full">
-            {/* Form Side */}
-            <div
-              ref={formRef}
-              className="md:flex-1 p-4 overflow-auto"
-              style={{ maxHeight: "100%" }}
-            >
-              <div className="bg-slate-50 rounded-2xl w-fit py-4 px-4 text-sm flex items-center justify-center mb-3">
-                Touch us Out
-              </div>
-              <h2 className="text-white text-xl font-semibold mb-4">
-                Start With a message
-              </h2>
-
-              <form action="" className="space-y-4">
-                {/* Fullname */}
-                <div>
-                  <label className="block text-white text-sm mb-1">
-                    Fullname
-                  </label>
-                  <input
-                    type="text"
-                    name="fullname"
-                    placeholder="Your name"
-                    className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 text-white placeholder-white/60 focus:outline-none"
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label className="block text-white text-sm mb-1">Email</label>
-                  <input
-                    type="text"
-                    name="email"
-                    placeholder="Your email"
-                    className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 text-white placeholder-white/60 focus:outline-none"
-                  />
-                </div>
-
-                {/* Phone & City */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-white text-sm mb-1">
-                      Phone number
-                    </label>
-                    <input
-                      type="text"
-                      name="phonenumber"
-                      placeholder="Your phone"
-                      className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 text-white placeholder-white/60 focus:outline-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-white text-sm mb-1">
-                      City
-                    </label>
-                    <input
-                      type="text"
-                      name="city"
-                      placeholder="Your city"
-                      className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 text-white placeholder-white/60 focus:outline-none"
-                    />
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label className="block text-white text-sm mb-1">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    rows="4"
-                    placeholder="Write your message..."
-                    className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 text-white placeholder-white/60 focus:outline-none resize-none"
-                  ></textarea>
-                </div>
-              </form>
-            </div>
-
-            {/* Image Side */}
-            <div className="hidden md:flex  md:flex-1 max-h-full">
-              <img
-                src="/group.jpeg"
-                className="w-full h-full object-cover rounded-b-xl md:rounded-none md:rounded-r-xl"
-                alt="Group"
-              />
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
   );
@@ -2742,7 +2628,7 @@ const performanceData = [
 
 export const PerformanceChart = () => {
   return (
-    <div className="bg-purple-800 text-white p-4 rounded-2xl w-[371px]">
+    <div className="bg-purple-800 text-white p-4 rounded-2xl  w-[280px]  md:w-[370px]">
       <div className="text-xs bg-purple-500 inline-block px-2 py-1 rounded-full mb-2">
         PERFORMANCE
       </div>
@@ -2818,7 +2704,7 @@ const skillsData = [
 
 export const SkillsRadarChart = () => {
   return (
-    <div className="bg-lime-200 text-black p-4 rounded-2xl w-[285px]">
+    <div className="bg-lime-200 text-black p-4 rounded-2xl w-[160px]  md:w-[285px]">
       <div className="text-xl font-semibold mb-2">Skill set</div>
       <ResponsiveContainer width="100%" height={250}>
         <RadarChart cx="50%" cy="50%" outerRadius="80%" data={skillsData}>
@@ -2855,7 +2741,7 @@ const analyticsData = [
 
 export const AnalyticsLineChart = () => {
   return (
-    <div className="bg-white text-black p-4 rounded-xl  w-[371px] h-[184px] shadow">
+    <div className="bg-white text-black p-4 rounded-xl  w-[301px]   md:w-[371px] h-[184px] shadow">
       <div className="flex justify-between items-center mb-2">
         <h3 className="text-lg font-semibold">Analytics</h3>
         <span className="text-xs text-gray-500">2024–2025</span>
@@ -3023,8 +2909,19 @@ export function AboutHero() {
 
       {/* heading */}
       <div className="text-center mb-6 w-full flex justify-center">
-        <h1 className="sm:text-[50px] text-[35px] leading-12 font-bold max-w-[892px]">
-        Powering Innovation Through Custom Digital Solutions
+        <h1 className="sm:text-[50px] text-[35px] leading-14 font-bold max-w-[892px]">
+        Powering Innovation Through Custom 
+        <span
+          className="text-black px-2 py-1 rounded"
+          style={{
+            background: "linear-gradient(90deg, #FFffff, #FF6666)",
+            backgroundSize: "200% auto",
+          }}
+        >
+          Digital Solutions
+        </span>
+        
+        
         </h1>
       </div>
 
@@ -3052,7 +2949,7 @@ export function AboutHero() {
           <PerformanceChart />
         </div>
         <div
-          className="absolute sm:left-[25%] sm:top-[30%] top-[31%] left-[12%]"
+          className="absolute -left-[25%]   sm:left-[25%] sm:top-[30%] top-[31%] left-[12%]"
           ref={(el) => (cardRefs.current[1] = el)}
         >
           <TrendsChart />
@@ -3145,7 +3042,7 @@ export const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pt-8 ">
           {/* Logo and description */}
           <div className="flex flex-col gap-2 max-w-sm pb-6">
-            <img src="/logo.png" alt="logo" className="w-24" />
+            <img src="/logoblack.svg" alt="logo" className="w-24" />
             <p className="text-sm text-gray-700">
               Design amazing digital experiences that create more happy in the
               world.
@@ -3263,6 +3160,156 @@ export function WhoWeAre() {
           </div>
         </div>
       </section>
+    </div>
+  );
+}
+
+
+
+
+
+
+
+// our projects
+
+import { ShoppingCart, Ship, Truck, MapPin } from "lucide-react";
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+export function OurProjects() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".project-card");
+
+      // Scroll animation
+      gsap.from(cards, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reset",
+        },
+      });
+
+      gsap.from(".main-image", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reset",
+        },
+      });
+
+      // Hover animation for each card
+      cards.forEach((card) => {
+        const imageWrapper = card.querySelector(".image-wrapper");
+
+        gsap.set(imageWrapper, { height: 0, opacity: 0, overflow: "hidden" });
+
+        card.addEventListener("mouseenter", () => {
+          gsap.to(card, {
+            boxShadow: "0px 25px 60px rgba(0, 0, 0, 0.06)",
+            scale: 1.015,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+
+          if (imageWrapper) {
+            gsap.to(imageWrapper, {
+              height: "auto",
+              opacity: 1,
+              duration: 0.4,
+              ease: "power2.out",
+            });
+          }
+        });
+
+        card.addEventListener("mouseleave", () => {
+          gsap.to(card, {
+            boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.03)",
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+
+          if (imageWrapper) {
+            gsap.to(imageWrapper, {
+              height: 0,
+              opacity: 0,
+              duration: 0.4,
+              ease: "power2.inOut",
+            });
+          }
+        });
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div ref={sectionRef} className="bg-white py-4 pb-6">
+      <div className="max-w-[1280px] mx-auto px-6">
+        <div className="flex flex-col items-center py-8">
+          <h1 className="text-2xl font-bold py-4">Our Projects</h1>
+          <p className="max-w-[508px] text-center">
+            Explore how NeuroLogics transforms ideas into impactful digital platforms tailored to real-world business needs.
+          </p>
+        </div>
+
+        <div className="min-h-[30vh] grid grid-cols-4 gap-4">
+          {/* Large Image */}
+          <div className="bg-blue-300 lg:col-span-2 row-span-2 rounded-xl overflow-hidden sm:col-span-2 col-span-4 main-image">
+            <img src="/img900.jpg" className="h-[639px] w-full object-cover" alt="" />
+          </div>
+
+          {/* Reusable Cards */}
+          {[
+            { title: "Asain Cart", icon: <ShoppingCart size={20}  />  ,  img:"/ScreenPart.png"   },
+            { title: "Oil Shipper", icon: <Ship size={20}  />  ,  img:"/OilShipper.png"    },
+            { title: "Tanker", icon: <Truck size={20} /> ,   img:"/Tanker.png"  },
+            { title: "TripPano", icon: <MapPin size={20} /> ,   img:"/Body.png"   },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="project-card lg:col-span-1 sm:col-span-2 col-span-4 px-5 pt-5 pb-4 flex flex-col justify-between rounded-xl gap-4 bg-[#DEDEDE]"
+            >
+              <div>
+                <div className="w-[48px] h-[48px] rounded-2xl bg-violet-600 flex items-center justify-center text-white">
+                  {item.icon}
+                </div>
+                <h4 className="font-bold text-[22px] mt-3">{item.title}</h4>
+                <p className="text-sm text-[#999999]">
+                  A powerful solution designed to handle digital operations for {item.title}.
+                </p>
+              </div>
+
+              {/* Image at bottom */}
+              <div className="image-wrapper mt-3">
+                <img
+                  src= {item?.img}
+                  
+                  
+                  className={`card-image ${index === 3 ? "w-[80px]" : "w-full"} rounded-lg`}
+                  alt=""
+                />
+              </div>
+             
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

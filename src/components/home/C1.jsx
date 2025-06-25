@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 // import { useNavigate } from "react-router-dom";
+
+const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 import { useNavigate } from "react-router-dom";
 export const ProgressCard = () => {
   const departments = ["UI", "UX", "DS", "HR", "QA"];
@@ -1743,6 +1747,8 @@ export const ContactSection = () => {
 export function Contact() {
   const sectionRef = useRef(null);
   const handRef = useRef(null);
+  const formRef = useRef(null)
+  const [loading , setLoading ] =  useState(false)
 
   useEffect(() => {
     // Fade up animation on view
@@ -1772,8 +1778,37 @@ export function Contact() {
   }, []);
   const navigate = useNavigate()
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+  
+    emailjs
+      .sendForm(
+        serviceId,          
+        templateId,         
+        formRef.current,   
+        publicKey           
+      )
+      .then(
+        () => {
+          setLoading(false);
+          toast.success("Message sent successfully!");
+          formRef.current.reset();
+        },
+        (error) => {
+          setLoading(false);
+          console.error("Email send failed:", error);
+          toast.error("Failed to send message. Please try again.");
+        }
+      );
+  };
+  
+
+
+
   return (
     <div className="bg-gradient-to-r from-gray-100 to-gray-200 p-6">
+      <ToastContainer position="top-right" autoClose={3000} />
       <section
         ref={sectionRef}
         className="min-h-screen max-w-[1280px] mx-auto flex items-center justify-center "
@@ -1783,9 +1818,9 @@ export function Contact() {
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-bold">Contact Us</h2>
             <p className="text-sm text-gray-600">
-            Have a project in mind or just want to connect? We’re here to help. Let’s build something great together—reach out today!
+              Have a project in mind or just want to connect? We’re here to help. Let’s build something great together—reach out today!
             </p>
-            <button onClick={()=>{navigate("/about-us")}}  className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700">
+            <button onClick={() => { navigate("/about-us") }} className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700">
               Learn More
             </button>
             <div className="mt-6 flex justify-end">
@@ -1801,31 +1836,49 @@ export function Contact() {
           {/* Right Content - Contact Form */}
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-bold">Send us a Message</h2>
-            <form className="space-y-3">
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="space-y-3"
+            >
               <input
                 type="text"
+                name="first_name"
                 placeholder="Full Name"
+                required
                 className="w-full px-4 py-2  bg-gradient-to-b from-gray-50 to-white  border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
               />
               <input
                 type="text"
+                name="phone"
                 placeholder="Phone Number"
                 className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
+                required
                 className="w-full px-4 py-2 border border-gray-300  bg-gradient-to-b from-gray-50 to-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
               />
               <textarea
+                name="message"
                 placeholder="Message"
+                required
                 className="w-full px-4 py-2 border border-gray-300  bg-gradient-to-b from-gray-50 to-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 min-h-[100px]"
               ></textarea>
               <button
                 type="submit"
-                className="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700"
+                className="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700 flex items-center justify-center"
+                disabled={loading}
               >
-                Send Message
+                {loading ? (
+                  <svg className="animate-spin h-5 w-5 mr-2 text-white" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                  </svg>
+                ) : null}
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
@@ -1835,12 +1888,19 @@ export function Contact() {
   );
 }
 
+
 // \map
+// ... existing code ...
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function ContactMapSection() {
   const sectionRef = useRef(null);
+  const formRef = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // Fade up animation on view
@@ -1860,96 +1920,138 @@ export function ContactMapSection() {
     );
   }, []);
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        serviceId,
+        templateId,
+        formRef.current,
+        publicKey      
+      )
+      .then(
+        () => {
+          setLoading(false);
+          toast.success("Message sent successfully!");
+          formRef.current.reset();
+        },
+        () => {
+          setLoading(false);
+          toast.error("Failed to send message. Please try again.");
+        }
+      );
+  };
+
   return (
-    <section
-      ref={sectionRef}
-      className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-100 to-gray-200 mdp-6 sm:px-2"
-    >
-      <div className="flex flex-col md:flex-row gap-8 bg-white rounded-2xl shadow-xl p-4 w-full max-w-6xl">
-        {/* Left Content - Map */}
-        <div className="flex-1 space-y-4">
-          <h2 className="text-2xl font-bold">Find Us</h2>
-          {/* <iframe
-            title="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19804.247331735055!2d-0.1285905!3d51.5032975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c1d0c69755%3A0x912496d9c8440f11!2sLondon%20Eye!5e0!3m2!1sen!2suk!4v1717583891427!5m2!1sen!2suk"
-            className="w-full md:h-[609px]  rounded-md border"
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe> */}
-          <iframe
-          title="map"
-          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13303.682358795668!2d73.10540909435271!3d33.529450209223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAster%206%2C%20Riverview%20hill%20%2C%20Bahria%20%20Phase%207%20%2C%20Rwalpindi%20Pakistan%20!5e0!3m2!1sen!2s!4v1750664296985!5m2!1sen!2s"
-          className="w-full md:h-[609px]  rounded-md border"
-          allowFullScreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-700 pt-2">
-            <div className="flex items-center gap-2  ">
-              <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-              info@NeuroCode.com 
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-              +923325281886 
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-              +92312508859
+    <>
+      <ToastContainer position="top-right" autoClose={3000} />
+      <section
+        ref={sectionRef}
+        className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-100 to-gray-200 mdp-6 sm:px-2"
+      >
+        <div className="flex flex-col md:flex-row gap-8 bg-white rounded-2xl shadow-xl p-4 w-full max-w-6xl">
+          {/* Left Content - Map */}
+          <div className="flex-1 space-y-4">
+            <h2 className="text-2xl font-bold">Find Us</h2>
+            <iframe
+              title="map"
+              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13303.682358795668!2d73.10540909435271!3d33.529450209223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAster%206%2C%20Riverview%20hill%20%2C%20Bahria%20%20Phase%207%20%2C%20Rwalpindi%20Pakistan%20!5e0!3m2!1sen!2s!4v1750664296985!5m2!1sen!2s"
+              className="w-full md:h-[609px] rounded-md border"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-700 pt-2">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                contact@neurocodetech.com
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                +923325281886
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                +92312508859
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Right Content - Contact Form */}
-        <div className="flex-1 space-y-4">
-          <h2 className="text-2xl font-bold">Contact Us</h2>
-          <p className="text-sm text-gray-600">
-          Ready to bring your vision to life? Fill out the form below and our expert team will connect with you to discuss how NeuroCode can craft the perfect digital solution for your business.
-
-
-          </p>
-          <form className="space-y-3 flex flex-col gap-4">
-            <input
-              type="text"
-              placeholder="First Name"
-              className="w-full px-4 py-2  bg-gradient-to-b from-gray-50 to-white  border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              className="w-full px-4 py-2 bg-gradient-to-b from-gray-50 to-white  border  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="w-full px-4 py-2 border   bg-gradient-to-b from-gray-50 to-white  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-            <input
-              type="text"
-              placeholder="Address"
-              className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full px-4 py-2 border  bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-            <textarea
-              placeholder="Message"
-              className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 min-h-[100px]"
-            ></textarea>
-            <button
-              type="submit"
-              className="bg-purple-600 text-white  px-6 py-2 rounded-md hover:bg-purple-700"
+          {/* Right Content - Contact Form */}
+          <div className="flex-1 space-y-4">
+            <h2 className="text-2xl font-bold">Contact Us</h2>
+            <p className="text-sm text-gray-600">
+              Ready to bring your vision to life? Fill out the form below and our
+              expert team will connect with you to discuss how NeuroCode can
+              craft the perfect digital solution for your business.
+            </p>
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="space-y-3 flex flex-col gap-4"
             >
-              Send Message
-            </button>
-          </form>
+              <input
+                type="text"
+                name="first_name"
+                placeholder="First Name"
+                required
+                className="w-full px-4 py-2 bg-gradient-to-b from-gray-50 to-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              />
+              <input
+                type="text"
+                name="last_name"
+                placeholder="Last Name"
+                required
+                className="w-full px-4 py-2 bg-gradient-to-b from-gray-50 to-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              />
+              <input
+                type="text"
+                name="address"
+                placeholder="Address"
+                className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+                className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+              />
+              <textarea
+                name="message"
+                placeholder="Message"
+                required
+                className="w-full px-4 py-2 border bg-gradient-to-b from-gray-50 to-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 min-h-[100px]"
+              ></textarea>
+              <button
+                type="submit"
+                className="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700 flex items-center justify-center"
+                disabled={loading}
+              >
+                {loading ? (
+                  <svg className="animate-spin h-5 w-5 mr-2 text-white" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+                  </svg>
+                ) : null}
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
-
+// ... existing code ...
 // 22
 
 gsap.registerPlugin(ScrollTrigger);
@@ -2167,7 +2269,7 @@ const teamData = [
     country: "france",
   },
   {
-    name: "Muhammad Ehsan",
+    name: "Ehsan Tarar",
     image: "/muhammadEhsan.jpeg",
     role: "Business Development Officer Germany",
     country: "germany",

@@ -81,7 +81,7 @@ export default function Hero() {
 
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-        NeuroLogics builds smart, scalable digital platforms to help businesses grow and adapt. From strategy to deployment, we deliver custom tech solutions across web, mobile, and cloud. Turn your ideas into impactful digital experiences with our expert team.
+        NeuroCode builds smart, scalable digital platforms to help businesses grow and adapt. From strategy to deployment, we deliver custom tech solutions across web, mobile, and cloud. Turn your ideas into impactful digital experiences with our expert team.
       </p>
 
       {/* Buttons */}

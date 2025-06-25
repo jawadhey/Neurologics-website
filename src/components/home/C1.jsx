@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import { useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 export const ProgressCard = () => {
   const departments = ["UI", "UX", "DS", "HR", "QA"];
   const levels = ["Trainee", "3–5 years", "5+ years"];
@@ -444,7 +444,7 @@ export const ServicesSection = () => {
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-2">Our Services</h2>
         <p className="text-gray-600 max-w-xl mx-auto mb-10">
-          From design to deployment, our services are built to accelerate your digital success. Explore how NeuroLogics helps businesses thrive with smart, scalable tech solutions.
+          From design to deployment, our services are built to accelerate your digital success. Explore how NeuroCode helps businesses thrive with smart, scalable tech solutions.
         </p>
 
         <div className="sm:grid sm:grid-cols-3 sm:grid-rows-2 sm:gap-2 flex flex-col gap-4">
@@ -455,7 +455,7 @@ export const ServicesSection = () => {
             <img src="./screensm.jpg" alt="Macbook" />
             <h3 className="font-semibold text-lg mb-2">Complete Digital Solutions Under One Roof</h3>
             <p className="text-sm text-gray-600">
-              At NeuroLogics, we don't just offer services—we deliver end-to-end digital transformation. From intuitive design to full-stack development and growth strategies, we power every stage of your digital journey.
+              At NeuroCode, we don't just offer services—we deliver end-to-end digital transformation. From intuitive design to full-stack development and growth strategies, we power every stage of your digital journey.
             </p>
           </div>
 
@@ -507,7 +507,7 @@ export const ServicesSection = () => {
             </div>
             <h3 className="font-semibold text-left text-lg">Product-Based Services</h3>
             <p className="text-left text-sm text-gray-600">
-              Offering tailored support, integration, and enhancement for NeuroLogics' proprietary tech solutions.
+              Offering tailored support, integration, and enhancement for NeuroCode' proprietary tech solutions.
             </p>
           </div>
         </div>
@@ -655,7 +655,6 @@ export const TechIconsSpread = () => {
     { src: "/adobe_illustrator.png", name: "Adobe Illustrator" },
     { src: "/android.png", name: "Android" },
     { src: "/adobe_xd.png", name: "Adobe XD" },
-    { src: "/adobe_photoshop.png", name: "Adobe Photoshop" },
   ];
 
   useEffect(() => {
@@ -778,7 +777,7 @@ export const TechIconsSpread = () => {
               Cutting-Edge Technologies and Proven Techniques That Power Every Project
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">
-              We leverage the latest tools, frameworks, and industry best practices to build high-performance digital platforms. At NeuroLogics, staying ahead of the curve is part of our DNA. We use modern technologies like React, Node.js, Flutter, Python, and cloud services such as AWS and Firebase to create fast, secure, and scalable solutions. Our team follows agile methodologies, CI/CD pipelines, and responsive design principles to ensure seamless development and efficient delivery. Whether it's front-end brilliance, back-end architecture, or mobile responsiveness—we combine innovation with reliability to deliver tech that lasts.
+              We leverage the latest tools, frameworks, and industry best practices to build high-performance digital platforms. At NeuroCode, staying ahead of the curve is part of our DNA. We use modern technologies like React, Node.js, Flutter, Python, and cloud services such as AWS and Firebase to create fast, secure, and scalable solutions. Our team follows agile methodologies, CI/CD pipelines, and responsive design principles to ensure seamless development and efficient delivery. Whether it's front-end brilliance, back-end architecture, or mobile responsiveness—we combine innovation with reliability to deliver tech that lasts.
             </p>
           </div>
 
@@ -1040,7 +1039,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const faqs = [
   {
-    question: "What services does NeuroLogics offer?",
+    question: "What services does NeuroCode offer?",
     answer:
       "We provide end-to-end digital solutions including UI/UX design, web and mobile development, digital marketing, tech consulting, and support for our own digital products.",
   },
@@ -1125,7 +1124,7 @@ export const FaqComponent = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-gray-800 text-sm leading-relaxed">
-            We understand that starting a digital project—or exploring a new platform—can come with a lot of questions. That's why we've compiled answers to the most common inquiries from clients and users alike. Whether you're curious about our services, development process, or specific product features like the Asian Cart app, this section is here to give you clarity and confidence as you engage with NeuroLogics.
+            We understand that starting a digital project—or exploring a new platform—can come with a lot of questions. That's why we've compiled answers to the most common inquiries from clients and users alike. Whether you're curious about our services, development process, or specific product features like the Asian Cart app, this section is here to give you clarity and confidence as you engage with NeuroCode.
           </p>
           <img
             ref={rocketRef}
@@ -1178,6 +1177,7 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 export const FooterComponent = () => {
+  const navigate = useNavigate()
   const footerRef = useRef(null);
 
   useEffect(() => {
@@ -1223,7 +1223,7 @@ export const FooterComponent = () => {
             <button className="bg-indigo-600 text-white px-4 py-2 text-sm rounded-md">
               Contact Us
             </button>
-            <button className="bg-white text-black px-4 py-2 text-sm rounded-md">
+            <button onClick={()=>{navigate("/about-us")}} className="bg-white text-black px-4 py-2 text-sm rounded-md">
               Learn More
             </button>
           </div>
@@ -1447,7 +1447,7 @@ export function ContactHero() {
               ref={paraRef}
               className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6"
             >
-              At NeuroLogics, we turn breakthrough ideas into scalable platforms.
+              At NeuroCode, we turn breakthrough ideas into scalable platforms.
               With modern frameworks and cloud tools like React, Flutter, Firebase,
               and AWS—we build future-ready solutions that move your business forward.
             </p>
@@ -1615,7 +1615,7 @@ export const WorkingMethodology = () => {
             Our Methodology
           </h2>
           <p className="text-sm text-[#1E1E1E] mb-4 max-w-[572px]">
-            At NeuroLogics, we believe that a successful digital product is born
+            At NeuroCode, we believe that a successful digital product is born
             from a clear, well-structured process. Our methodology is designed to
             align with your business goals at every stage—from the first spark of
             an idea to post-launch optimization. We work closely with you to
@@ -1770,6 +1770,7 @@ export function Contact() {
       ease: "power1.inOut",
     });
   }, []);
+  const navigate = useNavigate()
 
   return (
     <div className="bg-gradient-to-r from-gray-100 to-gray-200 p-6">
@@ -1784,7 +1785,7 @@ export function Contact() {
             <p className="text-sm text-gray-600">
             Have a project in mind or just want to connect? We’re here to help. Let’s build something great together—reach out today!
             </p>
-            <button className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700">
+            <button onClick={()=>{navigate("/about-us")}}  className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700">
               Learn More
             </button>
             <div className="mt-6 flex justify-end">
@@ -1885,7 +1886,7 @@ export function ContactMapSection() {
           <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-700 pt-2">
             <div className="flex items-center gap-2  ">
               <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-              info@neurologics.com 
+              info@NeuroCode.com 
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
@@ -1902,7 +1903,7 @@ export function ContactMapSection() {
         <div className="flex-1 space-y-4">
           <h2 className="text-2xl font-bold">Contact Us</h2>
           <p className="text-sm text-gray-600">
-          Ready to bring your vision to life? Fill out the form below and our expert team will connect with you to discuss how NeuroLogics can craft the perfect digital solution for your business.
+          Ready to bring your vision to life? Fill out the form below and our expert team will connect with you to discuss how NeuroCode can craft the perfect digital solution for your business.
 
 
           </p>
@@ -2084,10 +2085,10 @@ export function WhoWeAreSection2() {
     >
       <div className="w-full max-w-6xl">
         <div className="mb-8">
-          <p className="text-sm text-gray-300">NeuroLogics Journey</p>
+          <p className="text-sm text-gray-300">NeuroCode Journey</p>
           <h2 className="text-3xl font-bold mb-2">Our Journey</h2>
           <p className="text-gray-400 max-w-xl">
-          NeuroLogics evolves ideas into innovative, scalable tech solutions. Here’s how we bring your vision to life — from spark to solution.
+          NeuroCode evolves ideas into innovative, scalable tech solutions. Here’s how we bring your vision to life — from spark to solution.
           </p>
         </div>
 
@@ -2177,6 +2178,12 @@ const teamData = [
     role: "Business Development Officer Australia",
     country: "australia",
   },
+  {
+    name: "Muhammad Hassan Waheed ",
+    image: "/waheed.jpeg",
+    role: "Creative Head",
+    country: "pakistan",
+  },
 ];
 
 const flagMap = {
@@ -2231,21 +2238,21 @@ export function ExpertTeamSection() {
     };
   }, []);
 
-  const handleManualScroll = (direction) => {
-    const track = trackRef.current;
-    const step = 280 + 16; // card width + gap
-    const currentX = gsap.getProperty(track, "x");
-    const offset = direction === "next" ? -step : step;
+  // const handleManualScroll = (direction) => {
+  //   const track = trackRef.current;
+  //   const step = 280 + 16; // card width + gap
+  //   const currentX = gsap.getProperty(track, "x");
+  //   const offset = direction === "next" ? -step : step;
 
-    animationRef.current.pause();
+  //   animationRef.current.pause();
 
-    gsap.to(track, {
-      x: currentX + offset,
-      duration: 0.5,
-      ease: "power2.out",
-      onComplete: () => animationRef.current.resume(),
-    });
-  };
+  //   gsap.to(track, {
+  //     x: currentX + offset,
+  //     duration: 0.5,
+  //     ease: "power2.out",
+  //     onComplete: () => animationRef.current.resume(),
+  //   });
+  // };
 
   return (
     <section ref={sectionRef} className="px-6 py-12 max-w-7xl mx-auto w-full">
@@ -2256,13 +2263,13 @@ export function ExpertTeamSection() {
           </span>
           <h2 className="text-3xl font-bold mb-2">Our Founding Members</h2>
           <p className="text-gray-600 max-w-xl">
-            Meet the minds behind NeuroLogics. Our skilled team blends creativity,
+            Meet the minds behind NeuroCode. Our skilled team blends creativity,
             strategy, and tech to craft impactful digital platforms.
           </p>
         </div>
 
         {/* Arrows */}
-        <div className="flex gap-3">
+        {/* <div className="flex gap-3">
           <button
             onClick={() => handleManualScroll("prev")}
             className="bg-gray-200 p-2 rounded-full hover:bg-gray-300"
@@ -2275,7 +2282,7 @@ export function ExpertTeamSection() {
           >
             <ChevronRight className="w-5 h-5" />
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Infinite Track */}
@@ -2320,6 +2327,7 @@ export function Hero2() {
   const img1Ref = useRef(null);
   const img2Ref = useRef(null);
   const img3Ref = useRef(null);
+  const navigate = useNavigate()
 
   useEffect(() => {
     // Fade-up animation on scroll
@@ -2420,15 +2428,15 @@ export function Hero2() {
 
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-        NeuroLogics builds smart, scalable digital platforms to help businesses grow and adapt. From strategy to deployment, we deliver custom tech solutions across web, mobile, and cloud. Turn your ideas into impactful digital experiences with our expert team.
+        NeuroCode builds smart, scalable digital platforms to help businesses grow and adapt. From strategy to deployment, we deliver custom tech solutions across web, mobile, and cloud. Turn your ideas into impactful digital experiences with our expert team.
       </p>
 
       {/* Buttons */}
       <div className="flex justify-center gap-4 mb-10">
-        <button className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
+        <button onClick={()=>{navigate("/contact-us")}} className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
           Get Started
         </button>
-        <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
+        <button onClick={()=>{navigate("/about-us")}} className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
           Learn More
         </button>
       </div>
@@ -2790,6 +2798,7 @@ export function ServicesGrid() {
       }
     );
   }, []);
+  const navigate = useNavigate()
 
   return (
     <div ref={sectionRef} className="max-w-[1280px] min-h-screen px-6 mx-auto">
@@ -2815,7 +2824,7 @@ export function ServicesGrid() {
 
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-        We build future-ready web, mobile, and cloud platforms tailored to your business goals. From strategy to deployment, NeuroLogics delivers innovation that drives success.
+        We build future-ready web, mobile, and cloud platforms tailored to your business goals. From strategy to deployment, NeuroCode delivers innovation that drives success.
       </p>
 
       {/* Buttons */}
@@ -2823,7 +2832,7 @@ export function ServicesGrid() {
         <button className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
           Get Started
         </button>
-        <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
+        <button onClick={()=>{navigate("/about-us")}} className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
           Learn More
         </button>
       </div>
@@ -2857,6 +2866,7 @@ export function ServicesGrid() {
 
 // About us Hero
 export function AboutHero() {
+    const navigate =  useNavigate()
   const sectionRef = useRef(null);
   const cardRefs = useRef([]);
 
@@ -2927,14 +2937,14 @@ export function AboutHero() {
 
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-      At NeuroLogics, we specialize in building future-ready platforms that help businesses grow. With expert teams and cutting-edge tech, we turn bold ideas into smart, scalable digital experiences.
+      At NeuroCode, we specialize in building future-ready platforms that help businesses grow. With expert teams and cutting-edge tech, we turn bold ideas into smart, scalable digital experiences.
       </p>
 
         <div className="flex justify-center gap-4 mb-10">
               <button className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
                 Get Started
               </button>
-              <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
+              <button onClick={()=>{navigate("/about-us")}}  className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
                 Learn More
               </button>
             </div>
@@ -3010,6 +3020,7 @@ export const Footer = () => {
       }
     );
   }, []);
+  const navigate =  useNavigate()
 
   return (
     <div className="bg-gradient-to-r from-[#F9DCDC] via-[#E7E1F5] to-[#DCD9F9] ">
@@ -3029,10 +3040,10 @@ export const Footer = () => {
             </p>
           </div>
           <div className="flex gap-4">
-            <button className="bg-violet-600 text-white px-5 py-2 rounded-md shadow">
+            <button  onClick={()=>{navigate("/contact-us")}}  className="bg-violet-600 text-white px-5 py-2 rounded-md shadow">
               Contact Us
             </button>
-            <button className="bg-white text-black px-5 py-2 rounded-md shadow border border-gray-200">
+            <button  onClick={()=>{navigate("/about-us")}}  className="bg-white text-black px-5 py-2 rounded-md shadow border border-gray-200">
               Learn More
             </button>
           </div>
@@ -3042,7 +3053,7 @@ export const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pt-8 ">
           {/* Logo and description */}
           <div className="flex flex-col gap-2 max-w-sm pb-6">
-            <img src="/logoblack.svg" alt="logo" className="w-24" />
+            <img src="/logoblack.png" alt="logo" className="w-24" />
             <p className="text-sm text-gray-700">
               Design amazing digital experiences that create more happy in the
               world.
@@ -3075,7 +3086,7 @@ export const Footer = () => {
 
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-6 text-sm text-gray-500">
-          <p>© 2025 Neurologics. All rights reserved.</p>
+          <p>© 2025 NeuroCode. All rights reserved.</p>
           <div className="flex gap-4 mt-2 md:mt-0 text-gray-400 text-xl">
             <Instagram color="#999999" />
             <FacebookIcon color="#999999" />
@@ -3122,9 +3133,10 @@ export function WhoWeAre() {
       });
     }, sectionRef);
 
+
     return () => ctx.revert();
   }, []);
-
+   const navigate = useNavigate()
   return (
     <div className="bg-[#f5f5f5] ">
       <section ref={sectionRef} className="max-w-[1280px] mx-auto px-6 py-12   ">
@@ -3135,7 +3147,7 @@ export function WhoWeAre() {
             We craft future-ready platforms that help businesses grow. From design to deployment, our solutions are smart, scalable, and built to last.
             </p>
           </div>
-          <button className="p-[13px] bg-[#4300FF]  hover:bg-[#400FF] transition text-white rounded-xl">Contact Us</button>
+          <button onClick={()=>{navigate("/contact-us")}}  className="p-[13px] bg-[#4300FF]  hover:bg-[#400FF] transition text-white rounded-xl">Contact Us</button>
         </div>
         <div
           className="flex flex-col md:flex-row items-center gap-8"
@@ -3155,7 +3167,7 @@ export function WhoWeAre() {
             Driving digital excellence through innovation and custom technology.
             </p>
             <p className="text-gray-700">
-              At NeuroLogics, we specialize in building scalable digital platforms that empower businesses to thrive in an ever-changing tech landscape. With over 5 years of experience and 25+ successful product launches, our team turns complex ideas into seamless web, mobile, and cloud solutions. We don’t just develop software—we deliver strategy, design, and long-term growth. From startups to enterprises, we partner with clients to create future-ready digital experiences that truly make an impact.
+              At NeuroCode, we specialize in building scalable digital platforms that empower businesses to thrive in an ever-changing tech landscape. With over 5 years of experience and 25+ successful product launches, our team turns complex ideas into seamless web, mobile, and cloud solutions. We don’t just develop software—we deliver strategy, design, and long-term growth. From startups to enterprises, we partner with clients to create future-ready digital experiences that truly make an impact.
             </p>
           </div>
         </div>
@@ -3264,7 +3276,7 @@ export function OurProjects() {
         <div className="flex flex-col items-center py-8">
           <h1 className="text-2xl font-bold py-4">Our Projects</h1>
           <p className="max-w-[508px] text-center">
-            Explore how NeuroLogics transforms ideas into impactful digital platforms tailored to real-world business needs.
+            Explore how NeuroCode transforms ideas into impactful digital platforms tailored to real-world business needs.
           </p>
         </div>
 

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import vector from "/vector1.png";
 
 import gsap from "gsap";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
   const headingRef = useRef(null);
@@ -25,7 +26,7 @@ export default function Hero() {
       ease: "power3.out",
     });
   }, []);
-
+   const navigate = useNavigate();
   return (
     <section className="max-w-[1240px] mx-auto bg-[#EDEDED] left-0 right-0 z-50 px-2 sm:px-4 lg:px-6">
       {/* Top Label */}
@@ -86,12 +87,12 @@ export default function Hero() {
 
       {/* Buttons */}
       <div className="flex justify-center gap-4 mb-10">
-        <button className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
-          Get Started
+        <button  onClick={()=>{navigate("/contact-us")}} className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
+          Contact Us
         </button>
-        <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
+        {/* <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
           Learn More
-        </button>
+        </button> */}
       </div>
     </section>
   );

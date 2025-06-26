@@ -248,9 +248,24 @@ export const StatsCards = () => {
       {/* Cards Container */}
       <div className="relative z-10 flex flex-wrap justify-center gap-6">
         {[
-          { color: "bg-blue-500", text: "25+", desc: "Platforms Launched", sub: "Tailored digital solutions across industries." },
-          { color: "bg-red-500", text: "10+", desc: "Active Partnerships", sub: "Driving growth through long-term tech alliances." },
-          { color: "bg-green-500", text: "5+", desc: "Years of Experience", sub: "Building scalable web, mobile, and cloud platforms." },
+          {
+            color: "bg-blue-500",
+            text: "25+",
+            desc: "Platforms Launched",
+            sub: "Tailored digital solutions across industries.",
+          },
+          {
+            color: "bg-red-500",
+            text: "10+",
+            desc: "Active Partnerships",
+            sub: "Driving growth through long-term tech alliances.",
+          },
+          {
+            color: "bg-green-500",
+            text: "5+",
+            desc: "Years of Experience",
+            sub: "Building scalable web, mobile, and cloud platforms.",
+          },
         ].map((card, idx) => (
           <div
             key={idx}
@@ -448,7 +463,9 @@ export const ServicesSection = () => {
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-2">Our Services</h2>
         <p className="text-gray-600 max-w-xl mx-auto mb-10">
-          From design to deployment, our services are built to accelerate your digital success. Explore how NeuroCode helps businesses thrive with smart, scalable tech solutions.
+          From design to deployment, our services are built to accelerate your
+          digital success. Explore how NeuroCode helps businesses thrive with
+          smart, scalable tech solutions.
         </p>
 
         <div className="sm:grid sm:grid-cols-3 sm:grid-rows-2 sm:gap-2 flex flex-col gap-4">
@@ -457,9 +474,14 @@ export const ServicesSection = () => {
             className="col-span-1 row-span-2 bg-gradient-to-b from-white from-0% to-[#dedede1a] to-2% rounded-2xl p-6 shadow-md text-left flex flex-col justify-between"
           >
             <img src="./screensm.jpg" alt="Macbook" />
-            <h3 className="font-semibold text-lg mb-2">Complete Digital Solutions Under One Roof</h3>
+            <h3 className="font-semibold text-lg mb-2">
+              Complete Digital Solutions Under One Roof
+            </h3>
             <p className="text-sm text-gray-600">
-              At NeuroCode, we don't just offer services—we deliver end-to-end digital transformation. From intuitive design to full-stack development and growth strategies, we power every stage of your digital journey.
+              At NeuroCode, we don't just offer services—we deliver end-to-end
+              digital transformation. From intuitive design to full-stack
+              development and growth strategies, we power every stage of your
+              digital journey.
             </p>
           </div>
 
@@ -472,7 +494,8 @@ export const ServicesSection = () => {
             </div>
             <h3 className="font-semibold text-left text-lg">UI/UX Design</h3>
             <p className="text-left text-sm text-gray-600">
-              Crafting user-first, intuitive designs that elevate digital experiences and boost engagement.
+              Crafting user-first, intuitive designs that elevate digital
+              experiences and boost engagement.
             </p>
           </div>
 
@@ -483,9 +506,12 @@ export const ServicesSection = () => {
             <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mb-4">
               <WrenchIcon className="text-white w-5 h-5" />
             </div>
-            <h3 className="font-semibold text-left text-lg">Web & App Development</h3>
+            <h3 className="font-semibold text-left text-lg">
+              Web & App Development
+            </h3>
             <p className="text-left text-sm text-gray-600">
-              Building fast, secure, and scalable web and mobile applications tailored to your goals.
+              Building fast, secure, and scalable web and mobile applications
+              tailored to your goals.
             </p>
           </div>
 
@@ -496,9 +522,12 @@ export const ServicesSection = () => {
             <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mb-4">
               <SmartphoneIcon className="text-white w-5 h-5" />
             </div>
-            <h3 className="font-semibold text-left text-lg">Digital Marketing</h3>
+            <h3 className="font-semibold text-left text-lg">
+              Digital Marketing
+            </h3>
             <p className="text-left text-sm text-gray-600">
-              Driving visibility, traffic, and conversion through smart, data-driven strategies.
+              Driving visibility, traffic, and conversion through smart,
+              data-driven strategies.
             </p>
           </div>
 
@@ -509,9 +538,12 @@ export const ServicesSection = () => {
             <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
               <CodeIcon className="text-white w-5 h-5" />
             </div>
-            <h3 className="font-semibold text-left text-lg">Product-Based Services</h3>
+            <h3 className="font-semibold text-left text-lg">
+              Product-Based Services
+            </h3>
             <p className="text-left text-sm text-gray-600">
-              Offering tailored support, integration, and enhancement for NeuroCode' proprietary tech solutions.
+              Offering tailored support, integration, and enhancement for
+              NeuroCode' proprietary tech solutions.
             </p>
           </div>
         </div>
@@ -778,10 +810,21 @@ export const TechIconsSpread = () => {
           {/* Text Content */}
           <div ref={textRef} className="space-y-6">
             <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-gray-900 leading-tight">
-              Cutting-Edge Technologies and Proven Techniques That Power Every Project
+              Cutting-Edge Technologies and Proven Techniques That Power Every
+              Project
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">
-              We leverage the latest tools, frameworks, and industry best practices to build high-performance digital platforms. At NeuroCode, staying ahead of the curve is part of our DNA. We use modern technologies like React, Node.js, Flutter, Python, and cloud services such as AWS and Firebase to create fast, secure, and scalable solutions. Our team follows agile methodologies, CI/CD pipelines, and responsive design principles to ensure seamless development and efficient delivery. Whether it's front-end brilliance, back-end architecture, or mobile responsiveness—we combine innovation with reliability to deliver tech that lasts.
+              We leverage the latest tools, frameworks, and industry best
+              practices to build high-performance digital platforms. At
+              NeuroCode, staying ahead of the curve is part of our DNA. We use
+              modern technologies like React, Node.js, Flutter, Python, and
+              cloud services such as AWS and Firebase to create fast, secure,
+              and scalable solutions. Our team follows agile methodologies,
+              CI/CD pipelines, and responsive design principles to ensure
+              seamless development and efficient delivery. Whether it's
+              front-end brilliance, back-end architecture, or mobile
+              responsiveness—we combine innovation with reliability to deliver
+              tech that lasts.
             </p>
           </div>
 
@@ -975,14 +1018,45 @@ export const DownloadSection = () => {
         {/* Right Content */}
         <div className=" px-[12px] md:px-[40px] pt-[100px] md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left backdrop-blur-[10px] bg-white/10 h-full ">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Experience the Flavors of Asia at Your Fingertips. Download the Asian Cart App Today
+            Built for Spice Lovers, Designed for a Seamless Shopping Experience
           </h2>
-          <p className="text-white  font-medium mb-6 ">
-            Shop spices with ease, convenience, and confidence—right from your phone. The Asian Cart app brings the full marketplace experience to your mobile device. Browse a wide range of authentic spices, get personalized recommendations, enjoy secure payments, and track your orders in real-time. Designed for speed and simplicity, the app ensures a smooth shopping journey—from cart to kitchen. Download now and explore the rich taste of tradition, delivered.
+          <p className="text-white  hidden sm:block  font-medium mb-6 ">
+            Asian Cart is more than just an online store—it’s a complete
+            eCommerce solution tailored to the needs of spice brands and their
+            customers.
+            <br />
+            Whether you're a casual home cook or a business looking to stock
+            authentic flavors, Asian Cart makes it simple to discover, explore,
+            and purchase from a wide range of spice products. The platform is
+            designed with user convenience at its core—featuring intuitive
+            navigation, smart product filtering, secure checkout, and real-time
+            order tracking. With dedicated dashboards for both customers and
+            sellers, Asian Cart supports personalized recommendations, efficient
+            inventory management, and scalable growth.
+            <br/>
+            It's your digital spice aisle—always open, always fresh.
+          </p>
+
+          {/* small screen */}
+           <p className="text-white  font-medium mb-6  block  sm:hidden">
+            Asian Cart is more than just an online store—it’s a complete
+            eCommerce solution tailored to the needs of spice brands and their
+            customers.
+            
+            Whether you're a casual home cook or a business looking to stock
+            authentic flavors, Asian Cart makes it simple to discover, explore,
+            and purchase from a wide range of spice products. The platform is
+            designed with user convenience at its core—featuring intuitive
+            navigation, smart product filtering, secure checkout, and real-time
+            order tracking. With dedicated dashboards for both customers and
+            sellers, Asian Cart supports personalized recommendations, efficient
+            inventory management, and scalable growth.
+            
+            It's your digital spice aisle—always open, always fresh.
           </p>
 
           {/* Buttons */}
-          <div className="flex  flex-row sm:flex-row gap-4 mb-10  self-end">
+          {/* <div className="flex  flex-row sm:flex-row gap-4 mb-10  self-end">
             <a
               href="#"
               className="flex items-center px-4 py-2 bg-white/20 rounded-md"
@@ -1011,7 +1085,7 @@ export const DownloadSection = () => {
                 <span className="font-semibold text-[12px]">App Store</span>
               </div>
             </a>
-          </div>
+          </div> */}
 
           {/* Stats */}
           <div className="flex flex-col py-4  sm:flex-row   gap-4 w-full justify-center md:justify-start">
@@ -1128,7 +1202,13 @@ export const FaqComponent = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-gray-800 text-sm leading-relaxed">
-            We understand that starting a digital project—or exploring a new platform—can come with a lot of questions. That's why we've compiled answers to the most common inquiries from clients and users alike. Whether you're curious about our services, development process, or specific product features like the Asian Cart app, this section is here to give you clarity and confidence as you engage with NeuroCode.
+            We understand that starting a digital project—or exploring a new
+            platform—can come with a lot of questions. That's why we've compiled
+            answers to the most common inquiries from clients and users alike.
+            Whether you're curious about our services, development process, or
+            specific product features like the Asian Cart app, this section is
+            here to give you clarity and confidence as you engage with
+            NeuroCode.
           </p>
           <img
             ref={rocketRef}
@@ -1181,7 +1261,7 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 export const FooterComponent = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const footerRef = useRef(null);
 
   useEffect(() => {
@@ -1227,7 +1307,12 @@ export const FooterComponent = () => {
             <button className="bg-indigo-600 text-white px-4 py-2 text-sm rounded-md">
               Contact Us
             </button>
-            <button onClick={()=>{navigate("/about-us")}} className="bg-white text-black px-4 py-2 text-sm rounded-md">
+            <button
+              onClick={() => {
+                navigate("/about-us");
+              }}
+              className="bg-white text-black px-4 py-2 text-sm rounded-md"
+            >
               Learn More
             </button>
           </div>
@@ -1279,11 +1364,7 @@ export const FooterComponent = () => {
 
 // footer
 
-
-
 // hero contact page
-
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -1352,7 +1433,7 @@ export function ContactHero() {
             className="absolute left-[50%] translate-x-[-50%] top-[30%]"
             alt=""
           />
-  
+
           {/* Floating Icons */}
           <img
             ref={(el) => (imageRefs.current[0] = el)}
@@ -1396,7 +1477,7 @@ export function ContactHero() {
             className="absolute top-[4%] right-[26%] w-[44px] sm:w-[60px]"
             alt=""
           />
-  
+
           {/* Hero Content */}
           <section className="max-w-[1240px] mx-auto bg-transparent relative pt-[100px] px-4 z-50">
             <div className="text-center pb-8">
@@ -1410,7 +1491,7 @@ export function ContactHero() {
                 Explore Our Tech Stack
               </span>
             </div>
-  
+
             <h1
               ref={titleRef}
               className="text-center text-[26px] md:text-5xl font-bold mb-8 md:leading-tight"
@@ -1435,8 +1516,7 @@ export function ContactHero() {
               >
                 Modern Businesses.
               </span>
-          
-              Mobile & Web AI-integrated, and built to scale — from startup to {" "}
+              Mobile & Web AI-integrated, and built to scale — from startup to{" "}
               <span className="relative font-bold">
                 enterprise.
                 <img
@@ -1446,23 +1526,22 @@ export function ContactHero() {
                 />
               </span>
             </h1>
-  
+
             <p
               ref={paraRef}
               className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6"
             >
               At NeuroCode, we turn breakthrough ideas into scalable platforms.
-              With modern frameworks and cloud tools like React, Flutter, Firebase,
-              and AWS—we build future-ready solutions that move your business forward.
+              With modern frameworks and cloud tools like React, Flutter,
+              Firebase, and AWS—we build future-ready solutions that move your
+              business forward.
             </p>
           </section>
         </div>
       </div>
     </div>
   );
-  
 }
-
 
 // _________________________-
 
@@ -1620,13 +1699,13 @@ export const WorkingMethodology = () => {
           </h2>
           <p className="text-sm text-[#1E1E1E] mb-4 max-w-[572px]">
             At NeuroCode, we believe that a successful digital product is born
-            from a clear, well-structured process. Our methodology is designed to
-            align with your business goals at every stage—from the first spark of
-            an idea to post-launch optimization. We work closely with you to
-            understand your needs, transform them into smart designs, develop with
-            precision, and deploy solutions that are reliable, scalable, and
-            future-ready. It's a collaborative, end-to-end approach that ensures
-            innovation, efficiency, and long-term impact.
+            from a clear, well-structured process. Our methodology is designed
+            to align with your business goals at every stage—from the first
+            spark of an idea to post-launch optimization. We work closely with
+            you to understand your needs, transform them into smart designs,
+            develop with precision, and deploy solutions that are reliable,
+            scalable, and future-ready. It's a collaborative, end-to-end
+            approach that ensures innovation, efficiency, and long-term impact.
           </p>
 
           {/* Cards Grid */}
@@ -1747,8 +1826,8 @@ export const ContactSection = () => {
 export function Contact() {
   const sectionRef = useRef(null);
   const handRef = useRef(null);
-  const formRef = useRef(null)
-  const [loading , setLoading ] =  useState(false)
+  const formRef = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // Fade up animation on view
@@ -1776,35 +1855,25 @@ export function Contact() {
       ease: "power1.inOut",
     });
   }, []);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
-  
-    emailjs
-      .sendForm(
-        serviceId,          
-        templateId,         
-        formRef.current,   
-        publicKey           
-      )
-      .then(
-        () => {
-          setLoading(false);
-          toast.success("Message sent successfully!");
-          formRef.current.reset();
-        },
-        (error) => {
-          setLoading(false);
-          console.error("Email send failed:", error);
-          toast.error("Failed to send message. Please try again.");
-        }
-      );
+
+    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey).then(
+      () => {
+        setLoading(false);
+        toast.success("Message sent successfully!");
+        formRef.current.reset();
+      },
+      (error) => {
+        setLoading(false);
+        console.error("Email send failed:", error);
+        toast.error("Failed to send message. Please try again.");
+      }
+    );
   };
-  
-
-
 
   return (
     <div className="bg-gradient-to-r from-gray-100 to-gray-200 p-6">
@@ -1818,9 +1887,15 @@ export function Contact() {
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-bold">Contact Us</h2>
             <p className="text-sm text-gray-600">
-              Have a project in mind or just want to connect? We’re here to help. Let’s build something great together—reach out today!
+              Have a project in mind or just want to connect? We’re here to
+              help. Let’s build something great together—reach out today!
             </p>
-            <button onClick={() => { navigate("/about-us") }} className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700">
+            <button
+              onClick={() => {
+                navigate("/about-us");
+              }}
+              className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-700"
+            >
               Learn More
             </button>
             <div className="mt-6 flex justify-end">
@@ -1836,11 +1911,7 @@ export function Contact() {
           {/* Right Content - Contact Form */}
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-bold">Send us a Message</h2>
-            <form
-              ref={formRef}
-              onSubmit={sendEmail}
-              className="space-y-3"
-            >
+            <form ref={formRef} onSubmit={sendEmail} className="space-y-3">
               <input
                 type="text"
                 name="first_name"
@@ -1873,9 +1944,24 @@ export function Contact() {
                 disabled={loading}
               >
                 {loading ? (
-                  <svg className="animate-spin h-5 w-5 mr-2 text-white" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                  <svg
+                    className="animate-spin h-5 w-5 mr-2 text-white"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                      fill="none"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    />
                   </svg>
                 ) : null}
                 {loading ? "Sending..." : "Send Message"}
@@ -1887,7 +1973,6 @@ export function Contact() {
     </div>
   );
 }
-
 
 // \map
 // ... existing code ...
@@ -1924,24 +2009,17 @@ export function ContactMapSection() {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .sendForm(
-        serviceId,
-        templateId,
-        formRef.current,
-        publicKey      
-      )
-      .then(
-        () => {
-          setLoading(false);
-          toast.success("Message sent successfully!");
-          formRef.current.reset();
-        },
-        () => {
-          setLoading(false);
-          toast.error("Failed to send message. Please try again.");
-        }
-      );
+    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey).then(
+      () => {
+        setLoading(false);
+        toast.success("Message sent successfully!");
+        formRef.current.reset();
+      },
+      () => {
+        setLoading(false);
+        toast.error("Failed to send message. Please try again.");
+      }
+    );
   };
 
   return (
@@ -1983,8 +2061,8 @@ export function ContactMapSection() {
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-bold">Contact Us</h2>
             <p className="text-sm text-gray-600">
-              Ready to bring your vision to life? Fill out the form below and our
-              expert team will connect with you to discuss how NeuroCode can
+              Ready to bring your vision to life? Fill out the form below and
+              our expert team will connect with you to discuss how NeuroCode can
               craft the perfect digital solution for your business.
             </p>
             <form
@@ -2037,9 +2115,24 @@ export function ContactMapSection() {
                 disabled={loading}
               >
                 {loading ? (
-                  <svg className="animate-spin h-5 w-5 mr-2 text-white" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+                  <svg
+                    className="animate-spin h-5 w-5 mr-2 text-white"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                      fill="none"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    />
                   </svg>
                 ) : null}
                 {loading ? "Sending..." : "Send Message"}
@@ -2090,15 +2183,22 @@ export function WhoWeAreSection() {
 
   return (
     <div className="bg-[#f5f5f5] ">
-      <section ref={sectionRef} className="max-w-[1280px] mx-auto px-6 py-12   ">
-        <div className='bg-[#EDEDED] flex justify-between gap-4 p-[20px] rounded-xl mb-[40px] items-center md:flex-row flex-col  '>
+      <section
+        ref={sectionRef}
+        className="max-w-[1280px] mx-auto px-6 py-12   "
+      >
+        <div className="bg-[#EDEDED] flex justify-between gap-4 p-[20px] rounded-xl mb-[40px] items-center md:flex-row flex-col  ">
           <div className="">
             <h1 className="text-[27px] font-bold">Who we are ? </h1>
             <p className="max-w-[508px] pt-[14px]">
-            We craft future-ready platforms that help businesses grow. From design to deployment, our solutions are smart, scalable, and built to last.
+              We craft future-ready platforms that help businesses grow. From
+              design to deployment, our solutions are smart, scalable, and built
+              to last.
             </p>
           </div>
-          <button className="p-[13px] bg-[#4300FF]  hover:bg-[#400FF] transition text-white rounded-xl">Contact Us</button>
+          <button className="p-[13px] bg-[#4300FF]  hover:bg-[#400FF] transition text-white rounded-xl">
+            Contact Us
+          </button>
         </div>
         <div
           className="flex flex-col md:flex-row items-center gap-8"
@@ -2190,7 +2290,8 @@ export function WhoWeAreSection2() {
           <p className="text-sm text-gray-300">NeuroCode Journey</p>
           <h2 className="text-3xl font-bold mb-2">Our Journey</h2>
           <p className="text-gray-400 max-w-xl">
-          NeuroCode evolves ideas into innovative, scalable tech solutions. Here’s how we bring your vision to life — from spark to solution.
+            NeuroCode evolves ideas into innovative, scalable tech solutions.
+            Here’s how we bring your vision to life — from spark to solution.
           </p>
         </div>
 
@@ -2244,7 +2345,6 @@ export function WhoWeAreSection2() {
 
 // team
 
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -2269,7 +2369,7 @@ const teamData = [
     country: "france",
   },
   {
-    name: "Ehsan Tarar",
+    name: "Muhammad Ehsan Tarar",
     image: "/muhammadEhsan.jpeg",
     role: "Business Development Officer Germany",
     country: "germany",
@@ -2361,9 +2461,9 @@ export function ExpertTeamSection() {
       <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">
         <div>
           <span className="text-sm text-gray-500 bg-slate-100 px-4 py-2 rounded-full inline-block mb-2">
-            Founding Members
+            Expert Team
           </span>
-          <h2 className="text-3xl font-bold mb-2">Our Founding Members</h2>
+          <h2 className="text-3xl font-bold mb-2">Our Expert Team</h2>
           <p className="text-gray-600 max-w-xl">
             Meet the minds behind NeuroCode. Our skilled team blends creativity,
             strategy, and tech to craft impactful digital platforms.
@@ -2429,7 +2529,7 @@ export function Hero2() {
   const img1Ref = useRef(null);
   const img2Ref = useRef(null);
   const img3Ref = useRef(null);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fade-up animation on scroll
@@ -2516,7 +2616,8 @@ export function Hero2() {
         ref={headingRef}
         className="text-center text-[26px] md:text-5xl font-bold mb-8 md:leading-tight"
       >
-        Custom-Built Tech Solutions That Drive Growth From Concept to Code.<br />
+        Custom-Built Tech Solutions That Drive Growth From Concept to Code.
+        <br />
         <span
           className="text-black px-2 py-1 rounded"
           style={{
@@ -2530,17 +2631,30 @@ export function Hero2() {
 
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-        NeuroCode builds smart, scalable digital platforms to help businesses grow and adapt. From strategy to deployment, we deliver custom tech solutions across web, mobile, and cloud. Turn your ideas into impactful digital experiences with our expert team.
+        NeuroCode builds smart, scalable digital platforms to help businesses
+        grow and adapt. From strategy to deployment, we deliver custom tech
+        solutions across web, mobile, and cloud. Turn your ideas into impactful
+        digital experiences with our expert team.
       </p>
 
       {/* Buttons */}
       <div className="flex justify-center gap-4 mb-10">
-        <button onClick={()=>{navigate("/contact-us")}} className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
-          Get Started
+        <button
+          onClick={() => {
+            navigate("/contact-us");
+          }}
+          className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition"
+        >
+          Contact Us
         </button>
-        <button onClick={()=>{navigate("/about-us")}} className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
+        {/* <button
+          onClick={() => {
+            navigate("/about-us");
+          }}
+          className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition"
+        >
           Learn More
-        </button>
+        </button> */}
       </div>
 
       {/* animated section */}
@@ -2565,23 +2679,23 @@ export function Hero2() {
           alt=""
         />
 
-<div className=" w-full h-full">
-  {/* Left Bubble */}
-  <div className="absolute left-[20%] top-[10%] sm:top-[29%] z-10">
-    <div className="bg-[#5E2EFF] text-white text-sm sm:text-base font-medium px-6 py-2 rounded-full shadow-lg relative">
-      Smart Digital Platforms
-      <span className="absolute bottom-[-6px] left-[90%] w-3 h-3 bg-[#5E2EFF] rounded-full shadow-md"></span>
-    </div>
-  </div>
+        <div className=" w-full h-full">
+          {/* Left Bubble */}
+          <div className="absolute left-[20%] top-[10%] sm:top-[29%] z-10">
+            <div className="bg-[#5E2EFF] text-white text-sm sm:text-base font-medium px-6 py-2 rounded-full shadow-lg relative">
+              Smart Digital Platforms
+              <span className="absolute bottom-[-6px] left-[90%] w-3 h-3 bg-[#5E2EFF] rounded-full shadow-md"></span>
+            </div>
+          </div>
 
-  {/* Right Bubble */}
-  <div className="absolute left-[56%] top-[34%] z-10">
-    <div className="bg-[#F3F3F3] text-black text-sm sm:text-base font-medium px-6 py-2 rounded-full shadow-lg relative">
-      Built to Scale
-      <span className="absolute bottom-[-6px] left-[90%] w-3 h-3 bg-[#F3F3F3] rounded-full shadow-md"></span>
-    </div>
-  </div>
-</div>
+          {/* Right Bubble */}
+          <div className="absolute left-[56%] top-[34%] z-10">
+            <div className="bg-[#F3F3F3] text-black text-sm sm:text-base font-medium px-6 py-2 rounded-full shadow-lg relative">
+              Built to Scale
+              <span className="absolute bottom-[-6px] left-[90%] w-3 h-3 bg-[#F3F3F3] rounded-full shadow-md"></span>
+            </div>
+          </div>
+        </div>
 
         {/* Large images */}
         <img src="/f20.png" alt="" />
@@ -2614,7 +2728,8 @@ export function AsianCard() {
       <div className="text-center flex flex-col justify-center items-center">
         <h3 className="text-[#1E1E1E] text-[27px] font-bold">Asain Card</h3>
         <p className="text-[#1E1E1E] max-w-[508px] pt-4 text-[17px]">
-        An eCommerce platform built to simplify the online sale of spices with a smooth, user-friendly shopping experience. 
+          An eCommerce platform built to simplify the online sale of spices with
+          a smooth, user-friendly shopping experience.
         </p>
       </div>
 
@@ -2629,8 +2744,6 @@ export function AsianCard() {
         >
           <img src="./cards.png" alt="Cards" className="w-full" />
         </div>
-
-       
       </div>
     </div>
   );
@@ -2871,13 +2984,7 @@ export const AnalyticsLineChart = () => {
 };
 
 // services grid
-"use client";
-
-
-
-
-
-
+("use client");
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -2900,7 +3007,7 @@ export function ServicesGrid() {
       }
     );
   }, []);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div ref={sectionRef} className="max-w-[1280px] min-h-screen px-6 mx-auto">
@@ -2919,14 +3026,26 @@ export function ServicesGrid() {
       {/* heading */}
       <div className="text-center mb-6 w-full flex justify-center">
         <h1 className="sm:text-[50px] text-[35px] leading-16 font-bold max-w-[892px]">
-          Scalable 
-          <span className="text-black px-2 py-1 rounded" style={{ background: "linear-gradient(90deg, #FFffff, #FF6666)", backgroundSize: "200% auto", }} > Digital Solutions</span>That Grow With You
+          Scalable
+          <span
+            className="text-black px-2 py-1 rounded"
+            style={{
+              background: "linear-gradient(90deg, #FFffff, #FF6666)",
+              backgroundSize: "200% auto",
+            }}
+          >
+            {" "}
+            Digital Solutions
+          </span>
+          That Grow With You
         </h1>
       </div>
 
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-        We build future-ready web, mobile, and cloud platforms tailored to your business goals. From strategy to deployment, NeuroCode delivers innovation that drives success.
+        We build future-ready web, mobile, and cloud platforms tailored to your
+        business goals. From strategy to deployment, NeuroCode delivers
+        innovation that drives success.
       </p>
 
       {/* Buttons */}
@@ -2934,20 +3053,33 @@ export function ServicesGrid() {
         <button className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
           Get Started
         </button>
-        <button onClick={()=>{navigate("/about-us")}} className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
+        <button
+          onClick={() => {
+            navigate("/about-us");
+          }}
+          className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition"
+        >
           Learn More
         </button>
       </div>
 
       <div className="sm:grid hidden grid-rows-2  grid-cols-6 ">
         <div className="col-start-1 col-end-3 row-start-1 row-end-3">
-          <img src="./img102.jpg" className="w-full h-full object-cover" alt="" />
+          <img
+            src="./img102.jpg"
+            className="w-full h-full object-cover"
+            alt=""
+          />
         </div>
         <div className="col-start-2 col-end-5 row-start-1 pb-4 px-4 row-end-2 bg-[#EDEDED]">
           <ProgressChart />
         </div>
         <div className="row-start-1 row-end-3 col-start-5 col-end-8">
-          <img src="./img101.jpg" className="w-full h-full object-cover" alt="" />
+          <img
+            src="./img101.jpg"
+            className="w-full h-full object-cover"
+            alt=""
+          />
         </div>
         <div className="row-start-2 row-end-3 col-start-3 col-end-6 relative z-14 px-4 pt-4 bg-[#EDEDED]">
           <AnalyticsChart />
@@ -2968,7 +3100,7 @@ export function ServicesGrid() {
 
 // About us Hero
 export function AboutHero() {
-    const navigate =  useNavigate()
+  const navigate = useNavigate();
   const sectionRef = useRef(null);
   const cardRefs = useRef([]);
 
@@ -3022,34 +3154,41 @@ export function AboutHero() {
       {/* heading */}
       <div className="text-center mb-6 w-full flex justify-center">
         <h1 className="sm:text-[50px] text-[35px] leading-14 font-bold max-w-[892px]">
-        Powering Innovation Through Custom 
-        <span
-          className="text-black px-2 py-1 rounded"
-          style={{
-            background: "linear-gradient(90deg, #FFffff, #FF6666)",
-            backgroundSize: "200% auto",
-          }}
-        >
-          Digital Solutions
-        </span>
-        
-        
+          Powering Innovation Through Custom
+          <span
+            className="text-black px-2 py-1 rounded"
+            style={{
+              background: "linear-gradient(90deg, #FFffff, #FF6666)",
+              backgroundSize: "200% auto",
+            }}
+          >
+            Digital Solutions
+          </span>
         </h1>
       </div>
 
       {/* Sub Text */}
       <p className="text-center max-w-2xl mx-auto text-[#1E1E1E] font-[400] mb-6">
-      At NeuroCode, we specialize in building future-ready platforms that help businesses grow. With expert teams and cutting-edge tech, we turn bold ideas into smart, scalable digital experiences.
+        At NeuroCode, we specialize in building future-ready platforms that help
+        businesses grow. With expert teams and cutting-edge tech, we turn bold
+        ideas into smart, scalable digital experiences.
       </p>
 
-        <div className="flex justify-center gap-4 mb-10">
-              <button className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
-                Get Started
-              </button>
-              <button onClick={()=>{navigate("/about-us")}}  className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
-                Learn More
-              </button>
-            </div>
+      <div className="flex justify-center gap-4 mb-10">
+        <button  onClick={() => {
+            navigate("/contact-us");
+          }} className="bg-[#4300FF] text-white px-6 py-2 font-semibold rounded-full hover:bg-indigo-700 transition">
+          Contact Us
+        </button>
+        {/* <button
+          onClick={() => {
+            navigate("/about-us");
+          }}
+          className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition"
+        >
+          Learn More
+        </button> */}
+      </div>
 
       {/* cards */}
       <div className="relative h-[600px] -z-1">
@@ -3098,7 +3237,6 @@ export function AboutHero() {
 
 // footer
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 export const Footer = () => {
@@ -3122,7 +3260,7 @@ export const Footer = () => {
       }
     );
   }, []);
-  const navigate =  useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className="bg-gradient-to-r from-[#F9DCDC] via-[#E7E1F5] to-[#DCD9F9] ">
@@ -3134,18 +3272,31 @@ export const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 border-b border-white/30 pb-6">
           <div className="max-w-[750px]">
             <h2 className="text-xl sm:text-2xl font-semibold text-black">
-            Smart solutions for modern businesses.{" "}
-              <span className="text-violet-600 font-bold">Built to scale, designed to perform.</span>
+              Smart solutions for modern businesses.{" "}
+              <span className="text-violet-600 font-bold">
+                Built to scale, designed to perform.
+              </span>
             </h2>
             <p className="text-gray-600 mt-2">
-            We help you turn digital ideas into real-world impact—fast, secure, and future-ready.
+              We help you turn digital ideas into real-world impact—fast,
+              secure, and future-ready.
             </p>
           </div>
           <div className="flex gap-4">
-            <button  onClick={()=>{navigate("/contact-us")}}  className="bg-violet-600 text-white px-5 py-2 rounded-md shadow">
+            <button
+              onClick={() => {
+                navigate("/contact-us");
+              }}
+              className="bg-violet-600 text-white px-5 py-2 rounded-md shadow"
+            >
               Contact Us
             </button>
-            <button  onClick={()=>{navigate("/about-us")}}  className="bg-white text-black px-5 py-2 rounded-md shadow border border-gray-200">
+            <button
+              onClick={() => {
+                navigate("/about-us");
+              }}
+              className="bg-white text-black px-5 py-2 rounded-md shadow border border-gray-200"
+            >
               Learn More
             </button>
           </div>
@@ -3155,7 +3306,7 @@ export const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pt-8 ">
           {/* Logo and description */}
           <div className="flex flex-col gap-2 max-w-sm pb-6">
-            <img src="/logoblack.png" alt="logo" className="w-24" />
+            <img src="/logoblack.svg" alt="logo" className="w-34" />
             <p className="text-sm text-gray-700">
               Design amazing digital experiences that create more happy in the
               world.
@@ -3163,7 +3314,7 @@ export const Footer = () => {
           </div>
 
           {/* App download */}
-          <div className="flex flex-col gap-2">
+          {/* <div className="flex flex-col gap-2">
             <span className="text-violet-700 font-semibold">
               Get Asian Cart app
             </span>
@@ -3175,16 +3326,16 @@ export const Footer = () => {
                 className="w-28"
               />
             </div>
-          </div>
+          </div> */}
+          <nav className="flex flex-wrap gap-2 mt-4   sm:gap-6 text-sm text-blue-800 font-semibold border-b border-white/30 pb-4">
+            <Link to="/">Home</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/projects">Projects</Link>
+            <Link to="/about-us">About Us</Link>
+            <Link to="/contact-us">Contact Us</Link>
+          </nav>
         </div>
         {/* Navigation links */}
-        <nav className="flex flex-wrap gap-2 mt-4   sm:gap-6 text-sm text-blue-800 font-semibold border-b border-white/30 pb-4">
-          <Link to="/">Home</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/about-us">About Us</Link>
-          <Link to="/contact-us">Contact Us</Link>
-        </nav>
 
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-6 text-sm text-gray-500">
@@ -3235,21 +3386,32 @@ export function WhoWeAre() {
       });
     }, sectionRef);
 
-
     return () => ctx.revert();
   }, []);
-   const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="bg-[#f5f5f5] ">
-      <section ref={sectionRef} className="max-w-[1280px] mx-auto px-6 py-12   ">
-        <div className='bg-[#EDEDED] flex justify-between gap-4 p-[20px] rounded-xl mb-[40px] items-center md:flex-row flex-col  '>
+      <section
+        ref={sectionRef}
+        className="max-w-[1280px] mx-auto px-6 py-12   "
+      >
+        <div className="bg-[#EDEDED] flex justify-between gap-4 p-[20px] rounded-xl mb-[40px] items-center md:flex-row flex-col  ">
           <div className="">
             <h1 className="text-[27px] font-bold">Who we are ? </h1>
             <p className="max-w-[508px] pt-[14px]">
-            We craft future-ready platforms that help businesses grow. From design to deployment, our solutions are smart, scalable, and built to last.
+              We craft future-ready platforms that help businesses grow. From
+              design to deployment, our solutions are smart, scalable, and built
+              to last.
             </p>
           </div>
-          <button onClick={()=>{navigate("/contact-us")}}  className="p-[13px] bg-[#4300FF]  hover:bg-[#400FF] transition text-white rounded-xl">Contact Us</button>
+          <button
+            onClick={() => {
+              navigate("/contact-us");
+            }}
+            className="p-[13px] bg-[#4300FF]  hover:bg-[#400FF] transition text-white rounded-xl"
+          >
+            Contact Us
+          </button>
         </div>
         <div
           className="flex flex-col md:flex-row items-center gap-8"
@@ -3266,10 +3428,18 @@ export function WhoWeAre() {
           <div className="md:w-1/2 w-full">
             <h2 className="text-2xl font-semibold mb-2">Who We Are</h2>
             <p className="text-gray-600 mb-4">
-            Driving digital excellence through innovation and custom technology.
+              Driving digital excellence through innovation and custom
+              technology.
             </p>
             <p className="text-gray-700">
-              At NeuroCode, we specialize in building scalable digital platforms that empower businesses to thrive in an ever-changing tech landscape. With over 5 years of experience and 25+ successful product launches, our team turns complex ideas into seamless web, mobile, and cloud solutions. We don’t just develop software—we deliver strategy, design, and long-term growth. From startups to enterprises, we partner with clients to create future-ready digital experiences that truly make an impact.
+              At NeuroCode, we specialize in building scalable digital platforms
+              that empower businesses to thrive in an ever-changing tech
+              landscape. With over 5 years of experience and 25+ successful
+              product launches, our team turns complex ideas into seamless web,
+              mobile, and cloud solutions. We don’t just develop software—we
+              deliver strategy, design, and long-term growth. From startups to
+              enterprises, we partner with clients to create future-ready
+              digital experiences that truly make an impact.
             </p>
           </div>
         </div>
@@ -3278,16 +3448,9 @@ export function WhoWeAre() {
   );
 }
 
-
-
-
-
-
-
 // our projects
 
 import { ShoppingCart, Ship, Truck, MapPin } from "lucide-react";
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -3378,22 +3541,35 @@ export function OurProjects() {
         <div className="flex flex-col items-center py-8">
           <h1 className="text-2xl font-bold py-4">Our Projects</h1>
           <p className="max-w-[508px] text-center">
-            Explore how NeuroCode transforms ideas into impactful digital platforms tailored to real-world business needs.
+            Explore how NeuroCode transforms ideas into impactful digital
+            platforms tailored to real-world business needs.
           </p>
         </div>
 
         <div className="min-h-[30vh] grid grid-cols-4 gap-4">
           {/* Large Image */}
           <div className="bg-blue-300 lg:col-span-2 row-span-2 rounded-xl overflow-hidden sm:col-span-2 col-span-4 main-image">
-            <img src="/img900.jpg" className="h-[639px] w-full object-cover" alt="" />
+            <img
+              src="/img900.jpg"
+              className="h-[639px] w-full object-cover"
+              alt=""
+            />
           </div>
 
           {/* Reusable Cards */}
           {[
-            { title: "Asain Cart", icon: <ShoppingCart size={20}  />  ,  img:"/ScreenPart.png"   },
-            { title: "Oil Shipper", icon: <Ship size={20}  />  ,  img:"/OilShipper.png"    },
-            { title: "Tanker", icon: <Truck size={20} /> ,   img:"/Tanker.png"  },
-            { title: "TripPano", icon: <MapPin size={20} /> ,   img:"/Body.png"   },
+            {
+              title: "Asain Cart",
+              icon: <ShoppingCart size={20} />,
+              img: "/ScreenPart.png",
+            },
+            {
+              title: "Oil Shipper",
+              icon: <Ship size={20} />,
+              img: "/OilShipper.png",
+            },
+            { title: "Tanker", icon: <Truck size={20} />, img: "/Tanker.png" },
+            { title: "TripPano", icon: <MapPin size={20} />, img: "/Body.png" },
           ].map((item, index) => (
             <div
               key={index}
@@ -3405,21 +3581,21 @@ export function OurProjects() {
                 </div>
                 <h4 className="font-bold text-[22px] mt-3">{item.title}</h4>
                 <p className="text-sm text-[#999999]">
-                  A powerful solution designed to handle digital operations for {item.title}.
+                  A powerful solution designed to handle digital operations for{" "}
+                  {item.title}.
                 </p>
               </div>
 
               {/* Image at bottom */}
               <div className="image-wrapper mt-3">
                 <img
-                  src= {item?.img}
-                  
-                  
-                  className={`card-image ${index === 3 ? "w-[80px]" : "w-full"} rounded-lg`}
+                  src={item?.img}
+                  className={`card-image ${
+                    index === 3 ? "w-[80px]" : "w-full"
+                  } rounded-lg`}
                   alt=""
                 />
               </div>
-             
             </div>
           ))}
         </div>

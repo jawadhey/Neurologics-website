@@ -6,8 +6,8 @@ const Projects = () => {
     <div>
         <Hero2/>
         <MediaLogoBanner/>
-        <OurProjects/>
-        <AsianCard/>
+        {/* <OurProjects/> */}
+        {/* <AsianCard/> */}
         <Contact/>
         <Footer/>
         {/* <ContactSection/> */}

@@ -13,8 +13,8 @@ const Home = () => {
       <StatsCards/>
     <MediaLogoBanner/>
     <ServicesSection/>
-    <OurProjects/>
-    <AsianCard/>
+    {/* <OurProjects/> */}
+    {/* <AsianCard/> */}
     <WorkingMethodology/>
     <TechIconsSpread/>
     <DownloadSection/>

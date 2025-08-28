@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from '../components/home/Hero'
-import  {AsianCard, WorkingMethodology, StatsCards, ServicesSection, OurProjects, TechIconsSpread, DownloadSection, FaqComponent, ExpertTeamSection,  FooterComponent, Footer} from '../components/home/C1'
+import  {AsianCard, WorkingMethodology, StatsCards, ServicesSection, OurProjects, TechIconsSpread, DownloadSection, FaqComponent,  FooterComponent, Footer} from '../components/home/C1'
 import CardsGrid from '../components/home/CardsGrid'
 // import Dashboard from '../components/home/Dashboard'
 import { MediaLogoBanner } from '../components/home/C1'
@@ -19,7 +19,7 @@ const Home = () => {
     <TechIconsSpread/>
     <DownloadSection/>
     <FaqComponent/>
-    <ExpertTeamSection/>
+    {/* <ExpertTeamSection/> */}
     {/* <FooterComponent/> */}
     <Footer/>
     {/* <ContactSection/> */}

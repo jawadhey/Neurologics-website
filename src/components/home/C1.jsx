@@ -2345,179 +2345,179 @@ export function WhoWeAreSection2() {
 
 // team
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const teamData = [
-  {
-    name: "Muhammad Jawad",
-    image: "/jawad.jpeg",
-    role: "CEO Islamabad",
-    country: "pakistan",
-  },
-  {
-    name: "Saima Tamaz",
-    image: "/saimaTamaz.jpeg",
-    role: "COO Islamabad",
-    country: "pakistan",
-  },
-  {
-    name: "Tahir Farooq",
-    image: "/tahirFarooq.jpeg",
-    role: "Business Development Officer France",
-    country: "france",
-  },
-  {
-    name: "Muhammad Ehsan Tarar",
-    image: "/muhammadEhsan.jpeg",
-    role: "Business Development Officer Germany",
-    country: "germany",
-  },
-  {
-    name: "Muhammad Anees",
-    image: "/anees.jpeg",
-    role: "Business Development Officer Australia",
-    country: "australia",
-  },
-  {
-    name: "Muhammad Hassan Waheed ",
-    image: "/waheed.jpeg",
-    role: "Creative Head",
-    country: "pakistan",
-  },
-];
+// const teamData = [
+//   {
+//     name: "Muhammad Jawad",
+//     image: "/jawad.jpeg",
+//     role: "CEO Islamabad",
+//     country: "pakistan",
+//   },
+//   {
+//     name: "Saima Tamaz",
+//     image: "/saimaTamaz.jpeg",
+//     role: "COO Islamabad",
+//     country: "pakistan",
+//   },
+//   {
+//     name: "Tahir Farooq",
+//     image: "/tahirFarooq.jpeg",
+//     role: "Business Development Officer France",
+//     country: "france",
+//   },
+//   {
+//     name: "Muhammad Ehsan Tarar",
+//     image: "/muhammadEhsan.jpeg",
+//     role: "Business Development Officer Germany",
+//     country: "germany",
+//   },
+//   {
+//     name: "Muhammad Anees",
+//     image: "/anees.jpeg",
+//     role: "Business Development Officer Australia",
+//     country: "australia",
+//   },
+//   {
+//     name: "Muhammad Hassan Waheed ",
+//     image: "/waheed.jpeg",
+//     role: "Creative Head",
+//     country: "pakistan",
+//   },
+// ];
 
-const flagMap = {
-  pakistan: "🇵🇰",
-  france: "🇫🇷",
-  germany: "🇩🇪",
-  australia: "🇦🇺",
-};
+// const flagMap = {
+//   pakistan: "🇵🇰",
+//   france: "🇫🇷",
+//   germany: "🇩🇪",
+//   australia: "🇦🇺",
+// };
 
-export function ExpertTeamSection() {
-  const sectionRef = useRef(null);
-  const trackRef = useRef(null);
-  const animationRef = useRef(null);
+// export function ExpertTeamSection() {
+//   const sectionRef = useRef(null);
+//   const trackRef = useRef(null);
+//   const animationRef = useRef(null);
 
-  useEffect(() => {
-    gsap.fromTo(
-      sectionRef.current,
-      { autoAlpha: 0, y: 50 },
-      {
-        autoAlpha: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-      }
-    );
+//   useEffect(() => {
+//     gsap.fromTo(
+//       sectionRef.current,
+//       { autoAlpha: 0, y: 50 },
+//       {
+//         autoAlpha: 1,
+//         y: 0,
+//         duration: 1,
+//         ease: "power2.out",
+//         scrollTrigger: {
+//           trigger: sectionRef.current,
+//           start: "top 80%",
+//         },
+//       }
+//     );
 
-    const track = trackRef.current;
-    const distance = track.scrollWidth / 2;
+//     const track = trackRef.current;
+//     const distance = track.scrollWidth / 2;
 
-    animationRef.current = gsap.to(track, {
-      x: `-=${distance}`,
-      ease: "none",
-      duration: 40,
-      repeat: -1,
-    });
+//     animationRef.current = gsap.to(track, {
+//       x: `-=${distance}`,
+//       ease: "none",
+//       duration: 40,
+//       repeat: -1,
+//     });
 
-    // Pause on hover
-    track.addEventListener("mouseenter", () => {
-      animationRef.current.pause();
-    });
+//     // Pause on hover
+//     track.addEventListener("mouseenter", () => {
+//       animationRef.current.pause();
+//     });
 
-    track.addEventListener("mouseleave", () => {
-      animationRef.current.resume();
-    });
+//     track.addEventListener("mouseleave", () => {
+//       animationRef.current.resume();
+//     });
 
-    return () => {
-      animationRef.current.kill();
-    };
-  }, []);
+//     return () => {
+//       animationRef.current.kill();
+//     };
+//   }, []);
 
-  // const handleManualScroll = (direction) => {
-  //   const track = trackRef.current;
-  //   const step = 280 + 16; // card width + gap
-  //   const currentX = gsap.getProperty(track, "x");
-  //   const offset = direction === "next" ? -step : step;
+//   // const handleManualScroll = (direction) => {
+//   //   const track = trackRef.current;
+//   //   const step = 280 + 16; // card width + gap
+//   //   const currentX = gsap.getProperty(track, "x");
+//   //   const offset = direction === "next" ? -step : step;
 
-  //   animationRef.current.pause();
+//   //   animationRef.current.pause();
 
-  //   gsap.to(track, {
-  //     x: currentX + offset,
-  //     duration: 0.5,
-  //     ease: "power2.out",
-  //     onComplete: () => animationRef.current.resume(),
-  //   });
-  // };
+//   //   gsap.to(track, {
+//   //     x: currentX + offset,
+//   //     duration: 0.5,
+//   //     ease: "power2.out",
+//   //     onComplete: () => animationRef.current.resume(),
+//   //   });
+//   // };
 
-  return (
-    <section ref={sectionRef} className="px-6 py-12 max-w-7xl mx-auto w-full">
-      <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">
-        <div>
-          <span className="text-sm text-gray-500 bg-slate-100 px-4 py-2 rounded-full inline-block mb-2">
-            Expert Team
-          </span>
-          <h2 className="text-3xl font-bold mb-2">Our Expert Team</h2>
-          <p className="text-gray-600 max-w-xl">
-            Meet the minds behind NeuroCode. Our skilled team blends creativity,
-            strategy, and tech to craft impactful digital platforms.
-          </p>
-        </div>
+//   return (
+//     <section ref={sectionRef} className="px-6 py-12 max-w-7xl mx-auto w-full">
+//       <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-6">
+//         <div>
+//           <span className="text-sm text-gray-500 bg-slate-100 px-4 py-2 rounded-full inline-block mb-2">
+//             Expert Team
+//           </span>
+//           <h2 className="text-3xl font-bold mb-2">Our Expert Team</h2>
+//           <p className="text-gray-600 max-w-xl">
+//             Meet the minds behind NeuroCode. Our skilled team blends creativity,
+//             strategy, and tech to craft impactful digital platforms.
+//           </p>
+//         </div>
 
-        {/* Arrows */}
-        {/* <div className="flex gap-3">
-          <button
-            onClick={() => handleManualScroll("prev")}
-            className="bg-gray-200 p-2 rounded-full hover:bg-gray-300"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={() => handleManualScroll("next")}
-            className="bg-[#5A00F0] text-white p-2 rounded-full hover:bg-purple-700"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div> */}
-      </div>
+//         {/* Arrows */}
+//         {/* <div className="flex gap-3">
+//           <button
+//             onClick={() => handleManualScroll("prev")}
+//             className="bg-gray-200 p-2 rounded-full hover:bg-gray-300"
+//           >
+//             <ChevronLeft className="w-5 h-5" />
+//           </button>
+//           <button
+//             onClick={() => handleManualScroll("next")}
+//             className="bg-[#5A00F0] text-white p-2 rounded-full hover:bg-purple-700"
+//           >
+//             <ChevronRight className="w-5 h-5" />
+//           </button>
+//         </div> */}
+//       </div>
 
-      {/* Infinite Track */}
-      <div className="relative overflow-hidden w-full">
-        <div ref={trackRef} className="flex gap-4 w-max">
-          {[...teamData, ...teamData].map((member, idx) => (
-            <div
-              key={idx}
-              className="relative w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-            >
-              {/* Flag */}
-              <div className="absolute flex items-center justify-center bottom-3 right-3 w-8 h-8 rounded-full overflow-hidden border border-white shadow-md bg-white text-lg">
-                <p>{flagMap[member.country]}</p>
-              </div>
+//       {/* Infinite Track */}
+//       <div className="relative overflow-hidden w-full">
+//         <div ref={trackRef} className="flex gap-4 w-max">
+//           {[...teamData, ...teamData].map((member, idx) => (
+//             <div
+//               key={idx}
+//               className="relative w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+//             >
+//               {/* Flag */}
+//               <div className="absolute flex items-center justify-center bottom-3 right-3 w-8 h-8 rounded-full overflow-hidden border border-white shadow-md bg-white text-lg">
+//                 <p>{flagMap[member.country]}</p>
+//               </div>
 
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-60  object-top object-cover object-center"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {member.name}
-                </h3>
-                <p className="text-sm text-gray-500">{member.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+//               <img
+//                 src={member.image}
+//                 alt={member.name}
+//                 className="w-full h-60  object-top object-cover object-center"
+//               />
+//               <div className="p-4">
+//                 <h3 className="text-lg font-semibold text-gray-800">
+//                   {member.name}
+//                 </h3>
+//                 <p className="text-sm text-gray-500">{member.role}</p>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 // hero 2
 gsap.registerPlugin(ScrollTrigger);
